@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Turn off the aberdeen proxy server for use with eduroam
+#
+export HTTP_PROXY=
+export HTTPS_PROXY=

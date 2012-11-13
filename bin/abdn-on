@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Turn on the aberdeen proxy server for use with eduroam
+#
+export HTTP_PROXY=proxy.abdn.ac.uk:8080
+export HTTPS_PROXY=proxy.abdn.ac.uk:8080

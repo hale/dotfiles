@@ -55,8 +55,7 @@ alias rdtp='rake db:test:prepare'
 alias aargh='lsof -i :80'
 
 # git
-#alias 'git co'='git checkout'
-
+alias git='hub'
 # directory aliases
 alias cd12='cd ~/code'
 alias gsoc='cd ~/code/gsoc/'
