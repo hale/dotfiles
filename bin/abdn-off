@@ -2,5 +2,9 @@
 #
 # Turn off the aberdeen proxy server for use with eduroam
 #
-export HTTP_PROXY=
-export HTTPS_PROXY=
+unset HTTP_PROXY
+unset http_proxy
+unset HTTPS_PROXY
+unset https_proxy
+unset FTP_PROXY
+unset ftp_proxy
