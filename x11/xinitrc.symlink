@@ -1,0 +1,12 @@
+#!/usr/bin/zsh
+
+xrandr --output HDMI1 --mode 1920x1200 --left-of VGA1 &
+gnome-settings-daemon &
+rescuetime &
+spotify &
+google-chrome &
+tmux &
+
+exec awesome
+
+

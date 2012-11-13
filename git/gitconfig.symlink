@@ -5,10 +5,8 @@
 [hub]
         protocol = https
 [user]
-        name = Zach Holman
-        email = zach@zachholman.com
-[credential]
-        helper = osxkeychain
+        name = Philip Hale
+        email = p.hale.09@aberdeen.ac.uk
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
@@ -22,7 +20,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = gvim
 [apply]
         whitespace = nowarn
 [mergetool]
