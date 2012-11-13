@@ -10,3 +10,24 @@ if has('gui_running')
         set guifont=Source\ Code\ Pro:h10,Bitstream\ Vera\ Sans\ Mono:h10,Andale\ Mono\ Regular:h10,Menlo\ Regular:h10,Consolas\ Regular:h10,Courier\ New\ Regular:h10
     endif
 endif
+
+" On enter update/create tags
+autocmd VimEnter * call UpdateOrCreateTagsFile()
+
+" On write just update tags of this file
+autocmd BufWritePost *.rb call writefile(split(system("sort -u <(touch tags && grep -v " . expand('%:%') . " tags) <(ctags --language-force=ruby -u -f - " . shellescape(expand('%:%')) . " | grep " . expand('%:r') . ")"),"\n"),"tags")
+ 
+" Create tagsfile (if it doesn't exist)
+" or update tags file if it is too old
+" currently doesn't handle same-name classes well ...
+fun! UpdateOrCreateTagsFile()
+  let mtime_tags = getftime("tags")
+  let mtime_gemfile = getftime("Gemfile.lock")
+
+  if mtime_gemfile > 0 && (mtime_tags == -1 || mtime_gemfile > mtime_tags)
+    echom "Generating tags as Gemfile.lock is newer than tags"
+    let tempfile = tempname()
+    call writefile(["#!/bin/bash","ctags -R --language-force=ruby -u -f tags", "rm $0"], tempfile)
+    silent! execute ":!bash " . tempfile . " &"
+  endif
+endfun

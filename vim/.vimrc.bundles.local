@@ -1,0 +1,4 @@
+Bundle 'tpope/vim-bundler'
+Bundle 'skwp/vim-ruby-conque'
+Bundle 'rson/vim-conque'
+Bundle 'maksimr/vim-jsbeautify'
