@@ -66,3 +66,15 @@ alias pls='ruby ~/pivotal-ls/pvt.rb'
 
 # easy movement between OS X and Ubuntu
 alias mvim='gvim'
+
+JESS_HOME=~/Jess71p2/
+alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr94.jar:${JESS_HOME}/lib/JessWin.jar JessWin"
+
+
+unsetopt correct_all
+alias fr="foreman run"
+alias fs='foreman start'
+
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+
