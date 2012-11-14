@@ -1,0 +1,6 @@
+#!/bin/bash
+while [ true ]; do
+    sensors | grep Vcore
+    # echo -e "\r\033[K"
+    sleep 1
+done
