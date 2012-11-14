@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Awesome
+#
+# Sets up awesomewm
+#
+mkdir -p ~/.config/awesome
+ln -s ~/.dotfiles/awesome/rc.lua ~/.config/awesome/rc.lua
+
+## Copy over the custom theme file
+#if [$(uname -s) == "Linux"]
+#then
+  ## ln -s ~/.dotfiles/awesome/theme ~/path/to/awesome/themes/theme
+#fi
+
+
