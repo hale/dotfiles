@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
+DEFAULT_USER='phil'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -34,7 +35,7 @@ plugins=(rails ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$PATH
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:$PATH
 
 eval "$(rbenv init -)"
 
@@ -54,8 +55,7 @@ alias rdtp='rake db:test:prepare'
 alias aargh='lsof -i :80'
 
 # git
-#alias 'git co'='git checkout'
-
+alias git='hub'
 # directory aliases
 alias cd12='cd ~/code'
 alias gsoc='cd ~/code/gsoc/'
