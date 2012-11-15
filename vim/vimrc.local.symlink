@@ -31,3 +31,6 @@ fun! UpdateOrCreateTagsFile()
     silent! execute ":!bash " . tempfile . " &"
   endif
 endfun
+
+" support for owl
+au BufNewFile,BufRead *.owl set filetype=xml
