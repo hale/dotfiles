@@ -54,8 +54,6 @@ alias rdtp='rake db:test:prepare'
 
 alias aargh='lsof -i :80'
 
-# git
-alias git='hub'
 # directory aliases
 alias cd12='cd ~/code'
 alias gsoc='cd ~/code/gsoc/'
@@ -88,4 +86,19 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
     #done
 #fi
 
+# enable z jumps
 . ~/.dotfiles/z/z.sh
+
+
+# your project folder that we can `c [tab]` to
+#export PROJECTS=~/code
+
+# source every .zsh file in this rep
+for config_file (~/.dotfiles/**/*.zsh) source $config_file
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for config_file (~/.dotfiles/**/completion.zsh) source $config_file
