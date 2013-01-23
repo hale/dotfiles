@@ -35,7 +35,7 @@ plugins=(rails ruby git vim)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:$PATH
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:/opt/i7z-0.27.2/:$PATH
 
 eval "$(rbenv init -)"
 
