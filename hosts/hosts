@@ -16,6 +16,8 @@ ff02::2 ip6-allrouters
 127.0.0.1 reddit.com
 127.0.0.1 theverge.com
 127.0.0.1 4chan.org
+127.0.0.1 facebook.com
+127.0.0.1 www.facebook.com
 
 ############################################################
 ############# BLOCK ADVERTS ################################
