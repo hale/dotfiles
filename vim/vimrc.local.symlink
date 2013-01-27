@@ -35,3 +35,4 @@ endfun
 
 " support for OWL
 au BufNewFile,BufRead *.owl set filetype=xml
+au BufNewFile,BufRead *.jess set filetype=lisp
