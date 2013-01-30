@@ -5,3 +5,7 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'git://github.com/spolu/dwm.vim.git'
 Bundle 'hale/jess.vim'
 Bundle 'javacomplete'
+Bundle 'easytags.vim'
+Bundle 'airblade/vim-rooter'
+
+let g:spf13_no_autochdir = 1
