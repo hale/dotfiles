@@ -5,6 +5,9 @@ set shiftwidth=2
 set colorcolumn=80
 set shell=bash
 
+"stop auto changing directory
+let g:ctrlp_working_path_mode = 'r'
+
 if has('gui_running')
     if has('gui_gtk2')
         set guifont=Source\ Code\ Pro\ for\ Powerline\ 10,Bitstream\ Vera\ Sans\ Mono\ 10,Andale\ Mono\ Regular\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
@@ -13,27 +16,24 @@ if has('gui_running')
     endif
 endif
 
-" On enter update/create tags
-autocmd VimEnter * call UpdateOrCreateTagsFile()
 
-" On write just update tags of this file
-autocmd BufWritePost *.rb call writefile(split(system("sort -u <(touch tags && grep -v " . expand('%:%') . " tags) <(ctags --language-force=ruby -u -f - " . shellescape(expand('%:%')) . " | grep " . expand('%:r') . ")"),"\n"),"tags")
- 
-" Create tagsfile (if it doesn't exist)
-" or update tags file if it is too old
-" currently doesn't handle same-name classes well ...
-fun! UpdateOrCreateTagsFile()
-  let mtime_tags = getftime("tags")
-  let mtime_gemfile = getftime("Gemfile.lock")
-
-  if mtime_gemfile > 0 && (mtime_tags == -1 || mtime_gemfile > mtime_tags)
-    echom "Generating tags as Gemfile.lock is newer than tags"
-    let tempfile = tempname()
-    call writefile(["#!/bin/bash","ctags -R --language-force=ruby -u -f tags", "rm $0"], tempfile)
-    silent! execute ":!bash " . tempfile . " &"
-  endif
-endfun
 
 " support for OWL
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
+
+" don't change current directory on new buffer
+let g:spf13_no_autochdir = 1
+
+"##############################################################################
+" Easier split navigation
+"##############################################################################
+
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" add tag search to ctrlp
+let g:ctrlp_extensions = ['tag']
