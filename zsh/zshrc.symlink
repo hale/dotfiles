@@ -56,10 +56,6 @@ alias aargh='lsof -i :80'
 
 # directory aliases
 alias cd12='cd ~/code'
-alias gsoc='cd ~/code/gsoc/'
-alias glg='git lg'
-alias glgp='git lg -p'
-alias g='git status'
 alias pls='ruby ~/pivotal-ls/pvt.rb'
 
 # set shell to sh to fix Vundle install error (as per FAQ)
@@ -72,6 +68,7 @@ alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr9
 unsetopt correct_all
 alias fr="foreman run"
 alias fs='foreman start'
+alias be='bundle exec'
 
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
