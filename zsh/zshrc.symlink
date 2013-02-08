@@ -72,6 +72,8 @@ alias be='bundle exec'
 
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
+export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
+
 ## TMUX
 #if which tmux 2>&1 >/dev/null; then
     ## if no session is started, start a new session
