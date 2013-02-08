@@ -37,3 +37,9 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " add tag search to ctrlp
 let g:ctrlp_extensions = ['tag']
+
+" toggle syntastic hilighting
+nmap <leader>st :SyntasticToggle<CR>
+
+" compile with play
+nmap <leader>pc :!play compile<CR>
