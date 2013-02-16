@@ -1,9 +1,11 @@
 #!/usr/bin/zsh
 xrdb -merge ~/.Xresources &
 xrandr --output HDMI1 --mode 1920x1200 --right-of VGA1 &
+xmodmap ~/.speedswapper
 gnome-settings-daemon &
 rescuetime &
 chromium &
+redshift -l 57.146298:-2.114868 &
 exec awesome
 
 
