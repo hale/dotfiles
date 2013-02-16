@@ -58,6 +58,9 @@ alias aargh='lsof -i :80'
 alias cd12='cd ~/code'
 alias pls='ruby ~/pivotal-ls/pvt.rb'
 
+# todo.txt aliases
+alias t='todo.sh'
+
 # set shell to sh to fix Vundle install error (as per FAQ)
 alias mvim='SHELL=bash gvim'
 
@@ -100,4 +103,8 @@ autoload -U compinit
 compinit
 
 # load every completion after autocomplete loads
+
+
 for config_file (~/.dotfiles/**/completion.zsh) source $config_file
+
+export TERM=xterm-256color
