@@ -88,6 +88,8 @@ export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
 # enable z jumps
 . ~/.dotfiles/z/z.sh
 
+xmodmap ~/.speedswapper
+
 
 # your project folder that we can `c [tab]` to
 #export PROJECTS=~/code
