@@ -35,7 +35,7 @@ plugins=(rails ruby git vim)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:/opt/i7z-0.27.2/:$PATH
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:/opt/i7z-0.27.2:$HOME/node_modules/.bin
 
 eval "$(rbenv init -)"
 
@@ -63,6 +63,9 @@ alias t='todo.sh'
 
 # set shell to sh to fix Vundle install error (as per FAQ)
 alias mvim='SHELL=bash gvim'
+
+# alias for gcalcli
+alias gcal='gcalcli --width 20 calw'
 
 JESS_HOME=~/Jess71p2/
 alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr94.jar:${JESS_HOME}/lib/JessWin.jar JessWin"
