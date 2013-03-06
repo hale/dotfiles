@@ -8,29 +8,11 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="$(whoami)"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby git vim)
+plugins=(rails3 git vim brew last-working-dir mvn npm osx vmode)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,37 +21,26 @@ export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/local/s
 
 eval "$(rbenv init -)"
 
-alias vps="ssh phil@46.20.235.23"
-
-
 # apt
 alias update='sudo apt-get update'
 alias install='sudo apt-get install'
 alias upgrade='sudo apt-get upgrade'
 
 # rails
-alias guard="bundle exec guard"
 alias rdm='rake db:migrate'
 alias rdtp='rake db:test:prepare'
 
-alias aargh='lsof -i :80'
-
 # directory aliases
-alias cd12='cd ~/code'
-alias pls='ruby ~/pivotal-ls/pvt.rb'
+#alias pls='ruby ~/pivotal-ls/pvt.rb'
 
 # todo.txt aliases
 alias t='todo.sh'
-
-# set shell to sh to fix Vundle install error (as per FAQ)
-alias mvim='SHELL=bash gvim'
 
 # alias for gcalcli
 alias gcal='gcalcli --width 20 calw'
 
 JESS_HOME=~/Jess71p2/
 alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr94.jar:${JESS_HOME}/lib/JessWin.jar JessWin"
-
 
 unsetopt correct_all
 alias fr="foreman run"
@@ -80,37 +51,18 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
 export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
 
-## TMUX
-#if which tmux 2>&1 >/dev/null; then
-    ## if no session is started, start a new session
-    #test -z ${TMUX} && tmux
-
-    ## when quitting tmux, try to attach
-    #while test -z ${TMUX}; do
-        #tmux attach || break
-    #done
-#fi
-
 # enable z jumps
 . ~/.dotfiles/z/z.sh
 
-#xmodmap ~/.speedswapper
-
-
-# your project folder that we can `c [tab]` to
-#export PROJECTS=~/code
+# initialize autocomplete here, otherwise functions won't be loaded
+# load every completion after autocomplete loads
+autoload -U compinit
+compinit
 
 # source every .zsh file in this rep
 for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# load every completion after autocomplete loads
-
-
-for config_file (~/.dotfiles/**/completion.zsh) source $config_file
+#for config_file (~/.dotfiles/**/completion.zsh) source $config_file
 
 export TERM=xterm-256color
 
