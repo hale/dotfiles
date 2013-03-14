@@ -5,4 +5,5 @@ color_maven() {
             -e 's/\(\[INFO\].*\)/\033[1;34m\1\033[0m/g' \
                 -e 's/\(\[ERROR\].*\)/\033[1;31m\1\033[0m/g'
 }
-alias mvn=color_maven
+#FIXME: doesn't work
+#alias mvn=color_maven
