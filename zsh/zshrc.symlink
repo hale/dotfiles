@@ -11,7 +11,7 @@ DEFAULT_USER="$(whoami)"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails3 git vim brew last-working-dir mvn npm osx vmode)
+plugins=(brew last-working-dir npm)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -38,6 +38,8 @@ alias t='todo.sh'
 
 # alias for gcalcli
 alias gcal='gcalcli --width 20 calw'
+
+alias vimrc='vim ~/.vimrc.local'
 
 JESS_HOME=~/Jess71p2/
 alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr94.jar:${JESS_HOME}/lib/JessWin.jar JessWin"
