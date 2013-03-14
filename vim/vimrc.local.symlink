@@ -24,6 +24,11 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
 
+"" Compile with Maven when saving java files
+""au BufWritePost *.java silent! ! MAVEN_OPTS=-ea mvn clean compile
+"au BufNewFile,BufRead *.java compiler ant
+"au BufNewFile,BufRead *.java set makeprg=MAVEN_OPTS=-ea\ mvn\ clean\ compile
+
 " don't change current directory on new buffer
 let g:spf13_no_autochdir = 1
 
@@ -45,3 +50,13 @@ nmap <leader>st :SyntasticToggle<CR>
 
 " compile with play
 nmap <leader>pc :!play compile<CR>
+
+" removes the small delay between pressing escape and entering normal mode.
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
