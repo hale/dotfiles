@@ -41,6 +41,8 @@ alias gcal='gcalcli --width 20 calw'
 
 alias vimrc='vim ~/.vimrc.local'
 
+#JAVA_HOME=$(/usr/libexec/java_home)
+#JAVA_HOME=$(which java)
 JESS_HOME=~/Jess71p2/
 alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr94.jar:${JESS_HOME}/lib/JessWin.jar JessWin"
 
@@ -71,3 +73,6 @@ export TERM=xterm-256color
 # Toggle the university proxy.
 abdn-on()  { source ~/.dotfiles/zsh/abdn-on  }
 abdn-off() { source ~/.dotfiles/zsh/abdn-off }
+
+# enable grc
+source "`brew --prefix`/etc/grc.bashrc"
