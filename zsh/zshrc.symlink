@@ -41,6 +41,8 @@ alias gcal='gcalcli --width 20 calw'
 
 alias vimrc='vim ~/.vimrc.local'
 
+#JAVA_HOME=$(/usr/libexec/java_home)
+#JAVA_HOME=$(which java)
 JESS_HOME=~/Jess71p2/
 alias jesswin="java -classpath .:${JESS_HOME}/lib/jess.jar:${JESS_HOME}/lib/jsr94.jar:${JESS_HOME}/lib/JessWin.jar JessWin"
 
@@ -75,3 +77,6 @@ abdn-off() { source ~/.dotfiles/zsh/abdn-off }
 alias vps=ssh root@95.154.216.253
 alias mpro=ssh philiphale@192.168.0.50
 alias mpro-ext=ssh philiphale@90.209.128.151
+
+# enable grc
+source "`brew --prefix`/etc/grc.bashrc"

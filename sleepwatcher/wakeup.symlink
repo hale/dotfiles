@@ -1,0 +1,2 @@
+#/bin/sh
+echo "W: $(date)" >> ~/Desktop/sleephistory.log

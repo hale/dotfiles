@@ -1,0 +1,3 @@
+#/bin/sh
+echo "S: $(date)" >> ~/Desktop/sleephistory.log
+
