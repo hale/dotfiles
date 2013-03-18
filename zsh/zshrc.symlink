@@ -71,3 +71,7 @@ export TERM=xterm-256color
 # Toggle the university proxy.
 abdn-on()  { source ~/.dotfiles/zsh/abdn-on  }
 abdn-off() { source ~/.dotfiles/zsh/abdn-off }
+
+alias vps=ssh root@95.154.216.253
+alias mpro=ssh philiphale@192.168.0.50
+alias mpro-ext=ssh philiphale@90.209.128.151
