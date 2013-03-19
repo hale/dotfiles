@@ -80,3 +80,5 @@ alias mpro-ext='ssh philiphale@hale.dyndns.tv'
 
 # enable grc
 source "`brew --prefix`/etc/grc.bashrc"
+
+alias :q="exit"
