@@ -30,6 +30,9 @@ alias upgrade='sudo apt-get upgrade'
 alias rdm='rake db:migrate'
 alias rdtp='rake db:test:prepare'
 
+# git
+alias gl=pretty_git_log
+
 # directory aliases
 #alias pls='ruby ~/pivotal-ls/pvt.rb'
 

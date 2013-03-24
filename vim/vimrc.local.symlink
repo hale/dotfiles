@@ -25,7 +25,7 @@ au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
 
 "" Compile with Maven when saving java files
-""au BufWritePost *.java silent! ! MAVEN_OPTS=-ea mvn clean compile
+"au BufWritePost *.java silent! ! MAVEN_OPTS=-ea mvn -q clean compile
 "au BufNewFile,BufRead *.java compiler ant
 "au BufNewFile,BufRead *.java set makeprg=MAVEN_OPTS=-ea\ mvn\ clean\ compile
 
