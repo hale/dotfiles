@@ -4,6 +4,7 @@ set foldlevel=999
 set shiftwidth=2
 set colorcolumn=80
 set shell=bash
+set shortmess+=A
 
 "stop auto changing directory
 let g:ctrlp_working_path_mode = 'r'
