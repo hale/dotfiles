@@ -9,6 +9,8 @@ Bundle 'easytags.vim'
 Bundle 'airblade/vim-rooter'
 Bundle 'ktvoelker/sbt-vim'
 Bundle 'todotxt.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 let g:spf13_no_autochdir = 1
 let g:spf13_bundle_groups = ['general', 'neocomplcache', 'programming', 'ruby', 'python', 'javascript', 'html', 'misc', 'scala']
