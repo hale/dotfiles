@@ -3,8 +3,8 @@
 # You probably want to change the [user] section here since you are not me.
 
 [user]
-        name = Philip Hale
-        email = p.hale.09@aberdeen.ac.uk
+	name = Philip Hale
+	email = philip@freeagent.com
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
