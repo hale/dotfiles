@@ -60,3 +60,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+" allows easy folding of javadoc comments
+autocmd FileType java :set fmr=/**,*/ fdm=marker fdc=1
