@@ -24,11 +24,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
 
-"" Compile with Maven when saving java files
-"au BufWritePost *.java silent! ! MAVEN_OPTS=-ea mvn -q clean compile
-"au BufNewFile,BufRead *.java compiler ant
-"au BufNewFile,BufRead *.java set makeprg=MAVEN_OPTS=-ea\ mvn\ clean\ compile
-
 " don't change current directory on new buffer
 let g:spf13_no_autochdir = 1
 
@@ -43,7 +38,7 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " add tag search to ctrlp
-let g:ctrlp_extensions = ['tag']
+"let g:ctrlp_extensions = ['tag']
 
 " toggle syntastic hilighting
 nmap <leader>st :SyntasticToggle<CR>
@@ -63,9 +58,12 @@ UnBundle 'spf13/vim-autoclose'
 UnBundle 'Lokaltog/vim-easymotion'
 UnBundle 'godlygeek/tabular'
 UnBundle 'altercation/vim-colors-solarized'
+UnBundle 'scrooloose/nerdtree'
+UnBundle 'jistr/vim-nerdtree-tabs'
+UnBundle 'godlygeek/csapprox'
 
 set background=dark
-colorscheme base16-default
+colorscheme base16-tomorrow
 
 set splitright
 set splitbelow
