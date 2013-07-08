@@ -4,7 +4,7 @@
 
 [user]
 	name = Philip Hale
-	email = philip@freeagent.com
+	email = p.hale.09@aberdeen.ac.uk
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
