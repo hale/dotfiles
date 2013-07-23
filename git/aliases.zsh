@@ -1,13 +1,12 @@
 #alias gl='git pull --prune'
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-#alias gp='git push origin HEAD'
+alias gp='git push origin HEAD'
 alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
+alias gc='git commit --verbose'
+alias gca='git commit --verbose -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status' 
-#alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-
-alias g='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
-alias glgp='git lg -p'
+alias g='git status -sb'
+alias gu="git-up" # gem install git-up
+alias ga="git add"

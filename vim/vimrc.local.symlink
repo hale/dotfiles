@@ -67,3 +67,16 @@ colorscheme base16-tomorrow
 
 set splitright
 set splitbelow
+
+" user silver searcher instead of ack for faster ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"dash.vim shortcut
+nmap <silent> <leader>d <Plug>DashGlobalSearch
+
+"make runs tests when in ruby
+au BufNewFile,BufRead *.rb set makeprg=bundle\ exec\ ruby\ \-I\ test\ \`bundle\ show\ rake\`\/lib\/rake\/rake_test_loader\.rb\ %
+
+" normal line numbers...
+set norelativenumber
+set number
