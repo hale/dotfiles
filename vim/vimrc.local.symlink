@@ -2,19 +2,11 @@ set foldmethod=syntax
 set foldlevel=999
 set shiftwidth=2
 set colorcolumn=80
-set shell=bash
+set shell=zsh
 set shortmess+=A
 
 "stop auto changing directory
 let g:ctrlp_working_path_mode = 'r'
-
-if has('gui_running')
-    if has('gui_gtk2')
-        set guifont=Source\ Code\ Pro\ for\ Powerline\ 10,Bitstream\ Vera\ Sans\ Mono\ 10,Andale\ Mono\ Regular\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
-    else
-        set guifont=Source\ Code\ Pro\ for\ Powerline:h10,Bitstream\ Vera\ Sans\ Mono:h10,Andale\ Mono\ Regular:h10,Menlo\ Regular:h10,Consolas\ Regular:h10,Courier\ New\ Regular:h10
-    endif
-endif
 
 "" Change cursor shape in different modes on OS X
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -61,6 +53,7 @@ UnBundle 'altercation/vim-colors-solarized'
 UnBundle 'scrooloose/nerdtree'
 UnBundle 'jistr/vim-nerdtree-tabs'
 UnBundle 'godlygeek/csapprox'
+UnBundle 'Lokaltog/powerline'
 
 set background=dark
 colorscheme base16-tomorrow
@@ -80,3 +73,5 @@ au BufNewFile,BufRead *.rb set makeprg=bundle\ exec\ ruby\ \-I\ test\ \`bundle\ 
 " normal line numbers...
 set norelativenumber
 set number
+
+let g:airline_powerline_fonts = 1

@@ -98,10 +98,7 @@ export RUBY_GC_MALLOC_LIMIT=60000000
 export RUBY_FREE_MIN=200000
 
 #prefix tests with rake, allows globbing.
-alias tst="be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb"
+tst() {
+  be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance)/**/$1*.rb
+}
 
-#$test_file_name= "$1"
-#$test_regex= "$2"
-#tline() {
-  #bundle exec ruby -I test $test_file_name --name "/$test_regex/"
-#}

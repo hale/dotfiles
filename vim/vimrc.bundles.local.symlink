@@ -1,14 +1,4 @@
-"Bundle 'tpope/vim-bundler'
-"Bundle 'rson/vim-conque'
-"Bundle 'skwp/vim-ruby-conque'
-"Bundle 'maksimr/vim-jsbeautify'
-"Bundle 'git://github.com/spolu/dwm.vim.git'
-"Bundle 'hale/jess.vim'
-"Bundle 'javacomplete'
-"Bundle 'easytags.vim'
 Bundle 'airblade/vim-rooter'
-"Bundle 'ktvoelker/sbt-vim'
-"Bundle 'todotxt.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 
@@ -16,13 +6,8 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'sleistner/vim-jshint.git'
+"Bundle 'bling/vim-airline'
 
 let g:spf13_bundle_groups = ['general', 'programming', 'ruby', 'html']
-
-
 let g:spf13_no_autochdir = 1
-"let g:solarized_termtrans=1
-"let g:solarized_contrast="normal"
-"let g:solarized_visibility="normal"
-"let g:solarized_termcolors=16
 
