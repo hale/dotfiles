@@ -99,6 +99,18 @@ export RUBY_FREE_MIN=200000
 
 #prefix tests with rake, allows globbing.
 tst() {
-  be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance)/**/$1*.rb
+  be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance|capybara)/**/*$1*.rb
+}
+
+# reset the database
+dbreset() {
+  set -e
+  {
+    be rake db:drop
+    be rake db:create
+    be rake db:schema:load
+    be rake db:test:prepare
+    be rake db:seed
+  }
 }
 
