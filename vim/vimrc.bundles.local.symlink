@@ -7,6 +7,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'sleistner/vim-jshint.git'
 "Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-unimpaired'
 
 let g:spf13_bundle_groups = ['general', 'programming', 'ruby', 'html']
 let g:spf13_no_autochdir = 1
