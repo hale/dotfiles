@@ -32,3 +32,5 @@
       lola = log --graph --decorate --oneline --all
 [http]
       ;proxy=$http_proxy
+[credential]
+	helper = osxkeychain
