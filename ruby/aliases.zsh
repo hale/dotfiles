@@ -1,9 +1,27 @@
-alias r='rbenv local 1.8.7-p358'
-
-alias sc='script/console'
-alias sg='script/generate'
-alias sd='script/destroy'
-
 alias migrate='rake db:migrate db:test:clone'
+alias be='bundle exec'
 
+# reset the database
+dbreset() {
+  set -e
+  {
+    be rake db:drop
+    be rake db:create
+    be rake db:schema:load
+    be rake db:test:prepare
+    be rake db:seed
+  }
+}
+
+# faster rails
+export RUBY_GC_MALLOC_LIMIT=60000000
+export RUBY_FREE_MIN=200000
+
+#prefix tests with rake, allows globbing.
+tst() {
+  be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance|capybara)/**/*$1*.rb
+}
+
+alias fr="foreman run"
+alias fs='foreman start'
 alias be='bundle exec'

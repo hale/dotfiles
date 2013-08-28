@@ -78,6 +78,7 @@ set norelativenumber
 set number
 
 let g:airline_powerline_fonts = 1
+"let g:airline_theme = 'simple'
 
 " speed up vim startup
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
