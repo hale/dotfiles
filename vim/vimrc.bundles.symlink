@@ -1,7 +1,5 @@
 " required
 Bundle 'gmarik/vundle'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
 
 " ack results in quickfix
 Bundle 'mileszs/ack.vim'
@@ -11,7 +9,6 @@ Bundle 'kien/ctrlp.vim'
 
 " manage sessions - buffer contents and positions
 Bundle 'vim-scripts/sessionman.vim'
-Bundle 'matchit.zip'
 
 " fancy status bar, alternative to powerline
 Bundle 'bling/vim-airline'
