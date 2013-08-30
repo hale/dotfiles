@@ -1,0 +1,66 @@
+" required
+Bundle 'gmarik/vundle'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+
+" ack results in quickfix
+Bundle 'mileszs/ack.vim'
+
+" fuzzy file search
+Bundle 'kien/ctrlp.vim'
+
+" manage sessions - buffer contents and positions
+Bundle 'vim-scripts/sessionman.vim'
+Bundle 'matchit.zip'
+
+" fancy status bar, alternative to powerline
+Bundle 'bling/vim-airline'
+
+" undotree
+Bundle 'mbbill/undotree'
+
+" sugar for identation
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" remembers your last cursor position and fold level
+Bundle 'vim-scripts/restore_view.vim'
+
+" linter
+Bundle 'scrooloose/syntastic'
+
+" mostly use for GBlame - powerful git integration
+Bundle 'tpope/vim-fugitive'
+
+" post / fetch gists from vim
+Bundle 'mattn/gist-vim'
+
+" easily comment / uncomment code
+Bundle 'scrooloose/nerdcommenter'
+
+" better javascript support
+Bundle 'pangloss/vim-javascript'
+
+" HAML support
+Bundle 'tpope/vim-haml'
+
+" Rails plugin
+Bundle 'tpope/vim-rails'
+
+" working directly always project root
+Bundle 'airblade/vim-rooter'
+
+" easy access to documentation from vim
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
+" all the base16 vim themes
+Bundle 'chriskempson/base16-vim'
+
+" lint js files and open quickfix
+Bundle 'sleistner/vim-jshint.git'
+
+" easy navigation in quickfix (+more)
+Bundle 'tpope/vim-unimpaired'
+
+" alternative to git-gutter
+Bundle 'mhinz/vim-signify'
