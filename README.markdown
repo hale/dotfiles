@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration files for (mostly) vim, zsh, git. Probably only works on OS X.
+Configuration files for (mostly) vim, zsh, git. Probably only works on OS X. ZSH config currently depends on oh-my-zsh, vim config has recently been written to not depend on spf13, but borrows a fair bit of code from it.
 
 ## install
 
