@@ -1,14 +1,9 @@
 [user]
 	name = Philip Hale
-	email = p.hale.09@aberdeen.ac.uk
+	email = phil989@gmail.com
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
         rank-contributers = !$ZSH/bin/git-rank-contributers
         count   = !git shortlog -sn
-        lol = log --graph --decorate --oneline
-        lola = log --graph --decorate --oneline --all
 [color]
         diff = auto
         status = auto
@@ -27,10 +22,5 @@
         autocorrect = 1
 [push]
         default = simple
-[alias]
-      lol = log --graph --decorate --oneline
-      lola = log --graph --decorate --oneline --all
-[http]
-      ;proxy=$http_proxy
 [credential]
 	helper = osxkeychain
