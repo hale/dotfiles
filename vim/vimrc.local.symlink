@@ -54,6 +54,9 @@ UnBundle 'scrooloose/nerdtree'
 UnBundle 'jistr/vim-nerdtree-tabs'
 UnBundle 'godlygeek/csapprox'
 UnBundle 'Lokaltog/powerline'
+UnBundle 'airblade/vim-gitgutter'
+UnBundle 'myusuf3/numbers.vim'
+UnBundle 'terryma/vim-multiple-cursors'
 
 set background=dark
 colorscheme base16-tomorrow
@@ -75,3 +78,10 @@ set norelativenumber
 set number
 
 let g:airline_powerline_fonts = 1
+"let g:airline_theme = 'simple'
+
+" speed up vim startup
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+" speed up vim rendering
+set lazyredraw
