@@ -1,5 +1,7 @@
 # dotfiles
 
+Configuration files for (mostly) vim, zsh, git. Probably only works on OS X.
+
 ## install
 
 Run this:
