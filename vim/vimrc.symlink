@@ -1,0 +1,210 @@
+" setup vim
+set nocompatible
+set shell=/bin/sh
+
+" check vundle works
+filetype on
+filetype off
+set rtp+=~/.vim/bundle/vundle
+" enable vundle
+call vundle#rc()
+
+" load separate bundles file
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+" appearance
+set background=dark
+filetype plugin indent on " automatically detect filteypes
+syntax on
+set colorcolumn=80
+
+" mouse support
+set mouse=a
+set mousehide
+
+scriptencoding utf-8
+
+" shared clipboard
+set clipboard=unnamed
+
+" store way more history (default is 20)
+set history=1000
+
+" spell checking on
+set spell
+
+" allow buffer switching without saving
+set hidden
+
+" Instead of reverting the cursor to the last position in the buffer, we set it
+" to the first line when editing a git commit message
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
+" Setting up the directories
+set backup
+set undofile
+set undolevels=1000 " maximum number ofchanges that can be undond
+set undoreload=10000 " Maximum number of lines to save for undo on a buffer reload
+
+" show the current mode
+set showmode
+
+" highlight current line
+set cursorline
+
+highlight clear SignColumn
+highlight clear LineNr
+
+set showmatch " show matching brackets
+set incsearch " find as you type search
+set hlsearch " highlight search results by default
+set ignorecase " case insensitive search
+set smartcase " use of capitals triggers case sensitive search
+set scrolljump=5 " lines to jump when cursor leaves screen
+set scrolloff=3 " minimum lines to keep above and below cursor
+set foldenable " auto fold code
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+" fix airline
+set laststatus=2
+
+" formatting
+set nowrap
+set autoindent " autoindent at same level as previous line
+set expandtab " tabs become spaces
+
+" leader is ,
+let mapleader = ','
+
+" Yank from cursor to end of line, consistent with C and D
+noremap Y y
+
+" toggle search highlighting
+nmap <silent> <leader>/ :set invhlsearch<CR>
+
+" find merge conflict markers
+map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
+
+" visual shifting without exiting Visual mode
+vnoremap < <gv
+vnoremap > >gv
+
+" for when you forget to sudo
+cmap w!! w !sudo tee % >/dev/null
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+
+" easier horizontal scrolling
+map zl zL
+map zh zH
+
+" customize indent guides
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
+" customize airline
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+
+
+
+
+
+
+" folds
+set foldmethod=syntax
+set foldlevel=999
+
+" 2 spaces for everything
+set shiftwidth=2
+
+" suppress warning about unsaved buffers
+set shortmess+=A
+
+
+
+"" Change cursor shape in different modes on OS X
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" support for OWL
+au BufNewFile,BufRead *.owl set filetype=xml
+au BufNewFile,BufRead *.jess set filetype=lisp
+
+" don't change current directory on new buffer
+let g:spf13_no_autochdir = 1
+
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" toggle syntastic hilighting
+nmap <leader>st :SyntasticToggle<CR>
+
+" removes the small delay between pressing escape and entering normal mode.
+set ttimeoutlen=10
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
+
+set background=dark
+colorscheme base16-tomorrow
+
+set splitright
+set splitbelow
+
+" user silver searcher instead of ack for faster ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"dash.vim shortcut
+nmap <silent> <leader>d <Plug>DashGlobalSearch
+
+"make runs tests when in ruby
+au BufNewFile,BufRead *.rb set makeprg=bundle\ exec\ ruby\ \-I\ test\ \`bundle\ show\ rake\`\/lib\/rake\/rake_test_loader\.rb\ %
+
+" normal line numbers...
+set norelativenumber
+set number
+
+" speed up vim startup
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+" speed up vim rendering
+set lazyredraw
+
+" initialize directories
+function! InitializeDirectories()
+  let parent = $HOME
+  let prefix = 'vim'
+  let dir_list = {
+             \ 'backup': 'backupdir',
+             \ 'views': 'viewdir',
+             \ 'swap': 'directory',
+             \ 'undo': 'undodir' }
+  let common_dir = parent . '/.' . prefix
+
+  for [dirname, settingname] in items(dir_list)
+    let directory = common_dir . dirname . '/'
+    if !isdirectory(directory)
+      call mkdir(directory)
+    endif
+    if !isdirectory(directory)
+      echo "Warning: Unable to create backup directory: " . directory
+      echo "Try: mkdir -p " . directory
+    else
+      let directory = substitute(directory, " ", "\\\\ ", "g")
+      exec "set " . settingname . "=" . directory
+    endif
+  endfor
+endfunction
+call InitializeDirectories()
