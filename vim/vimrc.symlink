@@ -1,4 +1,3 @@
-" setup vim
 set nocompatible
 set shell=/bin/sh
 
@@ -16,9 +15,13 @@ endif
 
 " appearance
 set background=dark
+colorscheme base16-tomorrow
 filetype plugin indent on " automatically detect filteypes
 syntax on
 set colorcolumn=80
+set cursorline
+highlight clear SignColumn
+highlight clear LineNr
 
 " mouse support
 set mouse=a
@@ -50,12 +53,6 @@ set undoreload=10000 " Maximum number of lines to save for undo on a buffer relo
 
 " show the current mode
 set showmode
-
-" highlight current line
-set cursorline
-
-highlight clear SignColumn
-highlight clear LineNr
 
 set showmatch " show matching brackets
 set incsearch " find as you type search
@@ -109,13 +106,7 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
 " customize airline
-let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
-
-
-
-
-
 
 " folds
 set foldmethod=syntax
@@ -126,8 +117,6 @@ set shiftwidth=2
 
 " suppress warning about unsaved buffers
 set shortmess+=A
-
-
 
 "" Change cursor shape in different modes on OS X
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -156,9 +145,6 @@ augroup FastEscape
     au InsertEnter * set timeoutlen=0
     au InsertLeave * set timeoutlen=1000
 augroup END
-
-set background=dark
-colorscheme base16-tomorrow
 
 set splitright
 set splitbelow
