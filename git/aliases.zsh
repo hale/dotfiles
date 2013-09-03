@@ -22,3 +22,13 @@ stage() {
   BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
   git push --force staging $BRANCH_NAME:master
 }
+
+# Remove a specific history from the history
+#
+# Usage:
+#
+# git-rm <commit SHA>
+#
+git-rm() {
+  git rebase --onto $1^ $1
+}
