@@ -25,3 +25,13 @@ tst() {
 alias fr="foreman run"
 alias fs='foreman start'
 alias be='bundle exec'
+
+# start running jobs on the named app
+#
+# Usage:
+#
+# heroku-jobs <app-name>
+#
+heroku-jobs() {
+  heroku run rake jobs:work --app $1
+}
