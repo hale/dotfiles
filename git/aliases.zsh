@@ -16,3 +16,9 @@ alias gaa="git add --all"
 gdl() {
   kicker -c -e "git diff --color" .
 }
+
+# shortcut to push to heroku staging
+stage() {
+  BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+  git push --force staging $BRANCH_NAME:master
+}
