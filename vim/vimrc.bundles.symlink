@@ -37,6 +37,9 @@ Bundle 'scrooloose/nerdcommenter'
 " better javascript support
 Bundle 'pangloss/vim-javascript'
 
+" coffeescript support
+Bundle 'vim-coffee-script'
+
 " HAML support
 Bundle 'tpope/vim-haml'
 
