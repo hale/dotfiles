@@ -4,3 +4,6 @@
 [submodule "gnome-terminal-colors-solarized"]
 	path = gnome-terminal-colors-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "jekyll-seo-script"]
+	path = jekyll-seo-script
+	url = https://github.com/bhardin/jekyll-seo-script
