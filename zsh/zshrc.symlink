@@ -62,10 +62,3 @@ alias mysqlram='diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram
 # trello_cli required vars.
 export TRELLO_DEVELOPER_PUBLIC_KEY=d6b2496fe7c94eea2f881dee78f0c630
 export TRELLO_MEMBER_TOKEN=7b9d0e124e13df14824b52bc61a90e5e3c24feea5386f8ef949d97a965d721e3
-
-# shortcut to deploy my blog
-function blogdeploy() {
-  jekyll build
-  rsync -chavzP --stats _site/ sh4limar_pghale@ssh.phx.nearlyfreespeech.net:/home/public/
-}
-
