@@ -35,3 +35,6 @@ alias be='bundle exec'
 heroku-jobs() {
   heroku run rake jobs:work --app $1
 }
+
+# run rspec specs in bundler, foreman
+alias fspec="foreman run bundle exec rspec spec"
