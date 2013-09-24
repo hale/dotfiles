@@ -16,9 +16,6 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/u
 
 eval "$(rbenv init -)"
 
-# alias for gcalcli
-alias gcal='gcalcli --width 20 calw'
-
 alias vimrc='vim ~/.vimrc.local'
 
 unsetopt correct_all
@@ -41,8 +38,6 @@ for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
 #for config_file (~/.dotfiles/**/completion.zsh) source $config_file
 
-export TERM=xterm-256color
-
 # Toggle the university proxy.
 abdn-on()  { source ~/.dotfiles/zsh/abdn-on  }
 abdn-off() { source ~/.dotfiles/zsh/abdn-off }
@@ -56,9 +51,12 @@ source "`brew --prefix`/etc/grc.bashrc"
 
 alias :q="exit"
 
-# freeagent
-alias mysqlram='diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://1048576` && cp -R /usr/local/mysql/data/* /Volumes/ramdisk/ && mysqld'
-
 # trello_cli required vars.
 export TRELLO_DEVELOPER_PUBLIC_KEY=d6b2496fe7c94eea2f881dee78f0c630
 export TRELLO_MEMBER_TOKEN=7b9d0e124e13df14824b52bc61a90e5e3c24feea5386f8ef949d97a965d721e3
+
+# shortcut to encrypt a file with PGP
+encrypt() {
+  gpg -ao $1.asc -esr philip@pghale.com $1
+}
+
