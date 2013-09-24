@@ -16,6 +16,7 @@ alias g='git status -sb'
 alias gu="git-up" # gem install git-up
 alias ga="git add"
 alias gaa="git add --all"
+alias gri="git rebase -i"
 
 # live git diff; requires kicker gem
 gdl() {
