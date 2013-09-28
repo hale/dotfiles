@@ -60,3 +60,4 @@ encrypt() {
   gpg -ao $1.asc -esr philip@pghale.com $1
 }
 
+alias cim="vim"
