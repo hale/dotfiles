@@ -169,6 +169,9 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 " speed up vim rendering
 set lazyredraw
 
+" git status lower precedence than syntax errors
+let g:signify_sign_overwrite = 0
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
