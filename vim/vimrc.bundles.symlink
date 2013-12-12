@@ -67,3 +67,6 @@ Bundle 'mhinz/vim-signify'
 
 " easy alignment of text, e.g. for markdown tables
 Bundle 'godlygeek/tabular'
+
+" Better LaTeX support
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
