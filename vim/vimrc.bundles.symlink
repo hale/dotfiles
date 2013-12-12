@@ -64,3 +64,6 @@ Bundle 'tpope/vim-unimpaired'
 
 " alternative to git-gutter
 Bundle 'mhinz/vim-signify'
+
+" easy alignment of text, e.g. for markdown tables
+Bundle 'godlygeek/tabular'
