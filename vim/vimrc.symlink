@@ -129,6 +129,7 @@ let g:airline_section_b = 'WC: %{WordCount()}'
 
 " customize airline
 let g:airline_powerline_fonts = 1
+"let g:airline_section_b = "%{WordCount()}"
 
 " folds
 set foldmethod=syntax
@@ -201,6 +202,21 @@ set lazyredraw
 
 " git status lower precedence than syntax errors
 let g:signify_sign_overwrite = 0
+
+" word count function, for use in statusbar / airline
+function! WordCount()
+  let s:old_status = v:statusmsg
+  let position = getpos(".")
+  exe ':silent normal g\'
+  let stat = v:statusmsg
+  let s:word_count = 0
+  if stat != '--No lines in buffer--'
+    let s:word_count = str2nr(split(v:statusmsg)[11])
+    let v:statusmsg = s:old_status
+  end
+  call setpos('.', position)
+  return s:word_count 
+endfunction
 
 " initialize directories
 function! InitializeDirectories()
