@@ -109,17 +109,21 @@ let g:indent_guides_enable_on_vim_startup = 1
 " LaTeX word count
 let g:word_count = "<unknown>"
 
+" OS X head command doesn't like negative byte ranges so this uses
+" homebrew-provided GNU Coreutils
+let g:head_cmd = "ghead"
+
 function! WordCount()
   return g:word_count
 endfunction
 
 function! UpdateWordCount()
   if (&ft=='tex')
-    let g:word_count = system("! texcount " . bufname("%") . " | grep 'Words in text' | cut -c 16- | head -c 1")
+    let g:word_count = system("! texcount " . bufname("%") . " | grep 'Words in text' | cut -c 16- | " . g:head_cmd . " -c -1")
   endif
 endfunction
 
-au BufWrite *.tex call UpdateWordCount()
+au BufRead,BufWrite *.tex call UpdateWordCount()
 
 let g:airline_section_b = 'WC: %{WordCount()}'
 
