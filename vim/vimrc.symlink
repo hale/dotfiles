@@ -106,30 +106,29 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
-" LaTeX word count
-let g:word_count = "<unknown>"
-
-" OS X head command doesn't like negative byte ranges so this uses
-" homebrew-provided GNU Coreutils
-let g:head_cmd = "ghead"
-
-function! WordCount()
-  return g:word_count
-endfunction
+" WORD COUNT IN VIM AIRLINE
 
 function! UpdateWordCount()
-  if (&ft=='tex')
-    let g:word_count = system("! texcount " . bufname("%") . " | grep 'Words in text' | cut -c 16- | " . g:head_cmd . " -c -1")
+  let g:airline_section_b = 'WC: %{WordCount()}'
+endfunction
+
+function! WordCount()
+  if (&ft=='tex' || &ft=='latex')
+    return TexCount()
   endif
+endfunction
+
+function! TexCount()
+  " OS X head command doesn't like negative byte ranges so this uses
+  " homebrew-provided GNU Coreutils
+  let head_cmd = "ghead"
+  return system("! texcount " . bufname("%") . " | grep 'Words in text' | cut -c 16- | " . head_cmd . " -c -1")
 endfunction
 
 au BufRead,BufWrite *.tex call UpdateWordCount()
 
-let g:airline_section_b = 'WC: %{WordCount()}'
-
 " customize airline
 let g:airline_powerline_fonts = 1
-"let g:airline_section_b = "%{WordCount()}"
 
 " folds
 set foldmethod=syntax
@@ -202,21 +201,6 @@ set lazyredraw
 
 " git status lower precedence than syntax errors
 let g:signify_sign_overwrite = 0
-
-" word count function, for use in statusbar / airline
-function! WordCount()
-  let s:old_status = v:statusmsg
-  let position = getpos(".")
-  exe ':silent normal g\'
-  let stat = v:statusmsg
-  let s:word_count = 0
-  if stat != '--No lines in buffer--'
-    let s:word_count = str2nr(split(v:statusmsg)[11])
-    let v:statusmsg = s:old_status
-  end
-  call setpos('.', position)
-  return s:word_count 
-endfunction
 
 " initialize directories
 function! InitializeDirectories()
