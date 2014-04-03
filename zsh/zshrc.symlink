@@ -14,7 +14,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:$HOME/node_modules/.bin:/usr/texbin:/Applications/Postgres93.app/Contents/MacOS/bin
 
-
 eval "$(rbenv init -)"
 
 alias vimrc='vim ~/.vimrc.local'
@@ -39,13 +38,7 @@ for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
 #for config_file (~/.dotfiles/**/completion.zsh) source $config_file
 
-# Toggle the university proxy.
-abdn-on()  { source ~/.dotfiles/zsh/abdn-on  }
-abdn-off() { source ~/.dotfiles/zsh/abdn-off }
-
-alias vps='ssh phil@95.154.216.253'
 alias mpro='ssh philiphale@192.168.0.50'
-alias mpro-ext='ssh philiphale@hale.dyndns.tv'
 
 # enable grc
 source "`brew --prefix`/etc/grc.bashrc"
