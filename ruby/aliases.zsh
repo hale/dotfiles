@@ -13,10 +13,6 @@ dbreset() {
   }
 }
 
-# faster rails
-export RUBY_GC_MALLOC_LIMIT=60000000
-export RUBY_FREE_MIN=200000
-
 #prefix tests with rake, allows globbing.
 tst() {
   be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance|capybara)/**/*$1*.rb
