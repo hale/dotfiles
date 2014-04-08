@@ -7,14 +7,8 @@ Bundle 'mileszs/ack.vim'
 " fuzzy file search
 Bundle 'kien/ctrlp.vim'
 
-" manage sessions - buffer contents and positions
-Bundle 'vim-scripts/sessionman.vim'
-
 " fancy status bar, alternative to powerline
 Bundle 'bling/vim-airline'
-
-" undotree
-Bundle 'mbbill/undotree'
 
 " sugar for identation
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -27,9 +21,6 @@ Bundle 'scrooloose/syntastic'
 
 " mostly use for GBlame - powerful git integration
 Bundle 'tpope/vim-fugitive'
-
-" post / fetch gists from vim
-Bundle 'mattn/gist-vim'
 
 " easily comment / uncomment code
 Bundle 'scrooloose/nerdcommenter'
