@@ -108,13 +108,16 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " WORD COUNT IN VIM AIRLINE
 
-function! UpdateWordCount()
+function! ShowWordCount()
   let g:airline_section_b = 'WC: %{WordCount()}'
 endfunction
 
 function! WordCount()
   if (&ft=='tex' || &ft=='latex')
     return TexCount()
+  endif
+  if (&ft=='md' || &ft=='markdown')
+    return MdCount()
   endif
 endfunction
 
@@ -125,7 +128,22 @@ function! TexCount()
   return system("! texcount " . bufname("%") . " | grep 'Words in text' | cut -c 16- | " . head_cmd . " -c -1")
 endfunction
 
-au BufRead,BufWrite *.tex call UpdateWordCount()
+function! MdCount()
+  let position = getpos(".")
+  exe "silent normal g\<c-g>"
+  let stat = v:statusmsg
+  let s:wc = 0
+  if stat != '--No lines in buffer--'
+    let s:wc = str2nr(split(stat)[11])
+  end
+  call setpos('.', position)
+  return s:wc
+endfunction
+
+au BufRead,BufWrite *.tex call ShowWordCount()
+au BufRead,BufWrite *.md call ShowWordCount()
+
+map <Leader>w :echon MdCount()<CR>
 
 " customize airline
 let g:airline_powerline_fonts = 1
