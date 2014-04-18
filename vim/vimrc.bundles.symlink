@@ -64,3 +64,5 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " WriteRoom clone for full-screen distraction free editing
 Bundle 'junegunn/goyo.vim'
+
+Bundle 'majutsushi/tagbar'
