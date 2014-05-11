@@ -15,7 +15,7 @@ endif
 
 " appearance
 set background=dark
-colorscheme base16-default
+colorscheme base16-tomorrow
 filetype plugin indent on " automatically detect filteypes
 syntax on
 set colorcolumn=80
@@ -223,7 +223,7 @@ let g:signify_sign_overwrite = 0
 " Add support for markdown files in tagbar.
 let g:tagbar_type_markdown = {
       \ 'ctagstype': 'markdown',
-      \ 'ctagsbin' : '~/code/markdown2ctags/markdown2ctags.py',
+      \ 'ctagsbin' : 'markdown2ctags.py',
       \ 'ctagsargs' : '-f - --sort=yes',
       \ 'kinds' : [
       \ 's:sections',
