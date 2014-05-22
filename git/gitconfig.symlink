@@ -1,6 +1,6 @@
 [user]
 	name = Philip Hale
-	email = phil989@gmail.com
+	email = philip@pghale.com
 [alias]
         rank-contributers = !$ZSH/bin/git-rank-contributers
         count   = !git shortlog -sn
