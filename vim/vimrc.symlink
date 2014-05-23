@@ -124,8 +124,7 @@ endfunction
 function! TexCount()
   " OS X head command doesn't like negative byte ranges so this uses
   " homebrew-provided GNU Coreutils
-  let head_cmd = "ghead"
-  return system("! texcount " . bufname("%") . " | grep 'Words in text' | cut -c 16- | " . head_cmd . " -c -1")
+  return MdCount()
 endfunction
 
 function! MdCount()
