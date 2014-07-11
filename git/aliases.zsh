@@ -17,6 +17,8 @@ alias gu="git-up" # gem install git-up
 alias ga="git add"
 alias gaa="git add --all"
 alias gri="git rebase -i"
+alias grem="git remote -v"
+alias gra="git remote add"
 
 # live git diff; requires kicker gem
 gdl() {
