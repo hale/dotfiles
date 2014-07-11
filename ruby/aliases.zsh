@@ -34,6 +34,7 @@ heroku-jobs() {
 
 # run rspec specs in bundler, foreman
 alias fspec="foreman run bundle exec rspec"
+alias fguard="foreman run bundle exec guard -c"
 
 # rubinius
 export RUBYOPT=rubygems
