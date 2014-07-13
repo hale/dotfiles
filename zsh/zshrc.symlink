@@ -63,3 +63,6 @@ alias setjdk18='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
 # shortcut to the tree script
 alias t='tree'
+
+# added by travis gem
+[ -f /Users/philiphale/.travis/travis.sh ] && source /Users/philiphale/.travis/travis.sh
