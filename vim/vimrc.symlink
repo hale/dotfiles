@@ -235,6 +235,9 @@ let g:tagbar_type_markdown = {
       \ 'sort': 0,
       \ }
 
+" .lvimrc security question answers are persisted
+let g:localvimrc_persistent=2
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME

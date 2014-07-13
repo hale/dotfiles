@@ -65,4 +65,8 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " WriteRoom clone for full-screen distraction free editing
 Bundle 'junegunn/goyo.vim'
 
+" Interactive, formatted list of ctags in a sidebar
 Bundle 'majutsushi/tagbar'
+
+" Per-project vim config in '.lvimrc' files, for indentation rules etc.
+Bundle 'embear/vim-localvimrc'
