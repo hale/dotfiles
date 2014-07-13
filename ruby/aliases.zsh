@@ -38,3 +38,7 @@ alias fguard="foreman run bundle exec guard -c"
 
 # rubinius
 export RUBYOPT=rubygems
+
+# force Zeus to put the socket file elsewhere, for when the rails project is in
+# an ENCFS encrypted folder
+export ZEUSSOCK=/tmp/zeus.sock
