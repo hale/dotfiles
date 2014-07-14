@@ -15,6 +15,7 @@ endif
 
 " appearance
 set background=dark
+let base16colorspace=256
 colorscheme base16-tomorrow
 filetype plugin indent on " automatically detect filteypes
 syntax on
