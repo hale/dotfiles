@@ -8,6 +8,15 @@ then
 	. script/homebrew
 fi
 
+# TODO: Install homebrew packages
+
+# TODO: Install oh-my-zsh
+
 # Run the install (I'd like to pull this out of rake, eventually)
 rake install
 
+# Install Bas16 Shell
+git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell
+
+# Install custom zsh theme
+ln -s ~/.dotfiles/zsh/agnoster-hale.zsh-theme ~/.oh-my-zsh/themes/agnoster-hale.zsh-theme
