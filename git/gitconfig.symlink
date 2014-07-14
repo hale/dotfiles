@@ -4,6 +4,7 @@
 [alias]
         rank-contributers = !$ZSH/bin/git-rank-contributers
         count   = !git shortlog -sn
+        find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 [color]
         diff = auto
         status = auto
