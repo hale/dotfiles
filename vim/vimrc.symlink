@@ -114,9 +114,6 @@ function! ShowWordCount()
 endfunction
 
 function! WordCount()
-  if (&ft=='tex' || &ft=='latex')
-    return TexCount()
-  endif
   if (&ft=='md' || &ft=='markdown')
     return MdCount()
   endif
@@ -140,7 +137,6 @@ function! MdCount()
   return s:wc
 endfunction
 
-au BufRead,BufWrite *.tex call ShowWordCount()
 au BufRead,BufWrite *.md call ShowWordCount()
 
 map <Leader>w :echon MdCount()<CR>
