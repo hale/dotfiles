@@ -1,28 +1,23 @@
-# Path to your oh-my-zsh configuration.
+# oh my zsh initialization
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster-hale"
+
 DEFAULT_USER="$(whoami)"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(osx last-working-dir brew)
-
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:$HOME/node_modules/.bin:/usr/texbin:/Applications/Postgres93.app/Contents/MacOS/bin
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
 
 eval "$(rbenv init -)"
 
 alias vimrc='vim ~/.vimrc.local'
 
 unsetopt correct_all
-
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-
-export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
 
 # enable z jumps
 . ~/.dotfiles/z/z.sh
@@ -38,16 +33,10 @@ for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
 #for config_file (~/.dotfiles/**/completion.zsh) source $config_file
 
-alias mpro='ssh philiphale@192.168.0.50'
-
 # enable grc
 source "`brew --prefix`/etc/grc.bashrc"
 
 alias :q="exit"
-
-# trello_cli required vars.
-export TRELLO_DEVELOPER_PUBLIC_KEY=d6b2496fe7c94eea2f881dee78f0c630
-export TRELLO_MEMBER_TOKEN=7b9d0e124e13df14824b52bc61a90e5e3c24feea5386f8ef949d97a965d721e3
 
 # shortcut to encrypt a file with PGP
 encrypt() {
