@@ -143,6 +143,12 @@ map <Leader>w :echon MdCount()<CR>
 
 " customize airline
 let g:airline_powerline_fonts = 1
+" Hide fugitive changes - never use this
+let g:airline#extensions#hunks#enabled = 0
+" Hide branch name (we have powerline in the console for that)
+let g:airline#extensions#branch#enabled = 0
+" Hide the fileencoding / fileformat section
+let g:airline_section_y = ''
 
 " folds
 set foldmethod=syntax
