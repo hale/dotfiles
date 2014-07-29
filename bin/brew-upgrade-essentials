@@ -1,0 +1,4 @@
+# Updates the list of formulae, then upgrades essential packages.
+
+brew update
+brew upgrade git rbenv ruby-build encfs git macvim phantomjs osxfuse the_silver_searcher tree zsh
