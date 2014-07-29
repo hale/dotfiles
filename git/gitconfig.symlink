@@ -1,6 +1,7 @@
 [user]
 	name = Philip Hale
 	email = philip@pghale.com
+	signingkey = BDB4EB14
 [alias]
         rank-contributers = !$ZSH/bin/git-rank-contributers
         count   = !git shortlog -sn
