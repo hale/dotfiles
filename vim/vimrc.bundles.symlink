@@ -73,3 +73,6 @@ Bundle 'embear/vim-localvimrc'
 
 " :Google for google search under word
 Bundle 'szw/vim-g'
+
+" Managed splits.  Auto resizing, like a tiling window manager
+Bundle 'spolu/dwm.vim'
