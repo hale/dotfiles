@@ -60,3 +60,12 @@ alias t='tree'
 BASE16_SCHEME="default"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
+
+# gpg-agent config and setup. Run this before git etc.
+gpg-keychain() {
+  eval $(gpg-agent --daemon --allow-preset-passphrase)
+  KEYGRIP=$(gpg --fingerprint --fingerprint philip@pghale.com | grep fingerprint | tail -1 | cut -d= -f2 | sed -e 's/ //g')
+  /usr/local/opt/gpg-agent/libexec/gpg-preset-passphrase --preset $KEYGRIP
+}
+
