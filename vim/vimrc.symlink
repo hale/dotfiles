@@ -149,6 +149,9 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#branch#enabled = 0
 " Hide the fileencoding / fileformat section
 let g:airline_section_y = ''
+" hide the whitespace errors etc
+let g:airline#extensions#whitespace#enabled = 0
+
 
 " folds
 set foldmethod=syntax
