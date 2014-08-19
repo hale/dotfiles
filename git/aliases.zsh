@@ -29,7 +29,11 @@ gdl() {
 # shortcut to push to heroku staging
 stage() {
   BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-  git push --force staging $BRANCH_NAME:master
+  cmd="git push --force staging $BRANCH_NAME:master"
+  echo $cmd
+  echo "Running in 3 seconds..."
+  sleep 3
+  eval $cmd
 }
 
 # Remove a specific history from the history
