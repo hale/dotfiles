@@ -69,3 +69,7 @@ gpg-keychain() {
   /usr/local/opt/gpg-agent/libexec/gpg-preset-passphrase --preset $KEYGRIP
 }
 
+
+vom() {
+  cat ~/.dotfiles/zsh/vom.txt
+}
