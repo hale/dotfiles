@@ -74,6 +74,9 @@ set laststatus=2
 set nowrap
 set autoindent " autoindent at same level as previous line
 set expandtab " tabs become spaces
+set shiftwidth=2 " 2 spaces for everything
+set tabstop=2
+
 
 " leader is ,
 let mapleader = ','
@@ -156,9 +159,6 @@ let g:airline#extensions#whitespace#enabled = 0
 " folds
 set foldmethod=syntax
 set foldlevel=999
-
-" 2 spaces for everything
-set shiftwidth=2
 
 " suppress warning about unsaved buffers
 set shortmess+=A

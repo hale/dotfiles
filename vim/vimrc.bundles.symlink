@@ -68,9 +68,6 @@ Bundle 'junegunn/goyo.vim'
 " Interactive, formatted list of ctags in a sidebar
 Bundle 'majutsushi/tagbar'
 
-" Per-project vim config in '.lvimrc' files, for indentation rules etc.
-Bundle 'embear/vim-localvimrc'
-
 " :Google for google search under word
 Bundle 'szw/vim-g'
 
