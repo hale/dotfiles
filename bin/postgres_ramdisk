@@ -12,5 +12,7 @@ psql -c "drop tablespace opencounter_ramdisk;"
 
 psql -c "create tablespace opencounter_ramdisk location '/Volumes/postgres_ramdisk';"
 psql -c "create database opencounter_test tablespace = opencounter_ramdisk;"
+psql -c 'CREATE SCHEMA postgis;' -U postgres -d opencounter_test
+psql -c 'CREATE EXTENSION postgis WITH SCHEMA postgis;' -U postgres -d opencounter_test
 
-rake db:test:load
+rake db:schema:load RAILS_ENV=test
