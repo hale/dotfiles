@@ -42,3 +42,10 @@ export RUBYOPT=rubygems
 # force Zeus to put the socket file elsewhere, for when the rails project is in
 # an ENCFS encrypted folder
 export ZEUSSOCK=/tmp/zeus.sock
+
+function chpwd {
+  CUR_FOLDER=${PWD##*/}
+  ZEUS_SOCK_FOLDER="/tmp/zeus_socks/$CUR_FOLDER"
+  mkdir -p "$ZEUS_SOCK_FOLDER"
+  export ZEUSSOCK="$ZEUS_SOCK_FOLDER/zeus.sock"
+}
