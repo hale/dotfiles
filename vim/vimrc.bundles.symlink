@@ -1,75 +1,72 @@
 " required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " ack results in quickfix
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 
 " fuzzy file search
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " fancy status bar, alternative to powerline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " sugar for identation
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " remembers your last cursor position and fold level
-Bundle 'vim-scripts/restore_view.vim'
+Plugin 'vim-scripts/restore_view.vim'
 
 " linter
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " mostly use for GBlame - powerful git integration
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " easily comment / uncomment code
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " better javascript support
-Bundle 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 
 " coffeescript support
-Bundle 'vim-coffee-script'
+Plugin 'vim-coffee-script'
 
 " HAML support
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 
 " Rails plugin
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
 " working directly always project root
-Bundle 'airblade/vim-rooter'
+Plugin 'airblade/vim-rooter'
 
 " easy access to documentation from vim
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
 
 " all the base16 vim themes
-Bundle 'chriskempson/base16-vim'
-
-" lint js files and open quickfix
-Bundle 'sleistner/vim-jshint.git'
+Plugin 'chriskempson/base16-vim'
 
 " easy navigation in quickfix (+more)
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
 " alternative to git-gutter
-Bundle 'mhinz/vim-signify'
+Plugin 'mhinz/vim-signify'
 
 " easy alignment of text, e.g. for markdown tables
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 
 " Better LaTeX support
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " WriteRoom clone for full-screen distraction free editing
-Bundle 'junegunn/goyo.vim'
+Plugin 'junegunn/goyo.vim'
 
 " Interactive, formatted list of ctags in a sidebar
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 " :Google for google search under word
-Bundle 'szw/vim-g'
+Plugin 'szw/vim-g'
 
 " Managed splits.  Auto resizing, like a tiling window manager
-Bundle 'spolu/dwm.vim'
+Plugin 'spolu/dwm.vim'

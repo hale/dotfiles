@@ -33,9 +33,6 @@ for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
 #for config_file (~/.dotfiles/**/completion.zsh) source $config_file
 
-# enable grc
-source "`brew --prefix`/etc/grc.bashrc"
-
 alias :q="exit"
 
 # shortcut to encrypt a file with PGP

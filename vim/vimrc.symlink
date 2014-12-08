@@ -4,26 +4,28 @@ set shell=/bin/sh
 " check vundle works
 filetype on
 filetype off
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 " enable vundle
-call vundle#rc()
+call vundle#begin()
 
 " load separate bundles file
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
+call vundle#end()
+filetype plugin indent on
 
 " appearance
 set background=dark
-let base16colorspace=256
-colorscheme base16-tomorrow
+"let base16colorspace=256
+colorscheme base16-default
 filetype plugin indent on " automatically detect filteypes
 syntax on
 set colorcolumn=80
 set cursorline
 highlight clear SignColumn
 highlight clear LineNr
-set t_Co=256
+"set t_Co=256
 
 " mouse support
 set mouse=a
@@ -167,6 +169,13 @@ set shortmess+=A
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" Change cursor shape in different modes in Linux (gnome terminal)
+if has("autocmd")
+  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+endif
+
 " support for OWL
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
@@ -243,6 +252,9 @@ let g:tagbar_type_markdown = {
 
 " .lvimrc security question answers are persisted
 let g:localvimrc_persistent=2
+
+" js hint command
+let s:jshint_command='/usr/bin/jshint'
 
 " initialize directories
 function! InitializeDirectories()
