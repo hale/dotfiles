@@ -17,7 +17,7 @@ filetype plugin indent on
 
 " appearance
 set background=dark
-"let base16colorspace=256
+let base16colorspace=256
 colorscheme base16-default
 filetype plugin indent on " automatically detect filteypes
 syntax on
