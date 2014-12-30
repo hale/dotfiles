@@ -73,3 +73,4 @@ vom() {
 
 PERL_MB_OPT="--install_base \"/Users/philiphale/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/philiphale/perl5"; export PERL_MM_OPT;
+PATH="/usr/local/heroku/bin:$PATH"
