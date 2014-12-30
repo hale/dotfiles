@@ -256,6 +256,9 @@ let g:localvimrc_persistent=2
 " js hint command
 let s:jshint_command='/usr/bin/jshint'
 
+" set home printer
+set pdev=Photosmart-B110
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
