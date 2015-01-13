@@ -1,0 +1,4 @@
+#!/bin/sh
+source /home/phale/.virtualenvs/plex-lastfm-scrobbler/bin/activate
+nohup python /home/phale/plex-lastfm-scrobbler/scripts/plex-scrobble.py &
+sudo systemctl restart plexmediaserver.service
