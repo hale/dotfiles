@@ -1,5 +1,7 @@
 alias migrate='rake db:migrate db:test:clone'
 alias be='bundle exec'
+alias rs='foreman run bundle exec rails s'
+alias rc='foreman run bundle exec rails c'
 
 # reset the database
 dbreset() {
@@ -41,6 +43,10 @@ export RUBYOPT=rubygems
 
 # force Zeus to put the socket file elsewhere, for when the rails project is in
 # an ENCFS encrypted folder
+#
+# FIXME: universal sock file means only one zeus server running at a time.
+#        Make this dynamic depending on the project path.
+#
 export ZEUSSOCK=/tmp/zeus.sock
 
 function chpwd {
