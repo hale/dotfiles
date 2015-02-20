@@ -144,7 +144,7 @@ prompt_dir() {
   local pdir
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     # Only works when first listed remote is origin. TODO: specify origin.
-    pdir="`git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//'`"
+    pdir="`git remote -v | grep '^origin' | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//'`"
     pdir="|$pdir|`git rev-parse --show-prefix`"
   else
     pdir='%~'
