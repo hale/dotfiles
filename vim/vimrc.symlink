@@ -1,14 +1,11 @@
 set nocompatible
 set shell=/bin/sh
 
-" check vundle works
+" enable vundle
 filetype on
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-" enable vundle
 call vundle#begin()
-
-" load separate bundles file
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -19,13 +16,12 @@ filetype plugin indent on
 set background=dark
 let base16colorspace=256
 colorscheme base16-default
-filetype plugin indent on " automatically detect filteypes
+filetype plugin indent on
 syntax on
 set colorcolumn=80
 set cursorline
 highlight clear SignColumn
 highlight clear LineNr
-"set t_Co=256
 
 " mouse support
 set mouse=a
@@ -89,6 +85,9 @@ noremap Y y
 " toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
+" toggle relative line numbers
+nmap <silent> <leader>l :set invrelativenumber<CR>
+
 " find merge conflict markers
 map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
@@ -112,40 +111,6 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
-" WORD COUNT IN VIM AIRLINE
-
-function! ShowWordCount()
-  let g:airline_section_b = 'WC: %{WordCount()}'
-endfunction
-
-function! WordCount()
-  if (&ft=='md' || &ft=='markdown')
-    return MdCount()
-  endif
-endfunction
-
-function! TexCount()
-  " OS X head command doesn't like negative byte ranges so this uses
-  " homebrew-provided GNU Coreutils
-  return MdCount()
-endfunction
-
-function! MdCount()
-  let position = getpos(".")
-  exe "silent normal g\<c-g>"
-  let stat = v:statusmsg
-  let s:wc = 0
-  if stat != '--No lines in buffer--'
-    let s:wc = str2nr(split(stat)[11])
-  end
-  call setpos('.', position)
-  return s:wc
-endfunction
-
-au BufRead,BufWrite *.md call ShowWordCount()
-
-map <Leader>w :echon MdCount()<CR>
-
 " customize airline
 let g:airline_powerline_fonts = 1
 " Hide fugitive changes - never use this
@@ -156,7 +121,6 @@ let g:airline#extensions#branch#enabled = 0
 let g:airline_section_y = ''
 " hide the whitespace errors etc
 let g:airline#extensions#whitespace#enabled = 0
-
 
 " folds
 set foldmethod=syntax
@@ -169,22 +133,12 @@ set shortmess+=A
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Change cursor shape in different modes in Linux (gnome terminal)
-if has("autocmd")
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-endif
-
 " support for OWL
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
 
 " fix markdown filetype not recognised
 au BufNewFile,BufRead *.md set filetype=markdown
-
-" don't change current directory on new buffer
-let g:spf13_no_autochdir = 1
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -203,10 +157,11 @@ augroup FastEscape
     au InsertLeave * set timeoutlen=1000
 augroup END
 
+" Creating a split takes you there
 set splitright
 set splitbelow
 
-" user silver searcher cause it's blazin'
+" uses silver searcher cause it's blazin'
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -221,8 +176,8 @@ nmap <silent> <leader>d <Plug>DashGlobalSearch
 "make runs tests when in ruby
 au BufNewFile,BufRead *.rb set makeprg=bundle\ exec\ ruby\ \-I\ test\ \`bundle\ show\ rake\`\/lib\/rake\/rake_test_loader\.rb\ %
 
-" normal line numbers...
-set norelativenumber
+" relative line numbers for easier counting
+set relativenumber
 set number
 
 " speed up vim startup
