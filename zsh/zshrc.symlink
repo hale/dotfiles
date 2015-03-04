@@ -17,8 +17,6 @@ export TERM=gnome-256color
 
 eval "$(rbenv init -)"
 
-alias vimrc='vim ~/.vimrc.local'
-
 unsetopt correct_all
 
 # enable z jumps
@@ -26,28 +24,16 @@ unsetopt correct_all
 
 # initialize autocomplete here, otherwise functions won't be loaded
 # load every completion after autocomplete loads
-#
 autoload -U compinit
 compinit
 
 # source every .zsh file in this rep
 for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
-#for config_file (~/.dotfiles/**/completion.zsh) source $config_file
-
-alias :q="exit"
-
-# shortcut to encrypt a file with PGP
+# encrypt a file with PGP
 encrypt() {
   gpg -ao $1.asc -esr philip@pghale.com $1
 }
-
-alias cim="vim"
-
-# shortcuts to switch default JDK on OS X
-alias setjdk16='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
-alias setjdk17='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
-alias setjdk18='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
 # shortcut to the tree script
 alias t='tree'
@@ -68,11 +54,16 @@ gpg-keychain() {
   /usr/local/opt/gpg-agent/libexec/gpg-preset-passphrase --preset $KEYGRIP
 }
 
-
-vom() {
-  cat ~/.dotfiles/zsh/vom.txt
-}
+# oopsies
+vom() { cat ~/.dotfiles/zsh/vom.txt }
+alias cim="vim"
+alias :q="exit"
 
 PERL_MB_OPT="--install_base \"/Users/philiphale/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/philiphale/perl5"; export PERL_MM_OPT;
 PATH="/usr/local/heroku/bin:$PATH"
+
+# show numerical chmod permissinos of current directory
+statc() {
+  stat -c '%a %n' *
+}
