@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Prints the machine's external and internal IP address
+
+echo 'External IP:'
+curl ipecho.net/plain; echo
+echo
+echo 'Internal IP:'
+ip addr show | grep 'inet' 
+
+
