@@ -47,7 +47,7 @@ function doBackup {
   stderr=$HOMECHIME/logs/stderr/$name-$DATE.log
 
   before="btrfs subvolume snapshot $source $snapshot"
-  command="rsync -avz --delete $snapshot/ $dest/ >$stdout 2>$stderr"
+  command="rsync -av --delete $snapshot/ $dest/ >$stdout 2>$stderr"
   after="btrfs subvolume delete $snapshot"
 
   echo $before
