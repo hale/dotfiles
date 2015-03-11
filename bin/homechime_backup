@@ -51,8 +51,13 @@ function doBackup {
   after="btrfs subvolume delete $snapshot"
 
   echo $before
+  eval $before
+
   echo $command
+  eval $command
+
   echo $after
+  eval $after
   echo
 }
 
