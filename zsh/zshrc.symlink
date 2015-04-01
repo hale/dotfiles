@@ -67,3 +67,8 @@ PATH="/usr/local/heroku/bin:$PATH"
 statc() {
   stat -c '%a %n' *
 }
+
+# useful for creating filenames.  touch todo_`timestamp`.markdown
+timestamp() {
+  date "+%Y-%m-%dT%H:%M:%S"
+}
