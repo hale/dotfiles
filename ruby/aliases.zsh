@@ -2,6 +2,9 @@ alias migrate='rake db:migrate db:test:clone'
 alias be='bundle exec'
 alias rs='foreman run bundle exec rails s'
 alias rc='foreman run bundle exec rails c'
+alias dbm='bundle exec rake db:migrate'
+alias dbtp='bundle exec rake db:test:prepare'
+alias b='bundle'
 
 # reset the database
 dbreset() {
