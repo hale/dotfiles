@@ -14,7 +14,6 @@ dbreset() {
     be rake db:create
     be rake db:schema:load
     be rake db:test:prepare
-    be rake db:seed
   }
 }
 
