@@ -10,10 +10,7 @@ alias b='bundle'
 dbreset() {
   set -e
   {
-    be rake db:drop
-    be rake db:create
-    be rake db:schema:load
-    be rake db:test:prepare
+    be rake db:drop db:create db:schema:load db:test:prepare
   }
 }
 
