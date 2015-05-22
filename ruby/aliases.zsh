@@ -40,17 +40,4 @@ alias fguard="foreman run bundle exec guard -c"
 # rubinius
 export RUBYOPT=rubygems
 
-# force Zeus to put the socket file elsewhere, for when the rails project is in
-# an ENCFS encrypted folder
-#
-# FIXME: universal sock file means only one zeus server running at a time.
-#        Make this dynamic depending on the project path.
-#
-export ZEUSSOCK=/tmp/zeus.sock
 
-function chpwd {
-  CUR_FOLDER=${PWD##*/}
-  ZEUS_SOCK_FOLDER="/tmp/zeus_socks/$CUR_FOLDER"
-  mkdir -p "$ZEUS_SOCK_FOLDER"
-  export ZEUSSOCK="$ZEUS_SOCK_FOLDER/zeus.sock"
-}
