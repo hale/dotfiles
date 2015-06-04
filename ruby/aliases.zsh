@@ -40,4 +40,4 @@ alias fguard="foreman run bundle exec guard -c"
 # rubinius
 export RUBYOPT=rubygems
 
-
+alias binstub-setup="ln -s `pwd`/.git/safe/binstubs `pwd`/bin"
