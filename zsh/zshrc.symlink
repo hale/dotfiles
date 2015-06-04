@@ -10,6 +10,14 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:$HOME/node_modules/.bin:/usr/texbin:/Applications/Postgres93.app/Contents/MacOS/bin
+
+# linux
+export PATH="/usr/java/latest/bin:$PATH"
+export PATH="/usr/pgsql-9.4/bin/:$PATH"
+
+# symlink this to ./bin to use binstubs in ruby projects
+export PATH=".git/safe/binstubs:$PATH"
+
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
 
