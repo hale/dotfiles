@@ -56,12 +56,6 @@ Plugin 'mhinz/vim-signify'
 " easy alignment of text, e.g. for markdown tables
 Plugin 'godlygeek/tabular'
 
-" Better LaTeX support
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-
-" WriteRoom clone for full-screen distraction free editing
-Plugin 'junegunn/goyo.vim'
-
 " Interactive, formatted list of ctags in a sidebar
 Plugin 'majutsushi/tagbar'
 
