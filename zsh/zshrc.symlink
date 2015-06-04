@@ -15,15 +15,15 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/u
 export PATH="/usr/java/latest/bin:$PATH"
 export PATH="/usr/pgsql-9.4/bin/:$PATH"
 
-# symlink this to ./bin to use binstubs in ruby projects
-export PATH=".git/safe/binstubs:$PATH"
-
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
 
 export TERM=gnome-256color
 
 eval "$(rbenv init -)"
+
+# symlink this to ./bin to use binstubs in ruby projects
+export PATH=".git/safe/binstubs:$PATH"
 
 unsetopt correct_all
 
