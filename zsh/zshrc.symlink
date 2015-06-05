@@ -34,12 +34,11 @@ if islinux; then
   export PATH="/usr/pgsql-9.4/bin/:$PATH"
   export PATH="/usr/java/latest/bin:$PATH"
   export PATH="/usr/local/heroku/bin:$PATH"
-  export PATH="/anaconda/bin:$PATH"
+  export PATH="$HOME/anaconda3/bin:$PATH"
 elif ismac;then
   export PATH="/Applications/Postgres93.app/Contents/MacOS/bin$PATH"
   export PATH="/usr/local/share/npm/bin:$PATH"
   export PATH="/anaconda/bin:$PATH"
-  export PATH="$HOME/anaconda3/bin:$PATH"
 fi
 
 eval "$(rbenv init -)"
