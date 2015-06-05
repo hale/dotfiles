@@ -172,7 +172,7 @@ if executable('ag')
   let g:ctrl_use_caching = 0
 endif
 
-au BufNewFile,BufRead *.rb set makeprg=rspec\ %
+au BufNewFile,BufRead *.rb set makeprg=foreman\ run\ rspec\ %
 
 "dash.vim shortcut
 nmap <silent> <leader>d <Plug>DashGlobalSearch
@@ -218,7 +218,6 @@ set pdev=Photosmart-B110
 " ,a to run the current file in rspec
 map <Leader>a :call RunCurrentSpec()<CR>
 function! RunCurrentSpec()
-  setlocal makeprg="rspec --fail-fast %"
   exec 'make'
 endfunction
 
