@@ -1,16 +1,16 @@
-function ismac() {
-  if [ `uname -s` == "Darwin" ]; then
-    return true;
+ismac() {
+  if [[ `uname -s` == "Darwin" ]]; then
+    return 0;
   else
-    return false
+    return 1
   fi
 }
 
-function islinux() {
-  if [ `uname -s` == "Linux" ]; then
-    return true;
+islinux() {
+  if [[ `uname -s` == "Linux" ]]; then
+    return 0;
   else
-    return false
+    return 1
   fi
 }
 
@@ -30,12 +30,12 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"
 
-if [ islinux() ]; then
+if islinux; then
   export PATH="/usr/pgsql-9.4/bin/:$PATH"
   export PATH="/usr/java/latest/bin:$PATH"
   export PATH="/usr/local/heroku/bin:$PATH"
   export PATH="/anaconda/bin:$PATH"
-elif [ ismac() ];then
+elif ismac;then
   export PATH="/Applications/Postgres93.app/Contents/MacOS/bin$PATH"
   export PATH="/usr/local/share/npm/bin:$PATH"
   export PATH="/anaconda/bin:$PATH"
