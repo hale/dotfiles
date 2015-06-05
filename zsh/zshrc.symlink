@@ -94,3 +94,6 @@ timestamp() {
 }
 
 export AUDIODEV=/dev/snd/by-id/usb-BLUE_MICROPHONES_BLUE_NESSIE_USB_MIC_20130410-00
+
+# added by travis gem
+[ -f /home/phale/.travis/travis.sh ] && source /home/phale/.travis/travis.sh
