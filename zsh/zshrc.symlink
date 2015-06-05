@@ -1,47 +1,61 @@
-# oh my zsh initialization
+function ismac() {
+  if [ `uname -s` == "Darwin" ]; then
+    return true;
+  else
+    return false
+  fi
+}
+
+function islinux() {
+  if [ `uname -s` == "Linux" ]; then
+    return true;
+  else
+    return false
+  fi
+}
+
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
 ZSH_THEME="agnoster-hale"
 
 DEFAULT_USER="$(whoami)"
 plugins=(last-working-dir jsontools randquote sudo tmuxinator)
 source $ZSH/oh-my-zsh.sh
 
-# PATH
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rbenv/bin:$HOME/.dotfiles/bin:$HOME/node_modules/.bin:/usr/texbin:/Applications/Postgres93.app/Contents/MacOS/bin
-
-# linux
-export PATH="/usr/java/latest/bin:$PATH"
-export PATH="/usr/pgsql-9.4/bin/:$PATH"
-
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export PLAY_PATH="/usr/local/Cellar/play/2.0.4/libexec"
-
 export TERM=gnome-256color
+
+# PATH system binaries
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/node_modules/.bin:$PATH"
+
+if [ islinux() ]; then
+  export PATH="/usr/pgsql-9.4/bin/:$PATH"
+  export PATH="/usr/java/latest/bin:$PATH"
+  export PATH="/usr/local/heroku/bin:$PATH"
+  export PATH="/anaconda/bin:$PATH"
+elif [ ismac() ];then
+  export PATH="/Applications/Postgres93.app/Contents/MacOS/bin$PATH"
+  export PATH="/usr/local/share/npm/bin:$PATH"
+  export PATH="/anaconda/bin:$PATH"
+  export PATH="$HOME/anaconda3/bin:$PATH"
+fi
 
 eval "$(rbenv init -)"
 
-# symlink this to ./bin to use binstubs in ruby projects
 export PATH=".git/safe/binstubs:$PATH"
 
 unsetopt correct_all
 
-# enable z jumps
 . ~/.dotfiles/z/z.sh
 
-# initialize autocomplete here, otherwise functions won't be loaded
-# load every completion after autocomplete loads
 autoload -U compinit
 compinit
 
-# source every .zsh file in this rep
 for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
-# encrypt a file with PGP
-encrypt() {
-  gpg -ao $1.asc -esr philip@pghale.com $1
-}
+encrypt() { gpg -ao $1.asc -esr philip@pghale.com $1 }
 
 # shortcut to the tree script
 alias t='tree'
@@ -50,10 +64,9 @@ alias t='tree'
 [ -f /Users/philiphale/.travis/travis.sh ] && source /Users/philiphale/.travis/travis.sh
 
 # Base16 Shell
-BASE16_SCHEME="default"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+BASE16_SCHEME="default.dark"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
 
 # gpg-agent config and setup. Run this before git etc.
 gpg-keychain() {
@@ -69,7 +82,6 @@ alias :q="exit"
 
 PERL_MB_OPT="--install_base \"/Users/philiphale/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/philiphale/perl5"; export PERL_MM_OPT;
-PATH="/usr/local/heroku/bin:$PATH"
 
 # show numerical chmod permissinos of current directory
 statc() {
