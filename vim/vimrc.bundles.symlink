@@ -64,3 +64,12 @@ Plugin 'szw/vim-g'
 
 " Managed splits.  Auto resizing, like a tiling window manager
 Plugin 'spolu/dwm.vim'
+
+" distraction free mode
+Plugin 'junegunn/goyo.vim'
+
+" repeat.vim: enable repeating supported plugin maps with '.'
+Plugin 'tpope/vim-repeat'
+
+" quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
