@@ -222,6 +222,9 @@ function! RunCurrentSpec()
   exec 'make'
 endfunction
 
+" set the width of the master pane
+let g:dwm_master_pane_width=80
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
