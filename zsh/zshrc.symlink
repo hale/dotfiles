@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 export TERM=gnome-256color
 
 # PATH system binaries
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"
@@ -36,7 +36,7 @@ if islinux; then
   export PATH="/usr/local/heroku/bin:$PATH"
   export PATH="$HOME/anaconda3/bin:$PATH"
 elif ismac;then
-  export PATH="/Applications/Postgres.app/Contents/MacOS/bin$PATH"
+  export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
   export PATH="/usr/local/share/npm/bin:$PATH"
   export PATH="/anaconda/bin:$PATH"
 fi
