@@ -9,31 +9,31 @@
     File.open(%(%A), %(w)) {|f| f.write(b)}\n\
     exit 1 if b.include?(%(<)*%L)'"
 [user]
-	name = Philip Hale
-	email = philip@pghale.com
-	signingkey = BDB4EB14
+  name = Philip Hale
+  email = philip@pghale.com
+  signingkey = BDB4EB14
 [alias]
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
-        find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+  rank-contributers = !$ZSH/bin/git-rank-contributers
+  count   = !git shortlog -sn
+  find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-	attributesfile = /Users/philiphale/.gitattributes
+  excludesfile = ~/.gitignore
+  editor = vim
+  attributesfile = /Users/philiphale/.gitattributes
 [apply]
-        whitespace = nowarn
+  whitespace = nowarn
 [mergetool]
-        keepBackup = false
+  keepBackup = false
 [difftool]
-        prompt = false
+  prompt = false
 [help]
-        autocorrect = 1
+  autocorrect = 1
 [push]
-        default = simple
+  default = simple
 [credential]
   helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
