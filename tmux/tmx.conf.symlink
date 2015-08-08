@@ -4,3 +4,9 @@ set -g prefix M-Space
 bind-key M-Space send-prefix
 
 set -g default-terminal "screen-256color-bce"
+
+# ctrl+shift arrows to resize pane
+bind-key -n C-S-Up resize-pane -U 15
+bind-key -n C-S-Down resize-pane -D 15
+bind-key -n C-S-Left resize-pane -L 25
+bind-key -n C-S-Right resize-pane -R 25
