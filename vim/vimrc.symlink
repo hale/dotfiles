@@ -18,7 +18,7 @@ let base16colorspace=256
 colorscheme base16-default
 filetype plugin indent on
 syntax on
-set colorcolumn=80
+set colorcolumn=100
 set cursorline
 highlight clear SignColumn
 highlight clear LineNr
@@ -75,9 +75,7 @@ set expandtab " tabs become spaces
 set shiftwidth=2 " 2 spaces for everything
 set tabstop=2
 
-" FIXME: this is getting overriden somewhere, somehow. probably a plugin.
-set tw=80
-set textwidth=80
+set tw=100
 
 " leader is ,
 let mapleader = ','
