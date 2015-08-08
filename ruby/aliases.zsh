@@ -41,3 +41,5 @@ alias fguard="foreman run bundle exec guard -c"
 export RUBYOPT=rubygems
 
 alias binstub-setup="ln -s `pwd`/bin `pwd`/.git/safe/binstubs"
+
+alias isi="invoker start invoker.ini"
