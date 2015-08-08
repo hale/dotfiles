@@ -124,7 +124,7 @@ let g:airline_section_y = ''
 let g:airline#extensions#whitespace#enabled = 0
 
 " folds
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=999
 
 " suppress warning about unsaved buffers
