@@ -221,7 +221,7 @@ function! RunCurrentSpec()
 endfunction
 
 " set the width of the master pane
-let g:dwm_master_pane_width=80
+let g:dwm_master_pane_width=101
 
 " initialize directories
 function! InitializeDirectories()
