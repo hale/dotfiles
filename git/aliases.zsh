@@ -20,6 +20,7 @@ alias gri="git rebase -i"
 alias grem="git remote -v"
 alias gra="git remote add"
 alias gf="git find"
+alias girc="git rebase --continue"
 
 # live git diff; requires kicker gem
 gdl() {
