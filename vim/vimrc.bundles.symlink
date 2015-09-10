@@ -50,8 +50,8 @@ Plugin 'chriskempson/base16-vim'
 " easy navigation in quickfix (+more)
 Plugin 'tpope/vim-unimpaired'
 
-" alternative to git-gutter
-Plugin 'mhinz/vim-signify'
+" show git changes in buffer
+Plugin 'airblade/vim-gitgutter'
 
 " easy alignment of text, e.g. for markdown tables
 Plugin 'godlygeek/tabular'
@@ -73,3 +73,6 @@ Plugin 'tpope/vim-repeat'
 
 " quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
+
+" converting snakecase to camelcase, and other things
+Plugin 'tpope/vim-abolish'
