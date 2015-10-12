@@ -122,6 +122,7 @@ let g:airline#extensions#branch#enabled = 0
 let g:airline_section_y = ''
 " hide the whitespace errors etc
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline_theme='base16'
 
 " folds
 set foldmethod=indent
