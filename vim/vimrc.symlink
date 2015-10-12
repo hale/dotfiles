@@ -150,6 +150,8 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " toggle syntastic hilighting
 nmap <leader>st :SyntasticToggle<CR>
+" toggle paste mode
+nmap <leader>p :set paste!<CR>
 
 " removes the small delay between pressing escape and entering normal mode.
 set ttimeoutlen=10
