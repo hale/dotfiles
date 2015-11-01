@@ -38,7 +38,7 @@ if islinux; then
 elif ismac;then
   export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
   export PATH="/usr/local/share/npm/bin:$PATH"
-  export PATH="/anaconda/bin:$PATH"
+  export PATH="$PATH:/anaconda/bin"
 fi
 
 eval "$(rbenv init -)"
