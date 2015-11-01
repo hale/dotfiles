@@ -19,7 +19,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster-hale"
 
 DEFAULT_USER="$(whoami)"
-plugins=(last-working-dir jsontools randquote sudo tmuxinator)
+plugins=(last-working-dir jsontools randquote sudo tmuxinator fedora)
 source $ZSH/oh-my-zsh.sh
 
 export TERM=gnome-256color
