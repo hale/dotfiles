@@ -43,3 +43,4 @@ export RUBYOPT=rubygems
 alias binstub-setup="ln -s `pwd`/bin `pwd`/.git/safe/binstubs"
 
 alias isi="invoker start invoker.ini"
+alias dj="RAILS_ENV=development bin/delayed_job"
