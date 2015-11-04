@@ -226,6 +226,9 @@ endfunction
 " set the width of the master pane
 let g:dwm_master_pane_width=101
 
+" check ruby style violations
+nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
