@@ -4,4 +4,5 @@ tags
 *~
 *.swp
 *.rbc
+.rake_tasks
 
