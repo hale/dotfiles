@@ -76,3 +76,18 @@ Plugin 'tpope/vim-surround'
 
 " converting snakecase to camelcase, and other things
 Plugin 'tpope/vim-abolish'
+
+" easily interact with tmux from vim
+Plugin 'benmills/vimux'
+
+" run current / last spec, send output to tmux pane
+Plugin 'skalnik/vim-vroom'
+
+" better ruby support
+Plugin 'vim-ruby/vim-ruby'
+
+" improved :Explore
+Plugin 'tpope/vim-vinegar'
+
+" project-level ctags
+Plugin 'szw/vim-tags'

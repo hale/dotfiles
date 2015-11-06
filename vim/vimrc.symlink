@@ -86,8 +86,13 @@ noremap Y y
 " toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
-" toggle relative line numbers
-nmap <silent> <leader>l :set invrelativenumber<CR>
+" Absolute line numbers in Normal mode, relative in Insert mode
+set number relativenumber
+autocmd InsertEnter * :set number norelativenumber
+autocmd InsertLeave * :set number relativenumber
+
+" Retag project (ctags)
+map <leader>rt :!ctags --exclude '@./.gitignore' --exclude './public/assets' --extra=+f -R *<CR><CR>
 
 " find merge conflict markers
 map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
@@ -179,10 +184,6 @@ set makeprg=foreman\ run\ rspec\ %
 "dash.vim shortcut
 nmap <silent> <leader>d <Plug>DashGlobalSearch
 
-" no relative line numbers for sanity
-set norelativenumber
-set number
-
 " speed up vim startup
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
@@ -217,17 +218,15 @@ let s:jshint_command='/usr/bin/jshint'
 " set home printer
 set pdev=Photosmart-B110
 
-" ,a to run the current file in rspec
-map <Leader>a :call RunCurrentSpec()<CR>
-function! RunCurrentSpec()
-  exec 'make'
-endfunction
-
 " set the width of the master pane
 let g:dwm_master_pane_width=101
 
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
+
+" vroom settings
+let g:vroom_use_vimux = 1
+let g:vroom_use_binstubs = 1
 
 " initialize directories
 function! InitializeDirectories()
