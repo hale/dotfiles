@@ -228,6 +228,10 @@ nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
 
+" shortcut to grep current word
+nmap <leader>F :Ack!<space>
+nmap <leader>f :Ack! <C-r><C-w><cr>
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
