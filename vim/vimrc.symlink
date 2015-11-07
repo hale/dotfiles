@@ -224,9 +224,10 @@ let g:dwm_master_pane_width=101
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
 
-" vroom settings
+" vroom
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
+map <Leader>vq :VimuxCloseRunner<CR>
 
 " shortcut to grep current word
 nmap <leader>F :Ack!<space>
