@@ -233,6 +233,9 @@ map <Leader>vq :VimuxCloseRunner<CR>
 nmap <leader>F :Ack!<space>
 nmap <leader>f :Ack! <C-r><C-w><cr>
 
+" Save with leader-w
+nmap <leader>w :wa<cr>
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
