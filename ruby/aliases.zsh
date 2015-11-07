@@ -1,16 +1,15 @@
-alias migrate='rake db:migrate db:test:clone'
 alias be='bundle exec'
-alias rs='foreman run bundle exec rails s'
-alias rc='foreman run bundle exec rails c'
-alias dbm='bundle exec rake db:migrate'
-alias dbtp='bundle exec rake db:test:prepare'
+alias rs='rails s --binding=0.0.0.0'
+alias rc='rails c'
+alias dbm='rake db:migrate'
+alias dbtp='rake db:test:prepare'
 alias b='bundle'
 
 # reset the database
 dbreset() {
   set -e
   {
-    be rake db:drop db:create db:schema:load db:test:prepare
+    rake db:drop db:create db:schema:load db:test:prepare
   }
 }
 
@@ -29,13 +28,9 @@ alias be='bundle exec'
 #
 # heroku-jobs <app-name>
 #
-heroku-jobs() {
-  heroku run rake jobs:work --app $1
-}
-
-# run rspec specs in bundler, foreman
-alias fspec="foreman run bundle exec rspec"
-alias fguard="foreman run bundle exec guard -c"
+#heroku-jobs() {
+  #heroku run rake jobs:work --app $1
+#}
 
 # rubinius
 export RUBYOPT=rubygems
