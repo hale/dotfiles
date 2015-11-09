@@ -1,12 +1,37 @@
-# Prefix is: CAPSLOCK + Space
+# Prefix is: CAPSLOCK-Space
 unbind-key C-b
 set -g prefix M-Space
-bind-key M-Space send-prefix
+bind M-Space send-prefix
 
 set -g default-terminal "screen-256color-bce"
-
-# ctrl+shift arrows to resize pane
-bind-key -n C-S-Up resize-pane -U 15
-bind-key -n C-S-Down resize-pane -D 15
-bind-key -n C-S-Left resize-pane -L 25
-bind-key -n C-S-Right resize-pane -R 25
+#  
+#  #-------------------------------------------------------------------#
+#  #                               PANES                               #
+#  #-------------------------------------------------------------------#
+#  
+#  # prefix [hjkl] to move between panes
+#  bind h select-pane -L
+#  bind j select-pane -D
+#  bind k select-pane -U
+#  bind l select-pane -R
+#  
+#  # ctrl+shift [hjkl] to resize pane
+#  bind -n C-K resize-pane -U 15
+#  bind -n C-J resize-pane -D 15
+#  bind -n C-H resize-pane -L 25
+#  bind -n C-L resize-pane -R 25
+#  
+#  # prefix n to split horizontally
+#  unbind %
+#  bind n split-window -h
+#  
+#  # prefix shift+n to split vertically
+#  bind N split-window -v
+#  
+#  #-------------------------------------------------------------------#
+#  #                              WINDOWS                              #
+#  #-------------------------------------------------------------------#
+#  
+#  # prefix-space to create new windowa
+#  unbind Space
+#  bind Space new-window
