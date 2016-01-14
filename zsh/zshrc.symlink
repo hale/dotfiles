@@ -106,3 +106,4 @@ export GIT_TEMPLATE_DIR=~/.dotfiles/git/git_template
 
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
+alias todo="vim ~/Dropbox/todo_`timestamp`.markdown"
