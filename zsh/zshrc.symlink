@@ -103,3 +103,6 @@ export AUDIODEV=/dev/snd/by-id/usb-BLUE_MICROPHONES_BLUE_NESSIE_USB_MIC_20130410
 
 # set git template dir
 export GIT_TEMPLATE_DIR=~/.dotfiles/git/git_template
+
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
