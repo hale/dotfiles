@@ -8,7 +8,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 
 " fancy status bar, alternative to powerline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " sugar for indentation
 Plugin 'nathanaelkane/vim-indent-guides'
