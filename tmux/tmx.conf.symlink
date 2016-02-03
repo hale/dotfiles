@@ -3,35 +3,46 @@ unbind-key C-b
 set -g prefix M-Space
 bind M-Space send-prefix
 
+# improve colors
 set -g default-terminal "screen-256color-bce"
-#  
-#  #-------------------------------------------------------------------#
-#  #                               PANES                               #
-#  #-------------------------------------------------------------------#
-#  
-#  # prefix [hjkl] to move between panes
-#  bind h select-pane -L
-#  bind j select-pane -D
-#  bind k select-pane -U
-#  bind l select-pane -R
-#  
-#  # ctrl+shift [hjkl] to resize pane
-#  bind -n C-K resize-pane -U 15
-#  bind -n C-J resize-pane -D 15
-#  bind -n C-H resize-pane -L 25
-#  bind -n C-L resize-pane -R 25
-#  
-#  # prefix n to split horizontally
-#  unbind %
-#  bind n split-window -h
-#  
-#  # prefix shift+n to split vertically
-#  bind N split-window -v
-#  
-#  #-------------------------------------------------------------------#
-#  #                              WINDOWS                              #
-#  #-------------------------------------------------------------------#
-#  
-#  # prefix-space to create new windowa
-#  unbind Space
-#  bind Space new-window
+
+# act like vim
+setw -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind-key -r C-h select-window -t :-
+bind-key -r C-l select-window -t :+
+
+#set -g prefix2 C-s
+
+# start window numbers at 1 to match keyboard order with tmux window order
+#set -g base-index 1
+#set-window-option -g pane-base-index 1
+
+# renumber windows sequentially after closing any of them
+#set -g renumber-windows on
+
+# soften status bar color from harsh green to light gray
+set -g status-bg '#666666'
+set -g status-fg '#aaaaaa'
+
+# remove administrative debris (session name, hostname, time) in status bar
+set -g status-left ''
+set -g status-right ''
+
+# increase scrollback lines
+set -g history-limit 10000
+
+# prefix -> back-one-character
+#bind-key C-b send-prefix
+
+# prefix-2 -> forward-incremental-history-search
+#bind-key C-s send-prefix -2
+
+# ctrl+shift arrows to resize pane
+bind-key -n C-S-Up resize-pane -U 15
+bind-key -n C-S-Down resize-pane -D 15
+bind-key -n C-S-Left resize-pane -L 25
+bind-key -n C-S-Right resize-pane -R 25
