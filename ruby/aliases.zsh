@@ -3,6 +3,7 @@ alias rs='rails s --binding=0.0.0.0'
 alias rc='rails c'
 alias dbm='rake db:migrate'
 alias dbtp='rake db:test:prepare'
+alias dbms='rake db:migrate:status'
 alias b='bundle'
 
 # reset the database
