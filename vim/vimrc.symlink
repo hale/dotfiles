@@ -239,6 +239,12 @@ nmap <leader>f :Ack! <C-r><C-w><cr>
 " Save with leader-w
 nmap <leader>w :wa<cr>
 
+" save quit with leader-q
+nmap <leader>q :wa<cr>:qa<cr>
+
+" quit without saving with leader-Q
+nmap <leader>Q :qa!<cr>
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME
