@@ -78,7 +78,7 @@ set tabstop=2
 set tw=100
 
 " leader is ,
-let mapleader = ','
+let mapleader = " "
 
 " Yank from cursor to end of line, consistent with C and D
 noremap Y y
