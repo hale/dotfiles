@@ -21,10 +21,23 @@ alias grem="git remote -v"
 alias gra="git remote add"
 alias gf="git find"
 alias girc="git rebase --continue"
+alias gira="git rebase --abort"
+alias gsh="git show HEAD"
 
 # live git diff; requires kicker gem
 gdl() {
   kicker -c -e "git diff --color" .
+}
+
+# git reset --hard origin/<branch-name>
+grho() {
+  git reset --hard origin
+  BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+  cmd="git reset --hard origin/$BRANCH_NAME"
+  echo $cmd
+  echo "Running in 3 seconds..."
+  sleep 3
+  eval $cmd
 }
 
 # shortcut to push to heroku staging
@@ -37,7 +50,7 @@ stage() {
   eval $cmd
 }
 
-# Remove a specific history from the history
+# Remove a specific commit from the history
 #
 # Usage:
 #
