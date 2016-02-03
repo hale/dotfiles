@@ -92,3 +92,7 @@ Plugin 'tpope/vim-vinegar'
 
 " project-level ctags
 Plugin 'szw/vim-tags'
+
+" js beautify
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'

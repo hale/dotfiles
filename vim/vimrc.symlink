@@ -224,6 +224,9 @@ let g:dwm_master_pane_width=101
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
 
+" js beautify
+map <silent> <leader>jb :call JsBeautify()<cr>
+
 " vroom
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
