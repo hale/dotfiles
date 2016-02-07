@@ -2,16 +2,6 @@ runtime macros/matchit.vim
 set nocompatible
 set shell=/bin/sh
 
-" enable vundle
-"filetype on
-"filetype off
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"if filereadable(expand("~/.vimrc.bundles"))
-  "source ~/.vimrc.bundles
-"endif
-"call vundle#end()
-
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
