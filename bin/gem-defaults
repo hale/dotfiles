@@ -1,4 +1,4 @@
 #!/bin/sh
 #
 # Installs some default gems that we always want with new Ruby installs.
-gem install bundler foreman kicker git-up gist mux
+gem install bundler foreman kicker git-up gist tmuxinator gem-ctags
