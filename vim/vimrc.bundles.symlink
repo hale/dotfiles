@@ -7,10 +7,12 @@ call plug#begin('~/.vim/plugged')
 " Plug 'maksimr/vim-jsbeautify'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
+Plug 'alexsiri7/vim-textobj-rubyblock' " enables ir / ar for ruby blocks
 Plug 'benmills/vimux'                  " vim + tmux
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/tabular'               " :Tabularize /=>
 Plug 'junegunn/goyo.vim'               " :Goyo for distraction free writing mode
+Plug 'kana/vim-textobj-user'           " required for textobj-rubyblock
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
@@ -24,9 +26,11 @@ Plug 'skalnik/vim-vroom'               " run current / last spec, send output to
 Plug 'spolu/dwm.vim'
 Plug 'szw/vim-g'                       " :Google for google search under word
 Plug 'tpope/vim-abolish'               " converting snakecase to camelcase, and other things
+Plug 'tpope/vim-bundler'               " help editing gems
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'                  " Rails.vim for regular ruby projects
 Plug 'tpope/vim-repeat'                " '.' works in more cases
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'            " easy navigation in quickfix (+more)
