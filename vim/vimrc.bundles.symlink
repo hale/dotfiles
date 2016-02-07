@@ -3,101 +3,38 @@ if &compatible
 end
 call plug#begin('~/.vim/plugged')
 
-" ack results in quickfix
-Plug 'mileszs/ack.vim'
-
-" fuzzy file search
+" Plug 'einars/js-beautify'
+" Plug 'maksimr/vim-jsbeautify'
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'             " working directly always project root
+Plug 'benmills/vimux'                  " vim + tmux
+Plug 'chriskempson/base16-vim'
+Plug 'godlygeek/tabular'               " :Tabularize /=>
+Plug 'junegunn/goyo.vim'               " :Goyo for distraction free writing mode
 Plug 'kien/ctrlp.vim'
-
-" fancy status bar, alternative to powerline
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'rizzatti/dash.vim'
+Plug 'rizzatti/funcoo.vim'             " require for dash
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'skalnik/vim-vroom'               " run current / last spec, send output to tmux pane
+Plug 'spolu/dwm.vim'
+Plug 'szw/vim-g'                       " :Google for google search under word
+Plug 'tpope/vim-abolish'               " converting snakecase to camelcase, and other things
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'                " '.' works in more cases
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'            " easy navigation in quickfix (+more)
+Plug 'tpope/vim-vinegar'               " improved :Explore (netrw)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" sugar for indentation
-Plug 'nathanaelkane/vim-indent-guides'
-
-" remembers your last cursor position and fold level
-Plug 'vim-scripts/restore_view.vim'
-
-" linter
-Plug 'scrooloose/syntastic'
-
-" mostly use for GBlame - powerful git integration
-Plug 'tpope/vim-fugitive'
-
-" easily comment / uncomment code
-Plug 'scrooloose/nerdcommenter'
-
-" better javascript support
-Plug 'pangloss/vim-javascript'
-
-" coffeescript support
 Plug 'vim-coffee-script'
-
-" HAML support
-Plug 'tpope/vim-haml'
-
-" Rails plugin
-Plug 'tpope/vim-rails'
-
-" working directly always project root
-Plug 'airblade/vim-rooter'
-
-" easy access to documentation from vim
-Plug 'rizzatti/funcoo.vim'
-Plug 'rizzatti/dash.vim'
-
-" all the base16 vim themes
-Plug 'chriskempson/base16-vim'
-
-" easy navigation in quickfix (+more)
-Plug 'tpope/vim-unimpaired'
-
-" show git changes in buffer
-Plug 'airblade/vim-gitgutter'
-
-" easy alignment of text, e.g. for markdown tables
-Plug 'godlygeek/tabular'
-
-" Interactive, formatted list of ctags in a sidebar
-Plug 'majutsushi/tagbar'
-
-" :Google for google search under word
-Plug 'szw/vim-g'
-
-" Managed splits.  Auto resizing, like a tiling window manager
-Plug 'spolu/dwm.vim'
-
-" distraction free mode
-Plug 'junegunn/goyo.vim'
-
-" repeat.vim: enable repeating supported plugin maps with '.'
-Plug 'tpope/vim-repeat'
-
-" quoting/parenthesizing made simple
-Plug 'tpope/vim-surround'
-
-" converting snakecase to camelcase, and other things
-Plug 'tpope/vim-abolish'
-
-" easily interact with tmux from vim
-Plug 'benmills/vimux'
-
-" run current / last spec, send output to tmux pane
-Plug 'skalnik/vim-vroom'
-
-" better ruby support
 Plug 'vim-ruby/vim-ruby'
-
-" improved :Explore
-Plug 'tpope/vim-vinegar'
-
-" js beautify
-"Plug 'maksimr/vim-jsbeautify'
-"Plug 'einars/js-beautify'
-
-" :GHA! hale/dotfiles
-Plug 'junegunn/vim-github-dashboard'
-
+Plug 'vim-scripts/restore_view.vim'
 
 call plug#end()
