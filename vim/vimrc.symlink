@@ -38,7 +38,7 @@ scriptencoding utf-8
 set clipboard=unnamed
 
 " store way more history (default is 20)
-set history=1000
+set history=5000
 
 " spell checking on
 set spell
