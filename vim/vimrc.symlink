@@ -59,14 +59,11 @@ set incsearch " find as you type search
 set hlsearch " highlight search results by default
 set ignorecase " case insensitive search
 set smartcase " use of capitals triggers case sensitive search
-set scrolljump=5 " lines to jump when cursor leaves screen
-set scrolloff=3 " minimum lines to keep above and below cursor
+set scrolljump=1 " lines to jump when cursor leaves screen
+set scrolloff=0 " minimum lines to keep above and below cursor
 set foldenable " auto fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-
-" fix airline
-set laststatus=2
 
 " formatting
 set nowrap
@@ -91,8 +88,11 @@ set number relativenumber
 autocmd InsertEnter * :set number norelativenumber
 autocmd InsertLeave * :set number relativenumber
 
-" Retag project (ctags)
-map <leader>rt :!ctags --exclude '@./.gitignore' --exclude './public/assets' --extra=+f -R *<CR><CR>
+" tags / ctags
+map <leader>rt :TagsGenerate<CR>
+map <leader>rT :TagsGenerate!<CR>
+let g:vim_tags_ignore_files = ['public/assets', 'db/dump', '.gitignore', '.svnignore', '.cvsignore']
+map <Leader>tt :TagbarToggle<CR>
 
 " find merge conflict markers
 map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
@@ -117,15 +117,13 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
-" customize airline
-let g:airline_powerline_fonts = 1
-" Hide fugitive changes - never use this
-let g:airline#extensions#hunks#enabled = 0
-" Hide branch name (we have powerline in the console for that)
-let g:airline#extensions#branch#enabled = 0
-" Hide the fileencoding / fileformat section
-let g:airline_section_y = ''
-" hide the whitespace errors etc
+" PLUGIN vim-airline/vim-airlin
+
+set laststatus=2
+let g:airline_powerline_fonts = 1 " Hide fugitive changes - never use this
+let g:airline#extensions#hunks#enabled = 0 " Hide branch name (we have powerline in the console for that)
+let g:airline#extensions#branch#enabled = 0 " Hide the fileencoding / fileformat section
+let g:airline_section_y = '' " hide the whitespace errors
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme='base16'
 
@@ -136,11 +134,11 @@ set foldlevel=999
 " suppress warning about unsaved buffers
 set shortmess+=A
 
-"" Change cursor shape in different modes on OS X
+" Cursor is block in NORMAL, pipe in INSERT (only works on OS X)
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" support for OWL
+" support for .owl syntax files
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
 
@@ -155,6 +153,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " toggle syntastic hilighting
 nmap <leader>st :SyntasticToggle<CR>
+
 " toggle paste mode
 nmap <leader>p :set paste!<CR>
 
@@ -170,7 +169,7 @@ augroup END
 set splitright
 set splitbelow
 
-" uses silver searcher cause it's blazin'
+" silver searcher quicker than ack
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ackprg = 'ag --nogroup --nocolor --column --ignore public/ --ignore static/'
@@ -178,10 +177,7 @@ if executable('ag')
   let g:ctrl_use_caching = 0
 endif
 
-" fspec by default, but can be overwritten
-set makeprg=foreman\ run\ rspec\ %
-
-"dash.vim shortcut
+" dash.vim shortcut to show documentation
 nmap <silent> <leader>d <Plug>DashGlobalSearch
 
 " speed up vim startup
@@ -227,7 +223,7 @@ nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
 " js beautify
 map <silent> <leader>jb :call JsBeautify()<cr>
 
-" vroom
+" vroom - run tests easily
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
 map <Leader>vq :VimuxCloseRunner<CR>
