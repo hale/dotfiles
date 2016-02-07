@@ -1,3 +1,4 @@
+runtime macros/matchit.vim
 set nocompatible
 set shell=/bin/sh
 
