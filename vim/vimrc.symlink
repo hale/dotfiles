@@ -84,10 +84,9 @@ set number relativenumber
 autocmd InsertEnter * :set number norelativenumber
 autocmd InsertLeave * :set number relativenumber
 
-" tags / ctags
-map <leader>rt :TagsGenerate<CR>
-map <leader>rT :TagsGenerate!<CR>
-let g:vim_tags_ignore_files = ['public/assets', 'db/dump', '.gitignore', '.svnignore', '.cvsignore']
+" ctags
+let g:rails_ctags_arguments = ['--languages=ruby', '--extra=f']
+map <leader>rt :Ctags<CR>
 map <Leader>tt :TagbarToggle<CR>
 
 " find merge conflict markers
