@@ -2,14 +2,19 @@ set nocompatible
 set shell=/bin/sh
 
 " enable vundle
-filetype on
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"filetype on
+"filetype off
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"if filereadable(expand("~/.vimrc.bundles"))
+  "source ~/.vimrc.bundles
+"endif
+"call vundle#end()
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-call vundle#end()
+
 filetype plugin indent on
 
 " appearance
