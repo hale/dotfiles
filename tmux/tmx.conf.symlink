@@ -1,7 +1,7 @@
-# Prefix is: CAPSLOCK-Space
-unbind-key C-b
-set -g prefix M-Space
-bind M-Space send-prefix
+# prefix is backtick
+unbind C-b
+set -g prefix `
+bind-key ` send-prefix
 
 # improve colors
 set -g default-terminal "screen-256color-bce"
