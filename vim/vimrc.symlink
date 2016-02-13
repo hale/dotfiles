@@ -207,7 +207,7 @@ let g:localvimrc_persistent=2
 let s:jshint_command='/usr/bin/jshint'
 
 " set home printer
-set pdev=Photosmart-B110
+set printdevice=Photosmart_B110_series
 
 " set the width of the master pane
 let g:dwm_master_pane_width=101
