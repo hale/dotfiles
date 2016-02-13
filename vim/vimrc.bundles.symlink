@@ -3,18 +3,18 @@ if &compatible
 end
 call plug#begin('~/.vim/plugged')
 
-" Plug 'einars/js-beautify'
-" Plug 'maksimr/vim-jsbeautify'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
 Plug 'alexsiri7/vim-textobj-rubyblock' " enables ir / ar for ruby blocks
 Plug 'benmills/vimux'                  " vim + tmux
 Plug 'chriskempson/base16-vim'
+Plug 'einars/js-beautify'
 Plug 'godlygeek/tabular'               " :Tabularize /=>
 Plug 'junegunn/goyo.vim'               " :Goyo for distraction free writing mode
 Plug 'kana/vim-textobj-user'           " required for textobj-rubyblock
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
@@ -25,6 +25,8 @@ Plug 'scrooloose/syntastic'
 Plug 'skalnik/vim-vroom'               " run current / last spec, send output to tmux pane
 Plug 'spolu/dwm.vim'
 Plug 'szw/vim-g'                       " :Google for google search under word
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tonekk/vim-binding-pry'
 Plug 'tpope/vim-abolish'               " converting snakecase to camelcase, and other things
 Plug 'tpope/vim-bundler'               " help editing gems
 Plug 'tpope/vim-fugitive'
