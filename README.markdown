@@ -1,6 +1,8 @@
 # dotfiles
 
-Configuration files for (mostly) vim, zsh, git. Probably only works on OS X. ZSH config currently depends on oh-my-zsh, vim config has recently been written to not depend on spf13, but borrows a fair bit of code from it.
+* Compatible with Fedora 22, OS X El Capitan
+* ZSH config built from oh-my-zsh
+* Vim, tmux, ruby
 
 ## install
 
@@ -13,7 +15,6 @@ script/bootstrap
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`, though.
 
 ## topical
 
