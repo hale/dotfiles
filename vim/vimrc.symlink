@@ -76,6 +76,10 @@ let mapleader = " "
 " Yank from cursor to end of line, consistent with C and D
 noremap Y y
 
+" Quickly open/reload vim
+nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
 " toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
