@@ -1,6 +1,8 @@
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias todo="vim ~/Dropbox/todo_`timestamp`.markdown"
+function todo() {
+  vim ~/Dropbox/todo_$(timestamp).markdown
+}
 alias q="exit"
 
 # shortcut to the tree script. WARN: may conflict with todo.txt
