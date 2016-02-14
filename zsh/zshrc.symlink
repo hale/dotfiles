@@ -45,7 +45,7 @@ fi
 
 eval "$(rbenv init -)"
 
-export PATH=".git/safe/binstubs:$PATH"
+export PATH=".git/safe/../../bin:$PATH"
 export GOPATH="$HOME/go"
 
 unsetopt correct_all
