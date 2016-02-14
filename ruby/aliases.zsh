@@ -19,8 +19,6 @@ tst() {
   be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance|capybara)/**/*$1*.rb
 }
 
-alias fr="foreman run"
-alias fs='foreman start'
 alias be='bundle exec'
 
 # start running jobs on the named app
