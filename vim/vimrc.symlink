@@ -144,12 +144,6 @@ au BufNewFile,BufRead *.jess set filetype=lisp
 " fix markdown filetype not recognised
 au BufNewFile,BufRead *.md set filetype=markdown
 
-" Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
-
 " toggle syntastic hilighting
 nmap <leader>st :SyntasticToggle<CR>
 
@@ -228,34 +222,35 @@ let g:vroom_use_binstubs = 1
 
 " Run the current file with rspec
 map <leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-
 " Prompt for a command to run
 map <leader>vp :VimuxPromptCommand<CR>
-
 " Run last command executed by VimuxRunCommand
 map <leader>vl :VimuxRunLastCommand<CR>
-
 " Inspect runner pane
 map <leader>vi :VimuxInspectRunner<CR>
-
 " Close vim tmux runner opened by VimuxRunCommand
 map <leader>vq :VimuxCloseRunner<CR>
-
 " Interrupt any command running in the runner pane
 map <leader>vx :VimuxInterruptRunner<CR>
-
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <leader>vz :call VimuxZoomRunner()<CR>
-
 " vimux as tslime replacement; send buffer to repl
 function! VimuxSlime()
   call VimuxSendText(@v)
   call VimuxSendKeys("Enter")
 endfunction
-
 vmap <leader>vs "vy :call VimuxSlime()<CR>
 nmap <leader>vs vip<leader>vs<CR>
 
+" override dwm vim shortcuts to remove ctrl+hjkl mappings, which break
+" tmux-vim-navigator
+let g:dwm_map_keys=0
+nmap <C-,> <Plug>DWMRotateCounterclockwise
+nmap <C-.> <Plug>DWMRotateClockwise
+nmap <C-N> <Plug>DWMNew
+nmap <C-C> <Plug>DWMClose
+nmap <C-@> <Plug>DWMFocus
+nmap <C-Space> <Plug>DWMFocus
 
 " shortcut to grep current word
 nmap <leader>F :Ack!<space>
