@@ -37,6 +37,7 @@ if islinux; then
   export PATH="/usr/local/heroku/bin:$PATH"
   export PATH="$HOME/anaconda3/bin:$PATH"
 elif ismac;then
+  export HOMEBREW_BREWFILE="$HOME/.brewfile"
   export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
   export PATH="/usr/local/share/npm/bin:$PATH"
   export PATH="$PATH:/anaconda/bin"

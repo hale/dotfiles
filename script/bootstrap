@@ -2,17 +2,27 @@
 #
 # bootstrap installs things.
 
-# Assume everyone's on OS X and run Homebrew (*nix-ers beware)
+# Install homebrew + brew file, supporting install from ~/.brewfile
+set -e
+
 if [$(uname -s) == "Darwin"] 
 then
-	. script/homebrew
+  curl -fsSL https://raw.github.com/rcmdnk/homebrew-file/install/install.sh |sh
 fi
 
-# TODO: Install homebrew packages
+# * Install homebrew packages
+brew file install
 
-# TODO: Install oh-my-zsh
+# * Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Run the install (I'd like to pull this out of rake, eventually)
+# * Install Postgres.app
+# * Install latest ruby
+# * gem-defaults
+# * clone Plug.vim
+# * clone tpm (tmux plugin manager)
+
+# Create links to *.symlink files in ~/
 rake install
 
 # Install Bas16 Shell
