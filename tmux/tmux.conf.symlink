@@ -58,6 +58,14 @@ bind-key -t vi-copy y copy-pipe "pbcopy"
 unbind -t vi-copy Enter
 bind-key -t vi-copy Enter copy-pipe "pbcopy"
 
+# quick git diff
+unbind d
+bind-key d split-window -h "git diff"
+
+unbind .
+bind-key . split-window -v -c ~/.dotfiles "vim +CtrlP"
+
+
 # TODO: not working
 #set -g status-right "#[fg=white]#{git_repo} | #{git_branch} | #{git_stash}[#{git_dirty}]"
 
