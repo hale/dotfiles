@@ -1,3 +1,12 @@
+export PATH="$HOME/.dotfiles/bin:$PATH"
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+ensure_tmux_is_running
+
 ismac() {
   if [[ `uname -s` == "Darwin" ]]; then
     return 0;
@@ -27,7 +36,6 @@ export TERM=gnome-256color
 # PATH system binaries
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
