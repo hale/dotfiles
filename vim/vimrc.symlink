@@ -14,7 +14,7 @@ let base16colorspace=256
 colorscheme base16-default
 filetype plugin indent on
 syntax on
-set colorcolumn=100
+set colorcolumn=80
 set cursorline
 highlight clear SignColumn
 highlight clear LineNr
@@ -212,7 +212,7 @@ let s:jshint_command='/usr/bin/jshint'
 set printdevice=Photosmart_B110_series
 
 " set the width of the master pane
-let g:dwm_master_pane_width=101
+let g:dwm_master_pane_width=100
 
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
