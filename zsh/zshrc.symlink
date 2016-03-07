@@ -39,7 +39,6 @@ plugins=(jsontools randquote sudo tmuxinator fedora rake-fast)
 source $ZSH/oh-my-zsh.sh
 
 # PATH system binaries
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
@@ -56,7 +55,11 @@ elif ismac;then
   export PATH="$PATH:/anaconda/bin"
 fi
 
+
+export PATH="/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+
 
 export PATH=".git/safe/../../bin:$PATH"
 export GOPATH="$HOME/go"
