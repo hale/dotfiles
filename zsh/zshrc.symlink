@@ -1,6 +1,11 @@
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export TERM=gnome-256color
 
+# Base16 Shell
+BASE16_SCHEME="default.dark"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
@@ -69,11 +74,6 @@ encrypt() { gpg -ao $1.asc -esr philip@pghale.com $1 }
 
 # added by travis gem
 [ -f /Users/philiphale/.travis/travis.sh ] && source /Users/philiphale/.travis/travis.sh
-
-# Base16 Shell
-BASE16_SCHEME="default.dark"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # gpg-agent config and setup. Run this before git etc.
 gpg-keychain() {
