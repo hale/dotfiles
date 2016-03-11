@@ -14,3 +14,9 @@ alias ft02="ssh phale@192.168.1.95"
 vom() { cat ~/.dotfiles/zsh/vom.txt }
 alias cim="vim"
 alias :q="exit"
+
+# use Back to My Mac to phone home over ipv6
+imac() {
+  ssh imac.$(echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).$/\1/p')
+}
+
