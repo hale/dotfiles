@@ -57,7 +57,7 @@ set ignorecase " case insensitive search
 set smartcase " use of capitals triggers case sensitive search
 set scrolljump=1 " lines to jump when cursor leaves screen
 set scrolloff=0 " minimum lines to keep above and below cursor
-set foldenable " auto fold code
+set nofoldenable " don't auto fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -151,6 +151,9 @@ au BufNewFile,BufRead *.md set filetype=markdown
 " toggle syntastic hilighting
 nmap <leader>st :SyntasticToggle<CR>
 
+" use eslint instead of jshint
+let g:syntastic_javascript_checkers = ['eslint']
+
 " toggle paste mode
 nmap <leader>p :set paste!<CR>
 
@@ -205,9 +208,6 @@ let g:tagbar_type_markdown = {
 " .lvimrc security question answers are persisted
 let g:localvimrc_persistent=2
 
-" js hint command
-let s:jshint_command='/usr/bin/jshint'
-
 " set home printer
 set printdevice=Photosmart_B110_series
 
@@ -216,9 +216,6 @@ let g:dwm_master_pane_width=100
 
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
-
-" js beautify
-map <silent> <leader>jb :call JsBeautify()<cr>
 
 " vroom - run tests easily
 let g:vroom_use_vimux = 1

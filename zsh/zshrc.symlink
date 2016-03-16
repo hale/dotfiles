@@ -62,6 +62,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 
 export PATH=".git/safe/../../bin:$PATH"
+export PATH=".git/safe/../../node_modules/.bin:$PATH"
 export GOPATH="$HOME/go"
 
 unsetopt correct_all

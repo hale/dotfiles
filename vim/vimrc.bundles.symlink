@@ -9,16 +9,15 @@ Plug 'alexsiri7/vim-textobj-rubyblock' " enables ir / ar for ruby blocks
 Plug 'benmills/vimux'                  " vim + tmux
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'einars/js-beautify'
 Plug 'godlygeek/tabular'               " :Tabularize /=>
 Plug 'junegunn/goyo.vim'               " :Goyo for distraction free writing mode
 Plug 'kana/vim-textobj-user'           " required for textobj-rubyblock
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
-Plug 'maksimr/vim-jsbeautify'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'rizzatti/dash.vim'
 Plug 'rizzatti/funcoo.vim'             " require for dash
 Plug 'scrooloose/nerdcommenter'
@@ -40,7 +39,6 @@ Plug 'tpope/vim-unimpaired'            " easy navigation in quickfix (+more)
 Plug 'tpope/vim-vinegar'               " improved :Explore (netrw)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
 
