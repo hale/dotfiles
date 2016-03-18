@@ -1,6 +1,9 @@
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export TERM=gnome-256color
 
+# wait 10ms instead of default .4s for key sequences
+export KEYTIMEOUT=1
+
 # Base16 Shell
 BASE16_SCHEME="default.dark"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.sh"

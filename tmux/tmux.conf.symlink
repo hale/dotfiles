@@ -67,6 +67,10 @@ bind-key . split-window -v -c ~/.dotfiles "vim +CtrlP"
 
 bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
 
+
+# fix delay when leaving vim insert mode
+set -sg escape-time 0
+
 # TODO: not working
 #set -g status-right "#[fg=white]#{git_repo} | #{git_branch} | #{git_stash}[#{git_dirty}]"
 
