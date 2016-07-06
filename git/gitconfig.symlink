@@ -25,6 +25,7 @@
   excludesfile = ~/.gitignore
   editor = vim
   attributesfile = ~/.gitattributes
+  pager=diff-so-fancy | less --tabs=2 -R
 [apply]
   whitespace = nowarn
 [mergetool]
