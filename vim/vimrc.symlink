@@ -56,7 +56,7 @@ set hlsearch " highlight search results by default
 set ignorecase " case insensitive search
 set smartcase " use of capitals triggers case sensitive search
 set scrolljump=1 " lines to jump when cursor leaves screen
-set scrolloff=0 " minimum lines to keep above and below cursor
+set scrolloff=5 " minimum lines to keep above and below cursor
 set nofoldenable " don't auto fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
@@ -207,7 +207,7 @@ let g:localvimrc_persistent=2
 set printdevice=Photosmart_B110_series
 
 " set the width of the master pane
-let g:dwm_master_pane_width=100
+let g:dwm_master_pane_width=120
 
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
