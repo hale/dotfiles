@@ -23,6 +23,7 @@ alias gf="git find"
 alias girc="git rebase --continue"
 alias gira="git rebase --abort"
 alias gsh="git show HEAD"
+alias grh="git reset HEAD^"
 
 # live git diff; requires kicker gem
 gdl() {
