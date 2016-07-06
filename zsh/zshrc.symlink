@@ -68,6 +68,8 @@ export PATH=".git/safe/../../bin:$PATH"
 export PATH=".git/safe/../../node_modules/.bin:$PATH"
 export GOPATH="$HOME/go"
 
+eval $(docker-machine env default)
+
 unsetopt correct_all
 
 . ~/.dotfiles/z/z.sh
