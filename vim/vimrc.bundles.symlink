@@ -12,12 +12,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'               " :Tabularize /=>
 Plug 'junegunn/goyo.vim'               " :Goyo for distraction free writing mode
 Plug 'kana/vim-textobj-user'           " required for textobj-rubyblock
+Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
+Plug 'mxw/vim-jsx'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'rizzatti/dash.vim'
 Plug 'rizzatti/funcoo.vim'             " require for dash
 Plug 'scrooloose/nerdcommenter'
