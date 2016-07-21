@@ -12,6 +12,7 @@ alias ft02="ssh phale@192.168.1.95"
 
 # oopsies
 vom() { cat ~/.dotfiles/zsh/vom.txt }
+guy() { cat ~/.dotfiles/zsh/guy.txt }
 alias cim="vim"
 alias :q="exit"
 
