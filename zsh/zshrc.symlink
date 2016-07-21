@@ -113,3 +113,10 @@ export AUDIODEV=/dev/snd/by-id/usb-BLUE_MICROPHONES_BLUE_NESSIE_USB_MIC_20130410
 export GIT_TEMPLATE_DIR=~/.dotfiles/git/git_template
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# moo
+command_not_found_handler() {
+  cowsay -f small "who is '$1'?"
+  return 0;
+}
+
