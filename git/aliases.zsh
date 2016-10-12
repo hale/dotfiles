@@ -25,6 +25,8 @@ alias gira="git rebase --abort"
 alias gsh="git show HEAD"
 alias grh="git reset HEAD^"
 
+alias remotes="git remote -v | column -t\t"
+
 # live git diff; requires kicker gem
 gdl() {
   kicker -c -e "git diff --color" .
