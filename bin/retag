@@ -1,0 +1,4 @@
+#!/bin/sh
+# Tag Ruby and JS (ES6) files, output to ./tags
+ctags -f ./tags -R --languages=ruby --exclude=.git . $(bundle list --paths)
+find . -type f -iregex ".*\.js$" -or -iregex ".*\.jsx$" -not -path "./node_modules/*" -not -path "./public/*" -not -path "./vendor/*" -not -path "./lib/*" -exec jsctags {} -f \; | sed '/^$/d' | sort >> tags
