@@ -200,6 +200,18 @@ let g:tagbar_type_markdown = {
       \ 'sort': 0,
       \ }
 
+" support rspec
+let g:tagbar_type_ruby = {
+  \ 'kinds' : [
+    \ 'm:modules',
+    \ 'c:classes',
+    \ 'd:describes',
+    \ 'C:contexts',
+    \ 'f:methods',
+    \ 'F:singleton methods'
+  \ ]
+\ }
+
 " .lvimrc security question answers are persisted
 let g:localvimrc_persistent=2
 
