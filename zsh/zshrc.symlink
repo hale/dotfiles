@@ -125,3 +125,4 @@ command_not_found_handler() {
   return 0;
 }
 
+eval "$(thefuck --alias)"
