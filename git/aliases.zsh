@@ -24,6 +24,9 @@ alias gira="git rebase --abort"
 alias gsh="git show HEAD"
 alias grh="git reset HEAD^"
 
+# git merge last
+alias gml="git merge --no-ff -"
+
 alias remotes="git remote -v | column -t\t"
 
 # live git diff; requires kicker gem
