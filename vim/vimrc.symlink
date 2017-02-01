@@ -26,7 +26,7 @@ set mousehide
 scriptencoding utf-8
 
 " shared clipboard
-set clipboard=unnamed
+set clipboard^=unnamed
 
 " store way more history (default is 20)
 set history=5000
