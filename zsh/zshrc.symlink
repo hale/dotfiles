@@ -128,3 +128,4 @@ command_not_found_handler() {
 eval "$(thefuck --alias)"
 
 alias sshimac="ssh philiphale@1.tcp.ngrok.io -p 29247"
+export BUNDLE_JOBS=4
