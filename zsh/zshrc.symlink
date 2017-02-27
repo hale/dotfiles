@@ -129,3 +129,6 @@ eval "$(thefuck --alias)"
 
 alias sshimac="ssh philiphale@1.tcp.ngrok.io -p 29247"
 export BUNDLE_JOBS=$(sysctl -n hw.ncpu)
+
+export NVM_DIR="/Users/philiphale/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
