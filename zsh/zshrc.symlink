@@ -51,8 +51,9 @@ if islinux; then
   export PATH="$HOME/anaconda3/bin:$PATH"
 elif ismac;then
   export HOMEBREW_BREWFILE="$HOME/.brewfile"
-  export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
   export PATH="/usr/local/share/npm/bin:$PATH"
+  export PATH="$(yarn global bin):$PATH"
   export PATH="$PATH:/anaconda/bin"
   export PATH="$PATH:/opt/pdflabs/pdftk/bin"
 
