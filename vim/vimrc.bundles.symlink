@@ -44,5 +44,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'mbbill/undotree'
+Plug 'ruanyl/vim-fixmyjs'
 
 call plug#end()

@@ -153,6 +153,9 @@ nmap <leader>st :SyntasticToggle<CR>
 
 " use eslint instead of jshint
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers = ['stylelint']
+
+
 
 " toggle paste mode
 nmap <leader>p :set paste!<CR>
@@ -219,7 +222,7 @@ let g:localvimrc_persistent=2
 set printdevice=Photosmart_B110_series
 
 " set the width of the master pane
-let g:dwm_master_pane_width=120
+let g:dwm_master_pane_width=90
 
 " check ruby style violations
 nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
@@ -272,6 +275,9 @@ nmap <leader>q :wa<cr>:qa<cr>
 
 " quit without saving with leader-Q
 nmap <leader>Q :qa!<cr>
+
+noremap <Leader>j :Fixmyjs<CR>
+let g:fixmyjs_rc_path = '.eslintrc.js'
 
 " initialize directories
 function! InitializeDirectories()
