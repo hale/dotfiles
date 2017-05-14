@@ -52,11 +52,10 @@ bind -n C-Down resize-pane -D 5
 bind -n C-Up resize-pane -U 5
 
 # vim-like settings for copy mode
-unbind -t vi-copy Enter
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "pbcopy"
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "pbcopy"
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+unbind-key -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # quick git diff
 unbind d
@@ -66,6 +65,10 @@ unbind .
 bind-key . split-window -v -c ~/.dotfiles "vim +CtrlP"
 
 bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
+
+# enable mouse scroll, auto enter copy mode when scrolling
+set-option -g mouse on
+bind -n WheelUpPane copy-mode
 
 
 # fix delay when leaving vim insert mode
@@ -77,10 +80,3 @@ set -g default-command "reattach-to-user-namespace -l ${SHELL}"
 
 # TODO: not working
 #set -g status-right "#[fg=white]#{git_repo} | #{git_branch} | #{git_stash}[#{git_dirty}]"
-
-# TPM plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'hahcho/tmux-git'  # fork for TPM FIXME not working
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
