@@ -21,3 +21,4 @@ imac() {
   ssh imac.$(echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).$/\1/p')
 }
 
+alias retag='ctags -R --languages=ruby --exclude=.git . $(bundle list --paths)'

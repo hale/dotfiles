@@ -69,8 +69,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
-export PATH=".git/safe/../../bin:$PATH"
 export PATH=".git/safe/../../node_modules/.bin:$PATH"
+export PATH=".git/safe/../../bin:$PATH"
 
 
 #eval $(docker-machine env default)
