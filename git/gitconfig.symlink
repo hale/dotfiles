@@ -40,4 +40,5 @@
 [credential]
   helper = cache --timeout=86400
   helper = osxkeychain
-  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+[commit]
+  gpgsign = true
