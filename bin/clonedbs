@@ -15,9 +15,14 @@ APPS = %w(opencounter opencounter-staging opencounter-boston opencounter-boston-
 
 def clone(app)
   print "Cloning #{app}..."
+  `heroku pg:backups:capture -a #{app}`
+  `trash ~/opencounter/db/#{app}.dump`
   `curl -s -o ~/opencounter/db/#{app}.dump $(heroku pg:backups:public-url -a #{app})`
   puts "...done"
 end
+
+puts "Capture new snapshot before cloning? (Y/N) N"
+@capture = $stdin.gets.chomp == "Y"
 
 case ARGV.length
 when 0
