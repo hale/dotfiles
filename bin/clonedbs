@@ -6,32 +6,40 @@
 # clonedbs <app_name> <app_name>: clone each <app_name> to ~/opencounter/db/
 # clonedbs <app_name>: clone <app_name> to ~/opencounter/db/ and optionally restore
 #
+# TODO: support zoning-api on RDS
+#
 
 `mkdir -p ~/opencounter/db`
 
-APPS = %w(opencounter opencounter-staging opencounter-boston opencounter-boston-staging opencounter-v2
-  opencounter-v2-staging zoning-api zoning-api-staging zoningcheck zoningcheck-staging
-  opencounter-paloalto)
+APPS = %w(opencounter opencounter-staging opencounter-boston opencounter-boston-staging
+          opencounter-v2 opencounter-v2-staging zoning-api-staging zoningcheck zoningcheck-staging
+          opencounter-paloalto)
 
 def clone(app)
   print "Cloning #{app}..."
-  `heroku pg:backups:capture -a #{app}`
-  `trash ~/opencounter/db/#{app}.dump`
-  `curl -s -o ~/opencounter/db/#{app}.dump $(heroku pg:backups:public-url -a #{app})`
+  if app == "zoning-api"
+    puts 'cant clone zoning api!'
+    return
+  #``
+  else
+    `heroku pg:backups:capture -a #{app}` if @capture
+    `trash ~/opencounter/db/#{app}.dump`
+    `curl -s -o ~/opencounter/db/#{app}.dump $(heroku pg:backups:public-url -a #{app})`
+  end
   puts "...done"
 end
 
 puts "Capture new snapshot before cloning? (Y/N) N"
-@capture = $stdin.gets.chomp == "Y"
+@capture = $stdin.gets.chomp.downcase == "y"
 
 case ARGV.length
 when 0
   APPS.each(&method(:clone))
 when 1
-  app = ARGV[0]
-  clone(app)
   puts "Enter database to restore:"
   db = $stdin.gets.chomp
+  app = ARGV[0]
+  clone(app)
   `rake db:drop db:create && pg_restore --clean --no-acl --no-owner -h localhost -j 12 -d #{db} ../db/#{app}.dump`
 else
   ARGV.each(&method(:clone))
