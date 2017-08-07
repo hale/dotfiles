@@ -135,3 +135,5 @@ export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 export PATH="$HOME/.yarn/bin:$PATH"
 
 export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export FZF_DEFAULT_COMMAND='ag -g ""'

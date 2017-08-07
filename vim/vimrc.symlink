@@ -171,8 +171,8 @@ set splitbelow
 " silver searcher quicker than ack
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ackprg = 'ag --nogroup --nocolor --column --ignore public/ --ignore static/'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ackprg = 'ag --nogroup --nocolor --column --ignore public/ --ignore static/ --ignore node_modules --ignore .git'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   let g:ctrl_use_caching = 0
 endif
 
