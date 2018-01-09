@@ -2,6 +2,10 @@ runtime macros/matchit.vim
 set nocompatible
 set shell=/bin/sh
 
+set regexpengine=2 
+set noballooneval
+let g:netrw_nobeval = 1
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -15,8 +19,8 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 filetype plugin indent on
 syntax on
-set colorcolumn=80
-set cursorline
+set colorcolumn=0
+"set cursorline
 highlight clear SignColumn
 highlight clear LineNr
 
@@ -84,10 +88,11 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
+set number
 " Absolute line numbers in Normal mode, relative in Insert mode
-set number relativenumber
-autocmd InsertEnter * :set number norelativenumber
-autocmd InsertLeave * :set number relativenumber
+"set number relativenumber
+"autocmd InsertEnter * :set number norelativenumber
+"autocmd InsertLeave * :set number relativenumber
 
 " ctags
 let g:rails_ctags_arguments = ['--languages=ruby', '--extra=f']
@@ -115,14 +120,6 @@ nnoremap <leader>= :wincmd =<cr>
 map zl zL
 map zh zH
 
-" customize indent guides
-let g:indent_guides_auto_colors = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
-
-" PLUGIN vim-airline/vim-airlin
-
 set laststatus=2
 let g:airline_powerline_fonts = 1 " Hide fugitive changes - never use this
 let g:airline#extensions#hunks#enabled = 0 " Hide branch name (we have powerline in the console for that)
@@ -138,25 +135,15 @@ set foldlevel=999
 " suppress warning about unsaved buffers
 set shortmess+=A
 
-" Cursor is block in NORMAL, pipe in INSERT (only works on OS X)
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " support for .owl syntax files
 au BufNewFile,BufRead *.owl set filetype=xml
 au BufNewFile,BufRead *.jess set filetype=lisp
 
-" fix markdown filetype not recognised
 au BufNewFile,BufRead *.md set filetype=markdown
 
-" toggle syntastic hilighting
-nmap <leader>st :SyntasticToggle<CR>
-
-" use eslint instead of jshint
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_scss_checkers = ['stylelint']
-
-
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_lint_on_text_changed = "never"
 
 " toggle paste mode
 nmap <leader>p :set paste!<CR>
@@ -172,18 +159,17 @@ set splitbelow
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ackprg = 'ag --nogroup --nocolor --column --ignore public/ --ignore static/ --ignore node_modules --ignore .git'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-  let g:ctrl_use_caching = 0
 endif
 
 " dash.vim shortcut to show documentation
 nmap <silent> <leader>d <Plug>DashGlobalSearch
 
 " speed up vim startup
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
+"let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " speed up vim rendering
 set lazyredraw
+set ttyfast
 
 " git status lower precedence than syntax errors
 let g:signify_sign_overwrite = 0
@@ -225,9 +211,6 @@ set printdevice=Photosmart_B110_series
 " set the width of the master pane
 let g:dwm_master_pane_width=90
 
-" check ruby style violations
-nmap <silent> <leader>h :SyntasticCheck rubocop<CR>
-
 " vroom - run tests easily
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
@@ -263,6 +246,8 @@ nmap <C-N> <Plug>DWMNew
 nmap <C-C> <Plug>DWMClose
 nmap <C-@> <Plug>DWMFocus
 nmap <C-Space> <Plug>DWMFocus
+
+nmap <C-P> :Files<CR> ./
 
 " shortcut to grep current word
 nmap <leader>F :Ack!<space>

@@ -1,3 +1,4 @@
+alias vim="mvim -v"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 function todo() {
@@ -22,3 +23,5 @@ imac() {
 }
 
 alias retag='ctags -R --languages=ruby --exclude=.git . $(bundle list --paths)'
+
+alias clean-asl='sudo rm -rfv /private/var/log/asl/*.asl'

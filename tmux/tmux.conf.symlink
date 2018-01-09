@@ -62,7 +62,7 @@ unbind d
 bind-key d split-window -h "git diff"
 
 unbind .
-bind-key . split-window -v -c ~/.dotfiles "vim +CtrlP"
+bind-key . split-window -v -c ~/.dotfiles "vim +Files"
 
 bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
 

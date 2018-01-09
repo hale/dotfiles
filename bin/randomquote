@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+quotes = []
+
+Dir.chdir("/Users/philiphale/.dotfiles/quotes")
+
+Dir.foreach(".") do |file|
+  next if %w(. .. .DS_Store).include?(file)
+  f = File.read(file)
+  quotes << f.split("%").map { |s| s.gsub(/^\n/, '') unless ["", "\n"].include?(s) }.compact
+end
+
+puts quotes.flatten.sample

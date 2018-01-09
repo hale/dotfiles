@@ -16,7 +16,7 @@
   rank-contributers = !$ZSH/bin/git-rank-contributers
   count = !git shortlog -sn
   find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
-  up = pull --rebase --autostash
+	up = pull --rebase --autostash
 [color]
   diff = auto
   status = auto
