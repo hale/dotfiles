@@ -36,6 +36,8 @@ set clipboard^=unnamed
 " store way more history (default is 20)
 set history=5000
 
+let g:jsx_ext_required = 0
+
 " spell checking on
 set spell
 
@@ -88,13 +90,14 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
-set number
 " Absolute line numbers in Normal mode, relative in Insert mode
 "set number relativenumber
 "autocmd InsertEnter * :set number norelativenumber
 "autocmd InsertLeave * :set number relativenumber
 
-" ctags
+set number
+set norelativenumber
+
 let g:rails_ctags_arguments = ['--languages=ruby', '--extra=f']
 map <leader>rt :Ctags<CR>
 map <Leader>tt :TagbarToggle<CR>
@@ -208,9 +211,6 @@ let g:localvimrc_persistent=2
 " set home printer
 set printdevice=Photosmart_B110_series
 
-" set the width of the master pane
-let g:dwm_master_pane_width=90
-
 " vroom - run tests easily
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
@@ -240,12 +240,13 @@ nmap <leader>vs vip<leader>vs<CR>
 " override dwm vim shortcuts to remove ctrl+hjkl mappings, which break
 " tmux-vim-navigator
 let g:dwm_map_keys=0
-nmap <C-,> <Plug>DWMRotateCounterclockwise
-nmap <C-.> <Plug>DWMRotateClockwise
 nmap <C-N> <Plug>DWMNew
 nmap <C-C> <Plug>DWMClose
-nmap <C-@> <Plug>DWMFocus
 nmap <C-Space> <Plug>DWMFocus
+
+" set the width of the master pane
+let g:dwm_master_pane_width=90
+
 
 nmap <C-P> :Files<CR> ./
 

@@ -11,9 +11,9 @@
 
 `mkdir -p ~/opencounter/db`
 
-APPS = %w(opencounter opencounter-staging opencounter-boston opencounter-boston-staging
-          opencounter-v2 opencounter-v2-staging zoning-api-staging zoningcheck zoningcheck-staging
-          opencounter-paloalto)
+APPS = %w(opencounter-v1 opencounter-v1-staging opencounter-boston opencounter-boston-staging
+          opencounter-v2 opencounter-v2-staging zoningcheck zoningcheck-staging
+          opencounter-paloalto mvt-tileserver)
 
 def clone(app)
   print "Cloning #{app}..."

@@ -3,34 +3,21 @@ if &compatible
 end
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
 Plug 'benmills/vimux'                  " vim + tmux
-Plug 'chrisbra/csv.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'godlygeek/tabular'               " :Tabularize /=>
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'               " :Goyo for distraction free writing mode
-Plug 'kchmck/vim-coffee-script'
-Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'rizzatti/dash.vim'
-Plug 'rizzatti/funcoo.vim'             " require for dash
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'skalnik/vim-vroom'               " run current / last spec, send output to tmux pane
 Plug 'spolu/dwm.vim'
-Plug 'szw/vim-g'                       " :Google for google search under word
-Plug 'thaerkh/vim-indentguides'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tonekk/vim-binding-pry'
-Plug 'tpope/vim-abolish'               " converting snakecase to camelcase, and other things
-Plug 'tpope/vim-bundler'               " help editing gems
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
