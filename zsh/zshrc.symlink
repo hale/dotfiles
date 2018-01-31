@@ -53,7 +53,7 @@ ulimit -n 2048
 
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash)"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"

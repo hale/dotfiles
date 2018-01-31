@@ -145,7 +145,7 @@ au BufNewFile,BufRead *.jess set filetype=lisp
 
 au BufNewFile,BufRead *.md set filetype=markdown
 
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint', 'flow']}
 let g:ale_lint_on_text_changed = "never"
 
 " toggle paste mode
@@ -237,18 +237,16 @@ endfunction
 vmap <leader>vs "vy :call VimuxSlime()<CR>
 nmap <leader>vs vip<leader>vs<CR>
 
+
 " override dwm vim shortcuts to remove ctrl+hjkl mappings, which break
 " tmux-vim-navigator
 let g:dwm_map_keys=0
+let g:dwm_master_pane_width=90
 nmap <C-N> <Plug>DWMNew
 nmap <C-C> <Plug>DWMClose
-nmap <C-Space> <Plug>DWMFocus
+map <leader><leader> :call DWM_Focus()<CR>
 
-" set the width of the master pane
-let g:dwm_master_pane_width=90
-
-
-nmap <C-P> :Files<CR> ./
+noremap <C-P> :Files<CR>
 
 " shortcut to grep current word
 nmap <leader>F :Ack!<space>
