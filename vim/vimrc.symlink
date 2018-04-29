@@ -39,7 +39,7 @@ set history=5000
 let g:jsx_ext_required = 0
 
 " spell checking on
-set spell
+set nospell
 
 " allow buffer switching without saving
 set hidden
@@ -53,6 +53,10 @@ set backup
 set undofile
 set undolevels=1000 " maximum number ofchanges that can be undond
 set undoreload=10000 " Maximum number of lines to save for undo on a buffer reload
+
+" git status flags only on save and buffer open - for speed
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 " show the current mode
 set showmode

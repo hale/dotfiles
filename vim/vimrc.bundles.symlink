@@ -3,6 +3,7 @@ if &compatible
 end
 call plug#begin('~/.vim/plugged')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
 Plug 'benmills/vimux'                  " vim + tmux
 Plug 'chriskempson/base16-vim'

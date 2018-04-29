@@ -1,201 +1,270 @@
-ack
-acpica
-ant
-apple-gcc42
-asciidoc
-asciiquarium
-autoconf
-automake
-blitz
-boost
-cabextract
-cairo
-cctools
-cloc
-cloog
-cmake
-codeclimate
-coreutils
-cowsay
-cscope
-ctags
-curl
-curl-ca-bundle
-despotify
-dirmngr
-docbook
-docbook-xsl
-dos2unix
-dotwrp
-doxygen
-ecj
-eigen
-encfs
-encfsmacosxfuse
-enscript
-faac
-ffmpeg
-fftw
-fltk
-fontconfig
-fortune
-freetype
-freexl
-gcc
-gd
-gdal
-gdbm
-geos
-gettext
-ghc
-giflib
-gist
-git
-git-extras
-glew
-glib
-glm
-glpk
-gmp
-gnu-getopt
-gnu-sed
-gnuplot
-go
-gobject-introspection
-graphicsmagick
-graphviz
-grc
-gsl
-harfbuzz
-haskell-platform
-hdf5
-heroku
-heroku-toolbelt
-htop-osx
-hugo
-icu4c
-iftop
-ilmbase
-imagemagick
-isl
-jasper
-jbig2dec
-jpeg
-jsl
-json-c
-lame
-lftp
-libao
-libassuan
-libevent
-libexif
-libffi
-libgcrypt
-libgeotiff
-libgpg-error
-libgphoto2
-libicns
-libksba
-liblwgeom
-libmagic
-libmpc
-libogg
-libpng
-libspatialite
-libssh
-libtiff
-libtool
-libusb
-libusb-compat
-libvo-aacenc
-libvorbis
-libxml2
-libyaml
-links
-little-cms
-little-cms2
-lua
-luajit
-luarocks
-lzlib
-macvim
-maven
-md5sha1sum
-memcached
-mpfr
-mpg123
-msgpack
-multimarkdown
-ngrok2
-nmap
-node
-opencv
-openexr
-openssl
-optipng
-ossp-uuid
-p7zip
-pandoc
-pango
-parallel
-parity
-pcre
-pdftk
-phantomjs
-pidof
-pinentry
-pixman
-pkg-config
-postgresql
-proj
-pth
-qhull
-qrupdate
-qt
-r
-rbenv
-readline
-redis
-rlog
-rsync
-ruby-build
-s3cmd
-sane-backends
-sbt
-scons
-sdl
-sdl2
-sdl2_image
-sdl_image
-siege
-sl
-sleepwatcher
-sloccount
-spark
-sqlite
-ssh-copy-id
-suite-sparse
-swig
-szip
-tbb
-texi2html
-texinfo
-the_silver_searcher
-tmate
-tmux
-todo-txt
-trash
-tree
-v8
-valgrind
-veclibfort
-wakeonlan
-watch
-webp
-wget
-x264
-xmlto
-xvid
-xz
-yasm
-zsh
+# tap repositories and their packages
+tap caskroom/cask
+tap caskroom/fonts
+tap d12frosted/emacs-plus
+tap heroku/brew
+tap homebrew/bundle
+tap homebrew/core
+tap homebrew/services
+tap joshuaclayton/formulae
+tap puma/puma
+tap rcmdnk/file
+
+# Other commands
+
+brew ack
+brew acpica
+brew ant
+brew apple-gcc42
+brew asciidoc
+brew asciiquarium
+brew autoconf
+brew automake
+brew blitz
+brew boost
+brew brew-file
+brew cabal-install
+brew cabextract
+brew cairo
+brew cctools
+brew chromedriver
+brew cloc
+brew clojure
+brew cloog
+brew cmake
+brew codeclimate
+brew coreutils
+brew cowsay
+brew cscope
+brew ctags
+brew curl
+brew curl-ca-bundle
+brew despotify
+brew diff-so-fancy
+brew dirmngr
+brew dnstop
+brew docbook
+brew docbook-xsl
+brew dos2unix
+brew dotwrp
+brew doxygen
+brew drip
+brew ecj
+brew eigen
+brew emacs-plus
+brew encfs
+brew encfsmacosxfuse
+brew enscript
+brew faac
+brew ffmpeg
+brew fftw
+brew fltk
+brew fontconfig
+brew fortune
+brew freetype
+brew freexl
+brew fribidi
+brew gcc
+brew gd
+brew gdal
+brew gdbm
+brew gdk-pixbuf
+brew geos
+brew gettext
+brew ghc
+brew ghc
+brew giflib
+brew gist
+brew git
+brew git-extras
+brew glew
+brew glib
+brew glm
+brew glpk
+brew gmp
+brew gmp
+brew gnu-getopt
+brew gnu-sed
+brew gnuplot
+brew gnutls
+brew go
+brew gobject-introspection
+brew graphicsmagick
+brew graphite2
+brew graphviz
+brew grc
+brew grc
+brew gsl
+brew harfbuzz
+brew harfbuzz
+brew haskell-platform
+brew hdf5
+brew heroku
+brew heroku-node
+brew heroku-toolbelt
+brew htop
+brew htop-osx
+brew hugo
+brew icu4c
+brew icu4c
+brew iftop
+brew ilmbase
+brew imagemagick
+brew imagemagick@6
+brew isl
+brew jasper
+brew jbig2dec
+brew jp2a
+brew jpeg
+brew jq
+brew jsl
+brew json-c
+brew lame
+brew leiningen
+brew lftp
+brew libao
+brew libassuan
+brew libcroco
+brew libevent
+brew libexif
+brew libffi
+brew libffi
+brew libgcrypt
+brew libgeotiff
+brew libgit2
+brew libgpg-error
+brew libgphoto2
+brew libicns
+brew libidn2
+brew libksba
+brew liblwgeom
+brew libmagic
+brew libmpc
+brew libogg
+brew libpng
+brew libpng
+brew libpq
+brew librsvg
+brew libspatialite
+brew libssh
+brew libssh2
+brew libtasn1
+brew libtiff
+brew libtool
+brew libunistring
+brew libusb
+brew libusb-compat
+brew libvo-aacenc
+brew libvorbis
+brew libxml2
+brew libyaml
+brew links
+brew little-cms
+brew little-cms2
+brew lua
+brew luajit
+brew luarocks
+brew lzlib
+brew macvim
+brew maven
+brew md5sha1sum
+brew memcached
+brew mpfr
+brew mpg123
+brew msgpack
+brew multimarkdown
+brew ncurses
+brew nettle
+brew ngrok2
+brew nmap
+brew node
+brew oniguruma
+brew opencv
+brew openexr
+brew openssl
+brew openssl@1.1
+brew optipng
+brew ossp-uuid
+brew p11-kit
+brew p7zip
+brew pandoc
+brew pango
+brew parallel
+brew parity
+brew pcre
+brew pcre
+brew pdftk
+brew phantomjs
+brew pidof
+brew pinentry
+brew pixman
+brew pkg-config
+brew postgresql
+brew proj
+brew pth
+brew puma-dev
+brew python
+brew python3
+brew python@2
+brew qhull
+brew qrupdate
+brew qt
+brew r
+brew rbenv
+brew readline
+brew reattach-to-user-namespace
+brew redis
+brew ripgrep
+brew rlog
+brew rlwrap
+brew roundup
+brew rsync
+brew rsync
+brew ruby-build
+brew rustup-init
+brew s3cmd
+brew sane-backends
+brew sbt
+brew scons
+brew sdl
+brew sdl2
+brew sdl2_image
+brew sdl_image
+brew siege
+brew sl
+brew sleepwatcher
+brew sloccount
+brew spaceman-diff
+brew spark
+brew speedtest-cli
+brew sqlite
+brew ssh-copy-id
+brew suite-sparse
+brew swig
+brew szip
+brew tbb
+brew texi2html
+brew texinfo
+brew the_silver_searcher
+brew tmate
+brew tmux
+brew todo-txt
+brew trash
+brew tree
+brew unrar
+brew unused
+brew v8
+brew valgrind
+brew veclibfort
+brew wakeonlan
+brew watch
+brew webp
+brew wget
+brew x264
+brew xmlto
+brew xvid
+brew xz
+brew yarn
+brew yasm
+brew youtube-dl
+brew zsh
