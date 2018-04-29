@@ -1,17 +1,7 @@
+
 # tap repositories and their packages
-tap caskroom/cask
-tap caskroom/fonts
-tap d12frosted/emacs-plus
-tap heroku/brew
-tap homebrew/bundle
+
 tap homebrew/core
-tap homebrew/services
-tap joshuaclayton/formulae
-tap puma/puma
-tap rcmdnk/file
-
-# Other commands
-
 brew ack
 brew acpica
 brew ant
@@ -22,38 +12,30 @@ brew autoconf
 brew automake
 brew blitz
 brew boost
-brew brew-file
 brew cabal-install
 brew cabextract
 brew cairo
 brew cctools
-brew chromedriver
 brew cloc
 brew clojure
 brew cloog
 brew cmake
-brew codeclimate
 brew coreutils
 brew cowsay
 brew cscope
 brew ctags
 brew curl
-brew curl-ca-bundle
-brew despotify
 brew diff-so-fancy
 brew dirmngr
 brew dnstop
 brew docbook
 brew docbook-xsl
 brew dos2unix
-brew dotwrp
 brew doxygen
 brew drip
 brew ecj
 brew eigen
-brew emacs-plus
 brew encfs
-brew encfsmacosxfuse
 brew enscript
 brew faac
 brew ffmpeg
@@ -72,7 +54,6 @@ brew gdk-pixbuf
 brew geos
 brew gettext
 brew ghc
-brew ghc
 brew giflib
 brew gist
 brew git
@@ -81,7 +62,6 @@ brew glew
 brew glib
 brew glm
 brew glpk
-brew gmp
 brew gmp
 brew gnu-getopt
 brew gnu-sed
@@ -93,31 +73,22 @@ brew graphicsmagick
 brew graphite2
 brew graphviz
 brew grc
-brew grc
 brew gsl
 brew harfbuzz
-brew harfbuzz
-brew haskell-platform
 brew hdf5
 brew heroku
-brew heroku-node
-brew heroku-toolbelt
 brew htop
-brew htop-osx
 brew hugo
-brew icu4c
 brew icu4c
 brew iftop
 brew ilmbase
 brew imagemagick
-brew imagemagick@6
 brew isl
 brew jasper
 brew jbig2dec
 brew jp2a
 brew jpeg
 brew jq
-brew jsl
 brew json-c
 brew lame
 brew leiningen
@@ -127,7 +98,6 @@ brew libassuan
 brew libcroco
 brew libevent
 brew libexif
-brew libffi
 brew libffi
 brew libgcrypt
 brew libgeotiff
@@ -141,7 +111,6 @@ brew liblwgeom
 brew libmagic
 brew libmpc
 brew libogg
-brew libpng
 brew libpng
 brew libpq
 brew librsvg
@@ -163,9 +132,8 @@ brew little-cms
 brew little-cms2
 brew lua
 brew luajit
-brew luarocks
 brew lzlib
-brew macvim
+brew macvim --with-override-system-vim
 brew maven
 brew md5sha1sum
 brew memcached
@@ -175,14 +143,12 @@ brew msgpack
 brew multimarkdown
 brew ncurses
 brew nettle
-brew ngrok2
 brew nmap
 brew node
 brew oniguruma
 brew opencv
 brew openexr
 brew openssl
-brew openssl@1.1
 brew optipng
 brew ossp-uuid
 brew p11-kit
@@ -190,10 +156,7 @@ brew p7zip
 brew pandoc
 brew pango
 brew parallel
-brew parity
 brew pcre
-brew pcre
-brew pdftk
 brew phantomjs
 brew pidof
 brew pinentry
@@ -202,10 +165,6 @@ brew pkg-config
 brew postgresql
 brew proj
 brew pth
-brew puma-dev
-brew python
-brew python3
-brew python@2
 brew qhull
 brew qrupdate
 brew qt
@@ -218,7 +177,6 @@ brew ripgrep
 brew rlog
 brew rlwrap
 brew roundup
-brew rsync
 brew rsync
 brew ruby-build
 brew rustup-init
@@ -252,7 +210,6 @@ brew todo-txt
 brew trash
 brew tree
 brew unrar
-brew unused
 brew v8
 brew valgrind
 brew veclibfort
@@ -268,3 +225,34 @@ brew yarn
 brew yasm
 brew youtube-dl
 brew zsh
+
+tap homebrew/bundle
+
+tap homebrew/services
+
+tap caskroom/cask
+
+tap caskroom/fonts
+
+tap d12frosted/emacs-plus
+brew emacs-plus
+
+tap heroku/brew
+brew heroku-node
+
+tap joshuaclayton/formulae
+brew unused
+
+tap puma/puma
+brew puma-dev
+
+tap rcmdnk/file
+brew brew-file
+
+# Other Homebrew packages
+brew caskroom/cask/chromedriver
+brew caskroom/cask/ngrok
+brew codeclimate
+brew heroku-toolbelt
+brew parity
+brew pdftk
