@@ -251,8 +251,8 @@ brew brew-file
 
 # Other Homebrew packages
 brew caskroom/cask/chromedriver
+brew caskroom/cask/java
 brew caskroom/cask/ngrok
 brew codeclimate
-brew heroku-toolbelt
 brew parity
 brew pdftk
