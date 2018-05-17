@@ -69,6 +69,7 @@ brew gnuplot
 brew gnutls
 brew go
 brew gobject-introspection
+brew gource
 brew graphicsmagick
 brew graphite2
 brew graphviz
