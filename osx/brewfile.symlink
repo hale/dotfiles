@@ -33,7 +33,6 @@ brew docbook-xsl
 brew dos2unix
 brew doxygen
 brew drip
-brew ecj
 brew eigen
 brew encfs
 brew enscript
@@ -146,6 +145,7 @@ brew ncurses
 brew nettle
 brew nmap
 brew node
+brew numpy
 brew oniguruma
 brew opencv
 brew openexr
@@ -166,6 +166,8 @@ brew pkg-config
 brew postgresql
 brew proj
 brew pth
+brew python
+brew python@2
 brew qhull
 brew qrupdate
 brew qt
@@ -202,6 +204,7 @@ brew suite-sparse
 brew swig
 brew szip
 brew tbb
+brew testssl
 brew texi2html
 brew texinfo
 brew the_silver_searcher
@@ -255,5 +258,6 @@ brew caskroom/cask/chromedriver
 brew caskroom/cask/java
 brew caskroom/cask/ngrok
 brew codeclimate
+brew ecj
 brew parity
 brew pdftk
