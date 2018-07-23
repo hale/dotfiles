@@ -127,3 +127,5 @@ export PATH="/usr/local/bin:$PATH"
 
 export PATH=".git/safe/../../node_modules/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
+
+[ -s "/Users/philiphale/.jabba/jabba.sh" ] && source "/Users/philiphale/.jabba/jabba.sh"

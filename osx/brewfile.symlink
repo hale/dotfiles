@@ -238,6 +238,8 @@ tap caskroom/cask
 
 tap caskroom/fonts
 
+tap caskroom/versions
+
 tap d12frosted/emacs-plus
 brew emacs-plus
 
