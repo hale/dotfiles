@@ -27,6 +27,7 @@ brew ctags
 brew curl
 brew diff-so-fancy
 brew dirmngr
+brew dnsmasq
 brew dnstop
 brew docbook
 brew docbook-xsl

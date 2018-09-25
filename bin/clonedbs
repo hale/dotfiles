@@ -40,7 +40,8 @@ when 1
   db = $stdin.gets.chomp
   app = ARGV[0]
   clone(app)
-  `rake db:drop db:create && pg_restore --clean --no-acl --no-owner -h localhost -j 12 -d #{db} ../db/#{app}.dump`
+
+  `DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop db:create && pg_restore --clean --no-acl --no-owner -h localhost -j 12 -d #{db} ../db/#{app}.dump`
 else
   ARGV.each(&method(:clone))
 end
