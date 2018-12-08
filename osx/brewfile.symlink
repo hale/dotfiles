@@ -26,7 +26,6 @@ brew cscope
 brew ctags
 brew curl
 brew diff-so-fancy
-brew dirmngr
 brew dnsmasq
 brew dnstop
 brew docbook
@@ -48,7 +47,6 @@ brew freexl
 brew fribidi
 brew gcc
 brew gd
-brew gdal
 brew gdbm
 brew gdk-pixbuf
 brew geos
@@ -159,7 +157,6 @@ brew pandoc
 brew pango
 brew parallel
 brew pcre
-brew phantomjs
 brew pidof
 brew pinentry
 brew pixman
@@ -226,7 +223,7 @@ brew x264
 brew xmlto
 brew xvid
 brew xz
-brew yarn
+brew yarn --without-node
 brew yasm
 brew youtube-dl
 brew zsh
@@ -242,7 +239,6 @@ tap caskroom/fonts
 tap caskroom/versions
 
 tap d12frosted/emacs-plus
-brew emacs-plus
 
 tap heroku/brew
 brew heroku-node
@@ -253,6 +249,9 @@ brew unused
 tap puma/puma
 brew puma-dev
 
+tap railwaycat/emacsmacport
+brew emacs-mac --with-modern-icon --with-natural-title-bar
+
 tap rcmdnk/file
 brew brew-file
 
@@ -261,6 +260,8 @@ brew caskroom/cask/chromedriver
 brew caskroom/cask/java
 brew caskroom/cask/ngrok
 brew codeclimate
+brew dirmngr
 brew ecj
 brew parity
 brew pdftk
+brew phantomjs
