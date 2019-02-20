@@ -1,9 +1,10 @@
 export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export TERM=gnome-256color
 
 DISABLE_AUTO_TITLE="true"
 
-export HOMEBREW_BREWFILE=~/.brewfile
+export HOMEBREW_BREWFILE="$HOME/.brewfile"
 
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
@@ -47,11 +48,10 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # PATH system binaries
-export HOMEBREW_BREWFILE="$HOME/.brewfile"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="$PATH:/anaconda/bin"
 export PATH="$PATH:/opt/pdflabs/pdftk/bin"
+export PATH="/usr/local/anaconda3/bin:$PATH"
 
 ulimit -n 2048
 
@@ -123,7 +123,6 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
-export PATH="/usr/local/bin:$PATH"
 
 export PATH=".git/safe/../../node_modules/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
