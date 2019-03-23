@@ -135,7 +135,6 @@ brew luajit
 brew lzlib
 brew macvim --with-override-system-vim
 brew maven
-brew md5sha1sum
 brew memcached
 brew mpfr
 brew mpg123
@@ -194,7 +193,6 @@ brew sdl_image
 brew siege
 brew sl
 brew sleepwatcher
-brew sloccount
 brew snappy
 brew spaceman-diff
 brew spark
@@ -252,6 +250,8 @@ brew heroku-node
 
 tap joshuaclayton/formulae
 brew unused
+
+tap koekeishiya/formulae
 
 tap puma/puma
 brew puma-dev
