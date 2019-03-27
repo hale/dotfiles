@@ -36,13 +36,7 @@ islinux() {
 
 export GOPATH="$HOME/go"
 
-ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME=""
-
 DEFAULT_USER="$(whoami)"
-plugins=(jsontools randquote sudo tmuxinator fedora rake-fast)
-source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -76,9 +70,6 @@ for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
 encrypt() { gpg -ao $1.asc -esr philip@pghale.com $1 }
 
-# added by travis gem
-[ -f /Users/philiphale/.travis/travis.sh ] && source /Users/philiphale/.travis/travis.sh
-
 # gpg-agent config and setup. Run this before git etc.
 gpg-keychain() {
   eval $(gpg-agent --daemon --allow-preset-passphrase)
@@ -98,11 +89,6 @@ statc() {
 timestamp() {
   date "+%Y-%m-%dT%H:%M:%S"
 }
-
-export AUDIODEV=/dev/snd/by-id/usb-BLUE_MICROPHONES_BLUE_NESSIE_USB_MIC_20130410-00
-
-# added by travis gem
-[ -f /home/phale/.travis/travis.sh ] && source /home/phale/.travis/travis.sh
 
 # set git template dir
 export GIT_TEMPLATE_DIR=~/.dotfiles/git/git_template
@@ -127,6 +113,7 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export PATH=".git/safe/../../node_modules/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
 
-[ -s "/Users/philiphale/.jabba/jabba.sh" ] && source "/Users/philiphale/.jabba/jabba.sh"
-
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+

@@ -14,7 +14,8 @@ fi
 brew file install
 
 # * Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# TODO: replace with install prezto
 
 # * Install Postgres.app
 # * Install latest ruby
