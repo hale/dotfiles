@@ -278,3 +278,5 @@ brew phantomjs
 
 # Other Cask applications
 cask appcleaner
+cask font-iosevka
+cask font-source-code-pro-for-powerline
