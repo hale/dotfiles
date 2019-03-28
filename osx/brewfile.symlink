@@ -237,6 +237,7 @@ tap homebrew/services
 
 tap caskroom/cask
 cask anaconda
+cask virtualbox
 
 tap caskroom/fonts
 
