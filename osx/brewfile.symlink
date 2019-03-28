@@ -253,6 +253,8 @@ tap joshuaclayton/formulae
 brew unused
 
 tap koekeishiya/formulae
+brew chunkwm
+brew skhd
 
 tap puma/puma
 brew puma-dev
