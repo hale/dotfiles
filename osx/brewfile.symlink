@@ -236,7 +236,7 @@ tap homebrew/bundle
 tap homebrew/services
 
 tap caskroom/cask
-cask anaconda
+
 cask virtualbox
 
 tap caskroom/fonts
@@ -282,3 +282,5 @@ brew phantomjs
 cask appcleaner
 cask font-iosevka
 cask font-source-code-pro-for-powerline
+cask alacritty
+cask anaconda
