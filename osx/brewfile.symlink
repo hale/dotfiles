@@ -5,12 +5,13 @@ tap homebrew/core
 brew ack
 brew acpica
 brew adr-tools
-brew ant
+brew aria2
 brew asciidoc
 brew asciiquarium
 brew atomicparsley
 brew autoconf
 brew automake
+brew awscli
 brew blitz
 brew boost
 brew cabal-install
@@ -39,6 +40,7 @@ brew enscript
 brew faac
 brew ffmpeg
 brew fftw
+brew flac
 brew fltk
 brew fontconfig
 brew fortune
@@ -51,6 +53,7 @@ brew gdbm
 brew gdk-pixbuf
 brew geos
 brew get_iplayer
+brew getdns
 brew gettext
 brew ghc
 brew giflib
@@ -68,15 +71,18 @@ brew gnuplot
 brew gnutls
 brew go
 brew gobject-introspection
-brew gource
+brew gource -s
+brew gradle
 brew graphicsmagick
 brew graphite2
 brew graphviz
 brew grc
 brew gsl
+brew gts
 brew harfbuzz
 brew hdf5
 brew htop
+brew httrack
 brew hugo
 brew icu4c
 brew iftop
@@ -95,6 +101,7 @@ brew lftp
 brew libao
 brew libassuan
 brew libcroco
+brew libebml
 brew libevent
 brew libexif
 brew libffi
@@ -108,6 +115,7 @@ brew libidn2
 brew libksba
 brew liblwgeom
 brew libmagic
+brew libmatroska
 brew libmpc
 brew libogg
 brew libpng
@@ -126,6 +134,7 @@ brew libvo-aacenc
 brew libvorbis
 brew libvpx
 brew libxml2
+brew libxslt
 brew libyaml
 brew links
 brew little-cms
@@ -133,14 +142,17 @@ brew little-cms2
 brew lua
 brew luajit
 brew lzlib
-brew macvim --with-override-system-vim
+brew macvim
 brew maven
 brew memcached
+brew mkvtoolnix
 brew mpfr
 brew mpg123
 brew msgpack
 brew multimarkdown
+brew n
 brew ncurses
+brew netpbm
 brew nettle
 brew nmap
 brew node
@@ -148,7 +160,8 @@ brew numpy
 brew oniguruma
 brew opencv
 brew openexr
-brew openssl
+brew openjdk
+brew openssl@1.1
 brew optipng
 brew opus
 brew ossp-uuid
@@ -166,12 +179,14 @@ brew postgresql
 brew proj
 brew pth
 brew python
-brew python@2
+brew python@3.8
+brew qcachegrind
 brew qhull
 brew qrupdate
 brew qt
 brew r
 brew rbenv
+brew re2
 brew readline
 brew reattach-to-user-namespace
 brew redis
@@ -199,10 +214,12 @@ brew spark
 brew speedtest-cli
 brew sqlite
 brew ssh-copy-id
+brew stubby
 brew suite-sparse
 brew swig
 brew szip
 brew tbb
+brew terraform
 brew testssl
 brew texi2html
 brew texinfo
@@ -213,9 +230,9 @@ brew tmux
 brew todo-txt
 brew trash
 brew tree
+brew unbound
 brew unrar
 brew v8
-brew valgrind
 brew veclibfort
 brew wakeonlan
 brew watch
@@ -226,7 +243,7 @@ brew x265
 brew xmlto
 brew xvid
 brew xz
-brew yarn --without-node
+brew yarn
 brew yasm
 brew youtube-dl
 brew zsh
@@ -235,15 +252,8 @@ tap homebrew/bundle
 
 tap homebrew/services
 
-tap caskroom/cask
-
-cask virtualbox
-
-tap caskroom/fonts
-
-tap caskroom/versions
-
-tap d12frosted/emacs-plus
+tap fossas/tap
+brew fossa
 
 tap heroku/brew
 brew heroku
@@ -252,35 +262,37 @@ brew heroku-node
 tap joshuaclayton/formulae
 brew unused
 
-tap koekeishiya/formulae
-brew chunkwm
-brew skhd
-
 tap puma/puma
 brew puma-dev
-
-tap railwaycat/emacsmacport
-brew emacs-mac --with-modern-icon --with-natural-title-bar
 
 tap rcmdnk/file
 brew brew-file
 
+tap thecasualcoder/stable
+brew csvdiff
+
 # Other Homebrew packages
-brew apple-gcc42
 brew caskroom/cask/chromedriver
 brew caskroom/cask/java
 brew caskroom/cask/ngrok
-brew cctools
-brew codeclimate
-brew dirmngr
-brew ecj
-brew parity
-brew pdftk
-brew phantomjs
+brew openssl
+brew python@2
 
 # Other Cask applications
-cask appcleaner
-cask font-iosevka
-cask font-source-code-pro-for-powerline
+cask adoptopenjdk8
 cask alacritty
 cask anaconda
+cask appcleaner
+cask docker
+cask duplicacy
+cask font-iosevka
+cask font-source-code-pro-for-powerline
+cask handbrake
+cask makemkv
+cask mediainfo
+cask ngrok
+cask phantomjs
+cask qgis
+cask retinizer
+cask tor-browser
+cask virtualbox
