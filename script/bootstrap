@@ -2,16 +2,14 @@
 #
 # bootstrap installs things.
 
-# Install homebrew + brew file, supporting install from ~/.brewfile
 set -e
 
 if [$(uname -s) == "Darwin"] 
 then
-  curl -fsSL https://raw.github.com/rcmdnk/homebrew-file/install/install.sh |sh
+  # * Install homebrew packages
+  brew bundle
 fi
 
-# * Install homebrew packages
-brew file install
 
 # * Install oh-my-zsh
 # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -35,4 +33,4 @@ rake install
 git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell
 
 # Install custom zsh theme
-ln -s ~/.dotfiles/zsh/agnoster-hale.zsh-theme ~/.oh-my-zsh/themes/agnoster-hale.zsh-theme
+#ln -s ~/.dotfiles/zsh/agnoster-hale.zsh-theme ~/.oh-my-zsh/themes/agnoster-hale.zsh-theme

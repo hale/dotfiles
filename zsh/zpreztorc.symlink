@@ -1,2 +1,2 @@
-zstyle ':prezto:load' pmodule 'environment' 'terminal' 'history' 'history-substring-search' 'autosuggestions'
+zstyle ':prezto:load' pmodule 'environment' 'terminal' 'syntax-highlighting' 'history' 'history-substring-search' 'autosuggestions' 'tmux' 'fasd'
 zstyle ':prezto:module:autosuggestions' color 'yes'

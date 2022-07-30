@@ -149,8 +149,8 @@ au BufNewFile,BufRead *.jess set filetype=lisp
 
 au BufNewFile,BufRead *.md set filetype=markdown
 
-let g:ale_linters = {'javascript': ['eslint', 'flow']}
-let g:ale_lint_on_text_changed = "never"
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_set_highlights = 0
 
 " toggle paste mode
 nmap <leader>p :set paste!<CR>

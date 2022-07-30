@@ -9,6 +9,7 @@ Plug 'benmills/vimux'                  " vim + tmux
 Plug 'danielwe/base16-vim'             " TODO: use upstream after this is merged: https://github.com/chriskempson/base16-vim/pull/198
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
@@ -34,6 +35,6 @@ Plug 'vim-scripts/restore_view.vim'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'                        " async syntax linter
 Plug 'godlygeek/tabular'
-Plug '~/.fzf'
+Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
 
 call plug#end()

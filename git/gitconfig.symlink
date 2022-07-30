@@ -44,3 +44,7 @@
   gpgsign = true
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
