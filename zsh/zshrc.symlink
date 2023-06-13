@@ -1,5 +1,8 @@
+# FIXME: Something is setting RUBYOPT=rubygems, which causes failures ('ubygems not found')
+unset RUBYOPT
+
 export PATH="$HOME/.dotfiles/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 export DISABLE_AUTO_TITLE="true"
 
@@ -14,10 +17,6 @@ fi
 
 # wait 10ms instead of default .4s for key sequences
 export KEYTIMEOUT=1
-
-# Base16 Shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 ismac() {
   if [[ `uname -s` == "Darwin" ]]; then
@@ -37,6 +36,7 @@ islinux() {
 
 DEFAULT_USER="$(whoami)"
 
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -49,8 +49,8 @@ export PATH="$PATH:/opt/pdflabs/pdftk/bin"
 ulimit -n 2048
 
 
-export PATH="/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+#export PATH="/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+#export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -95,12 +95,6 @@ export GIT_TEMPLATE_DIR=~/.dotfiles/git/git_template
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# moo
-command_not_found_handler() {
-  cowsay -f small "who is '$1'?"
-  return 0;
-}
-
 alias sshimac="ssh philiphale@1.tcp.ngrok.io -p 29247"
 export BUNDLE_JOBS=$(sysctl -n hw.ncpu)
 
@@ -122,3 +116,11 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export GREN_GITHUB_TOKEN="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"
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="~/Library/Python/3.9/bin:$PATH"
+
+# Base16 Shell
+BASE16_SHELL_PATH="$HOME/.config/base16-shell"
+[ -n "$PS1" ] && \
+  [ -s "$BASE16_SHELL_PATH/profile_helper.sh" ] && \
+    source "$BASE16_SHELL_PATH/profile_helper.sh"
+base16_default-dark

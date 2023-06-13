@@ -1,4 +1,0 @@
-# configuration options for POW
-# http://pow.cx/docs/configuration.html
-export POW_WORKERS=3
-export POW_TIMEOUT=9000

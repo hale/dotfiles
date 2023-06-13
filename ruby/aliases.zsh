@@ -32,11 +32,7 @@ alias be='bundle exec'
 #}
 
 # rubinius
-export RUBYOPT=rubygems
 
 binstub-setup() {
   mkdir ./.git/safe
 }
-
-alias isi="invoker start invoker.ini"
-alias dj="RAILS_ENV=development bin/delayed_job"
