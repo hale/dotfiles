@@ -36,5 +36,6 @@ Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'                        " async syntax linter
 Plug 'godlygeek/tabular'
 Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
