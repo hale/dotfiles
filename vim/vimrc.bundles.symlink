@@ -8,6 +8,7 @@ Plug 'airblade/vim-rooter'             " working directly always project root
 Plug 'benmills/vimux'                  " vim + tmux
 Plug 'danielwe/base16-vim'             " TODO: use upstream after this is merged: https://github.com/chriskempson/base16-vim/pull/198
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/goyo.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -33,7 +34,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'godlygeek/tabular'
-Plug 'w0rp/ale'                        " async syntax linter
+Plug 'dense-analysis/ale'
 Plug 'godlygeek/tabular'
 Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
 Plug 'hashivim/vim-terraform'

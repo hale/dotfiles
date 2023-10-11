@@ -13,8 +13,11 @@ endif
 filetype plugin indent on
 
 " appearance
-let base16colorspace=256
-colorscheme base16-default-dark
+if exists('$BASE16_THEME')
+      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+    let base16colorspace=256
+    colorscheme base16-$BASE16_THEME
+endif
 
 filetype plugin indent on
 syntax on
@@ -149,10 +152,10 @@ au BufNewFile,BufRead *.jess set filetype=lisp
 au BufNewFile,BufRead *.md set filetype=markdown
 
 
-let g:ale_javascript_eslint_use_global = 1
-"let g:ale_javascript_eslint_executable  'eslint_d'
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['standardrb']}
+let g:ale_fixers = {'javascript': ['eslint'], 'ruby': ['standardrb']}
+
 let g:ale_fix_on_save = 1
 let g:ale_set_highlights = 0
 

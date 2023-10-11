@@ -70,12 +70,6 @@ for config_file (~/.dotfiles/**/*.zsh) source $config_file
 
 encrypt() { gpg -ao $1.asc -esr philip@pghale.com $1 }
 
-# gpg-agent config and setup. Run this before git etc.
-gpg-keychain() {
-  eval $(gpg-agent --daemon --allow-preset-passphrase)
-  KEYGRIP=$(gpg --fingerprint --fingerprint philip@pghale.com | grep fingerprint | tail -1 | cut -d= -f2 | sed -e 's/ //g')
-  /usr/local/opt/gpg-agent/libexec/gpg-preset-passphrase --preset $KEYGRIP
-}
 
 PERL_MB_OPT="--install_base \"/Users/philiphale/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/philiphale/perl5"; export PERL_MM_OPT;
@@ -119,10 +113,13 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="~/Library/Python/3.9/bin:$PATH"
 
 # Base16 Shell
-BASE16_SHELL_PATH="$HOME/.config/base16-shell"
+BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
-  [ -s "$BASE16_SHELL_PATH/profile_helper.sh" ] && \
-    source "$BASE16_SHELL_PATH/profile_helper.sh"
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        source "$BASE16_SHELL/profile_helper.sh"
 base16_default-dark
+
+export GPG_TTY=$(tty)
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
