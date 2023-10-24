@@ -1,11 +1,9 @@
 #!/bin/sh
 #
 # Prints the machine's external and internal IP address
+set -x
 
-echo 'External IP:'
-curl ipecho.net/plain; echo
-echo
-echo 'Internal IP:'
-ip addr show | grep 'inet' 
+dig -4 +short A myip.opendns.com @resolver1.opendns.com
+ipconfig getifaddr en0
 
 
