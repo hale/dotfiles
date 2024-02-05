@@ -11,26 +11,12 @@ then
 fi
 
 
-# * Install oh-my-zsh
-# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# TODO: replace with install prezto
-
-# * Install Postgres.app
-# * Install latest ruby
-# * gem-defaults
-# * clone Plug.vim
-# * clone tpm (tmux plugin manager)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# * clone fzf (fuzzy file finder)
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+# * Install Prezto for ZSH
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # Create links to *.symlink files in ~/
 rake install
 
-# Install Bas16 Shell
-git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell
-
-# Install custom zsh theme
-#ln -s ~/.dotfiles/zsh/agnoster-hale.zsh-theme ~/.oh-my-zsh/themes/agnoster-hale.zsh-theme
+# Install Base16 Shell
+git clone https://github.com/tinted-theming/base16-shell.git \
+  $HOME/.config/base16-shell
