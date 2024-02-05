@@ -1,0 +1,57 @@
+#!/bin/sh
+
+gource \
+  -s 0.03 \
+  --multi-sampling \
+  --hide bloom \
+  --logo /Users/philiphale/Library/Mobile\ Documents/com~apple~CloudDocs/OpenCounter/oc-avatars/oc-logo.png \
+  --font-colour 000000 \
+  --dir-colour 000000 \
+  --highlight-colour 000000 \
+  --selection-colour 000000 \
+  --user-image-dir /Users/philiphale/Library/Mobile\ Documents/com~apple~CloudDocs/OpenCounter/oc-avatars \
+  --dir-name-depth 2 \
+  -i 0 \
+  --user-scale 2 \
+  --viewport 1920x1080 \
+  --high-dpi \
+  -b eef7f1 \
+  --max-user-speed 400 \
+  -e 0.01 \
+  --font-size 32 \
+  --date-format '%B %d %Y' \
+  --highlight-dirs \
+  --highlight-users \
+  --file-extensions \
+  --filename-colour 000000 \
+  --filename-time 2 \
+  --file-filter public \
+  --file-filter db \
+  --file-filter vendor \
+  --file-filter flow-typed \
+  --file-filter config \
+  --file-filter log \
+  --file-filter doc \
+  --file-filter script \
+  --file-filter .storybook \
+  --file-filter .circleci \
+  --file-filter test \
+  --file-filter spec/fixtures \
+  --file-filter spec/schema_fixtures \
+  --file-filter githooks \
+  --file-filter bin \
+  --path ~/opencounter/opencounter \
+  -o - |
+ffmpeg \
+  -y \
+  -r 60 \
+  -f image2pipe \
+  -vcodec ppm \
+  -i - \
+  -vcodec libx264 \
+  -preset slower \
+  -pix_fmt yuv420p \
+  -crf 20 \
+  -threads 0 \
+  -bf 0 \
+  gource.mp4
