@@ -38,5 +38,6 @@ Plug 'dense-analysis/ale'
 Plug 'godlygeek/tabular'
 Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
 Plug 'hashivim/vim-terraform'
+Plug 'ruanyl/vim-gh-line'              " open current line in GitHub
 
 call plug#end()

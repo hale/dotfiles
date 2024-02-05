@@ -25,3 +25,4 @@ imac() {
 alias retag='ctags -R --languages=ruby --exclude=.git . $(bundle list --paths)'
 
 alias clean-asl='sudo rm -rfv /private/var/log/asl/*.asl'
+alias tf='terraform'
