@@ -8,7 +8,7 @@ export DISABLE_AUTO_TITLE="true"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=12
 
-export HOMEBREW_BREWFILE="$HOME/.brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/.brewfile"
 
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap

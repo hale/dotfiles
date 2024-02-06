@@ -20,3 +20,9 @@ rake install
 # Install Base16 Shell
 git clone https://github.com/tinted-theming/base16-shell.git \
   $HOME/.config/base16-shell
+
+# NEXT STEPS:
+#
+# 1. Open Alacritty
+# 2. Run vim (should auto-install vim-plugged)
+# 3. Import private GPG key
