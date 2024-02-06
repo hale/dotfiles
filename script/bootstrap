@@ -21,8 +21,21 @@ rake install
 git clone https://github.com/tinted-theming/base16-shell.git \
   $HOME/.config/base16-shell
 
+# HACK: install aws-mfa. Replace 3.9 with whatever macos installs
+/usr/bin/pip3 install aws-mfa
+sudo ln -s ~/Library/Python/3.9/bin/aws-mfa /usr/local/bin/aws-mfa
+
 # NEXT STEPS:
 #
 # 1. Open Alacritty
 # 2. Run vim (should auto-install vim-plugged)
 # 3. Import private GPG key
+# 4. Change default web browser to Firefox Developer Edition
+# 5. Remove keyboard shortcut for Ctrl+up and Ctrl+down (mission control - we want tmux pane resize
+# instead)
+# 6. Change keyboard shortcut Caps Lock to Escape (vim)
+# 7. Install ruby (e.g. rbenv install 3.2.2) then rbenv rehash
+# 8. Install bundler (e.g. gem install bundler)
+# 9. Add secrets: bundle config enterprise.contribsys.com KEY:VAL
+# 10. Add long term AWS creds in ~/.aws/credentials
+
