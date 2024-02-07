@@ -25,6 +25,8 @@ git clone https://github.com/tinted-theming/base16-shell.git \
 /usr/bin/pip3 install aws-mfa
 sudo ln -s ~/Library/Python/3.9/bin/aws-mfa /usr/local/bin/aws-mfa
 
+# install dnsmasq
+
 # NEXT STEPS:
 #
 # 1. Open Alacritty
@@ -39,3 +41,25 @@ sudo ln -s ~/Library/Python/3.9/bin/aws-mfa /usr/local/bin/aws-mfa
 # 9. Add secrets: bundle config enterprise.contribsys.com KEY:VAL
 # 10. Add long term AWS creds in ~/.aws/credentials
 
+# LOCAL *.test DNS SETUP
+# ----
+#
+# After dnsmasq is installed (should be in brewfile) then make the following changes:
+#
+#$ cat /etc/resolver/test
+#nameserver 127.0.0.1
+
+#$ cat /etc/resolver/lvh.me
+#nameserver 127.0.0.1
+
+#$ grep -vE '^#|^\s*$' /opt/homebrew/etc/dnsmasq.conf /opt/homebrew/etc/dnsmasq.d/*.conf
+#/opt/homebrew/etc/dnsmasq.conf:domain-needed
+#/opt/homebrew/etc/dnsmasq.conf:bogus-priv
+#/opt/homebrew/etc/dnsmasq.conf:interface=lo0
+#/opt/homebrew/etc/dnsmasq.conf:listen-address=127.0.0.1
+#/opt/homebrew/etc/dnsmasq.conf:no-dhcp-interface=lo0
+#/opt/homebrew/etc/dnsmasq.conf:no-hosts
+#/opt/homebrew/etc/dnsmasq.conf:log-queries
+#/opt/homebrew/etc/dnsmasq.conf:conf-dir=/opt/homebrew/etc/dnsmasq.d
+#/opt/homebrew/etc/dnsmasq.d/lvh.me.conf:address=/lvh.me/127.0.0.1
+#/opt/homebrew/etc/dnsmasq.d/test-tld.conf:address=/test/127.0.0.1
