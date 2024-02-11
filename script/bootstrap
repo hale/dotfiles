@@ -4,24 +4,31 @@
 
 set -e
 
-if [$(uname -s) == "Darwin"] 
+if [[ $(uname) == "Darwin" ]]
 then
-  # * Install homebrew packages
+  if [[ $(command -v brew) == "" ]]; then
+    echo "installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
   brew bundle
 fi
 
 
 # * Install Prezto for ZSH
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+fi
 
 # Create links to *.symlink files in ~/
 rake install
 
 # Install Base16 Shell
-git clone https://github.com/tinted-theming/base16-shell.git \
-  $HOME/.config/base16-shell
+if [ ! -d "${HOME}/.config/base16-shell" ]; then
+  git clone https://github.com/tinted-theming/base16-shell.git $HOME/.config/base16-shell
+fi
 
 # HACK: install aws-mfa. Replace 3.9 with whatever macos installs
+echo "Installing aws-mfa"
 /usr/bin/pip3 install aws-mfa
 sudo ln -s ~/Library/Python/3.9/bin/aws-mfa /usr/local/bin/aws-mfa
 
