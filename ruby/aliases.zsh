@@ -1,10 +1,9 @@
-alias be='bundle exec'
-alias rs='rails s --binding=0.0.0.0'
-alias rc='rails c'
-alias dbm='rake db:migrate'
-alias dbtp='rake db:test:prepare'
-alias dbms='rake db:migrate:status'
-alias b='bundle'
+alias rc='docker compose run console bin/rails c'
+alias dbm='docker compose run console bin/rails db:migrate'
+alias dbtp='docker compose run specs rails db:test:prepare'
+alias dbms='docker compose run specs rails db:migrate:status'
+alias b='docker compose run console bundle'
+alias be='docker compose run console bundle exec'
 
 # reset the database
 dbreset() {
@@ -13,25 +12,6 @@ dbreset() {
     rake db:drop db:create db:schema:load db:test:prepare
   }
 }
-
-#prefix tests with rake, allows globbing.
-tst() {
-  be ruby -I test `bundle show rake`/lib/rake/rake_test_loader.rb test/(unit|functional|integration|acceptence|performance|capybara)/**/*$1*.rb
-}
-
-alias be='bundle exec'
-
-# start running jobs on the named app
-#
-# Usage:
-#
-# heroku-jobs <app-name>
-#
-#heroku-jobs() {
-  #heroku run rake jobs:work --app $1
-#}
-
-# rubinius
 
 binstub-setup() {
   mkdir ./.git/safe
