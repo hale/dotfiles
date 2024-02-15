@@ -33,6 +33,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'skalnik/vim-vroom'               " run current / last spec, send output to tmux pane
 Plug 'spolu/dwm.vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
