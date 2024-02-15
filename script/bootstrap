@@ -32,6 +32,17 @@ echo "Installing aws-mfa"
 /usr/bin/pip3 install aws-mfa
 sudo ln -s ~/Library/Python/3.9/bin/aws-mfa /usr/local/bin/aws-mfa
 
+# install latest ruby
+rbenv install $(rbenv install -l | grep -v - | tail -1)
+
+# install rbenv-ctags to generate tags for stdlib
+mkdir -p ~/.rbenv/plugins
+git clone https://github.com/tpope/rbenv-ctags.git  ~/.rbenv/plugins/rbenv-ctags
+rbenv ctags
+
+# install gem defaults
+../bin/gem-defaults
+
 # install dnsmasq
 
 # NEXT STEPS:
