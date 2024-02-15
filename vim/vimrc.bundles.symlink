@@ -9,20 +9,26 @@ if &compatible
 end
 call plug#begin('~/.vim/plugged')
 
+Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
 Plug 'benmills/vimux'                  " vim + tmux
-Plug 'danielwe/base16-vim'             " TODO: use upstream after this is merged: https://github.com/chriskempson/base16-vim/pull/198
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/goyo.vim'
+Plug 'danielwe/base16-vim'             " TODO: use upstream after this is merged: https://github.com/chriskempson/base16-vim/pull/198
+Plug 'dense-analysis/ale'
+Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'ruanyl/vim-fixmyjs'
+Plug 'ruanyl/vim-gh-line'              " open current line in GitHub
 Plug 'scrooloose/nerdcommenter'
 Plug 'skalnik/vim-vroom'               " run current / last spec, send output to tmux pane
 Plug 'spolu/dwm.vim'
@@ -39,11 +45,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
-Plug 'godlygeek/tabular'
-Plug 'dense-analysis/ale'
-Plug 'godlygeek/tabular'
-Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
-Plug 'hashivim/vim-terraform'
-Plug 'ruanyl/vim-gh-line'              " open current line in GitHub
 
 call plug#end()
