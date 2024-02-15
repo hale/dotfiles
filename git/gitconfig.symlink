@@ -26,7 +26,41 @@
   excludesfile = ~/.gitignore
   editor = vim
   attributesfile = ~/.gitattributes
-  pager=diff-so-fancy | less --tabs=2 -R
+  pager = delta
+[delta]
+  syntax-theme = base16-256
+  navigate = true # use n and N to move between diff sections
+  light = false
+  side-by-side = false
+
+  line-numbers = true
+  file-style = brightwhite box
+  file-decoration-style = none
+  hunk-header-style = omit
+  plus-style = brightgreen black
+  plus-emph-style = black green
+  minus-style = brightred black
+  minus-emph-style = black red
+  line-numbers-minus-style = brightred
+  line-numbers-plus-style = brightgreen
+  line-numbers-left-style = "#3e3e43"
+  line-numbers-right-style = "#3e3e43"
+  line-numbers-zero-style = "#57575f"
+  zero-style = syntax
+  whitespace-error-style = black bold
+  blame-code-style = syntax
+  blame-palette = "#161617" "#1b1b1d" "#2a2a2d" "#3e3e43"
+  merge-conflict-begin-symbol = ~
+  merge-conflict-end-symbol = ~
+  merge-conflict-ours-diff-header-style = yellow bold
+  merge-conflict-ours-diff-header-decoration-style = "#3e3e43" box
+  merge-conflict-theirs-diff-header-style = yellow bold
+  merge-conflict-theirs-diff-header-decoration-style = "#3e3e43" box
+
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
 [apply]
   whitespace = nowarn
 [mergetool]
@@ -42,8 +76,6 @@
   helper = osxkeychain
 [commit]
   gpgsign = true
-[pager]
-  diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 [pull]
 	rebase = true
 [rebase]
@@ -53,3 +85,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[branch]
+	sort = -committerdate
+[maintenance]
+	repo = /Users/philhale/oc/opencounter
+[rerere]
+	enabled = true
+	autoUpdate = true
