@@ -6,6 +6,7 @@ set -e
 
 if [[ $(uname) == "Darwin" ]]
 then
+  xcode-select --install
   if [[ $(command -v brew) == "" ]]; then
     echo "installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -32,8 +33,10 @@ echo "Installing aws-mfa"
 /usr/bin/pip3 install aws-mfa
 sudo ln -s ~/Library/Python/3.9/bin/aws-mfa /usr/local/bin/aws-mfa
 
-# install latest ruby
-rbenv install $(rbenv install -l | grep -v - | tail -1)
+# install latest ruby (assumes rust is in brewfile for YJIT)
+RUBY_VERSION=$(rbenv install -l | grep -v - | tail -1)
+rbenv install $RUBY_VERSION -- --enable-yjit
+rbenv global $RUBY_VERSION
 
 # install rbenv-ctags to generate tags for stdlib
 mkdir -p ~/.rbenv/plugins
