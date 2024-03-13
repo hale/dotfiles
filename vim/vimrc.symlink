@@ -225,6 +225,7 @@ set printdevice=Photosmart_B110_series
 " vroom - run tests easily
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
+let g:vroom_command_prefix='docker compose run specs'
 
 " Run the current file with rspec
 map <leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>

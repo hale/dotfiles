@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
-Plug 'benmills/vimux'                  " vim + tmux
+Plug 'preservim/vimux'                  " vim + tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'danielwe/base16-vim'             " TODO: use upstream after this is merged: https://github.com/chriskempson/base16-vim/pull/198
 Plug 'dense-analysis/ale'
