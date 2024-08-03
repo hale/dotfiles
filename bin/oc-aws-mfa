@@ -1,0 +1,12 @@
+#!/bin/zsh
+set -x
+
+aws-mfa
+
+read AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN < <(cat ~/.aws/credentials | python3 -c "import sys; import configparser; from shlex import join; c = configparser.ConfigParser(); c.read_file(sys.stdin); print(join([c['default'][k] for k in ['aws_access_key_id', 'aws_secret_access_key', 'aws_session_token']]))")
+  cat >! ~/.aws/default-credentials-mfa.vars <<EOF
+# last updated $(date)
+AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+EOF
