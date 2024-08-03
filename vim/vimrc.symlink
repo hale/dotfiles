@@ -276,6 +276,8 @@ nmap <leader>Q :qa!<cr>
 noremap <Leader>j :Fixmyjs<CR>
 let g:fixmyjs_rc_path = '.eslintrc.js'
 
+"let g:silicon['theme'] = 'base16-256'
+
 " initialize directories
 function! InitializeDirectories()
   let parent = $HOME

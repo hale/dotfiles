@@ -30,6 +30,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'ruanyl/vim-gh-line'              " open current line in GitHub
 Plug 'scrooloose/nerdcommenter'
+Plug 'segeljakt/vim-silicon'           " screenshots of code
 Plug 'skalnik/vim-vroom'               " run current / last spec, send output to tmux pane
 Plug 'spolu/dwm.vim'
 Plug 'tmux-plugins/vim-tmux'

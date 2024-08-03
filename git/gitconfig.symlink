@@ -36,7 +36,6 @@
   line-numbers = true
   file-style = brightwhite box
   file-decoration-style = none
-  hunk-header-style = omit
   plus-style = brightgreen black
   plus-emph-style = black green
   minus-style = brightred black
