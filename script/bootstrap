@@ -2,16 +2,26 @@
 #
 # bootstrap installs things.
 
-set -e
+set -ex
+
+if [ ! -d ".dotfiles" ]; then
+  echo "Git clone dotfiles into ~/.dotfiles first"
+  exit 1
+fi
+
+cd ~/.dotfiles
 
 if [[ $(uname) == "Darwin" ]]
 then
-  xcode-select --install
+  if [[ $(xcode-select -p) != "/Library/Developer/CommandLineTools" ]]; then
+    xcode-select --install
+  fi
   if [[ $(command -v brew) == "" ]]; then
     echo "installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
-  brew bundle
+  brew bundle --file ~/.dotfiles/osx/brewfile.symlink
 fi
 
 
@@ -44,7 +54,7 @@ git clone https://github.com/tpope/rbenv-ctags.git  ~/.rbenv/plugins/rbenv-ctags
 rbenv ctags
 
 # install gem defaults
-../bin/gem-defaults
+bin/gem-defaults
 
 # install dnsmasq
 
@@ -53,12 +63,15 @@ rbenv ctags
 # 1. Open Alacritty
 # 2. Run vim (should auto-install vim-plugged)
 # 3. Import private GPG key
-# 4. Change default web browser to Firefox Developer Edition
-# 5. Remove keyboard shortcut for Ctrl+up and Ctrl+down (mission control - we want tmux pane resize
-# instead)
-# 6. Change keyboard shortcut Caps Lock to Escape (vim)
-# 7. Install ruby (e.g. rbenv install 3.2.2) then rbenv rehash
-# 8. Install bundler (e.g. gem install bundler)
+
+# MacOS Settings - unscripted, must apply manually
+# - Change keyboard shortcut Caps Lock to Escape - "Customize Modifier Keys" in sys pref
+# - Change default web browser to Firefox Developer Edition
+# - Remove keyboard shortcut for Ctrl+up and Ctrl+down (mission control - conflicts tmux pane # resize)
+
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+
 # 9. Add secrets: bundle config enterprise.contribsys.com KEY:VAL
 # 10. Add long term AWS creds in ~/.aws/credentials
 
