@@ -3,8 +3,31 @@ set nocompatible
 set shell=/bin/sh
 
 set regexpengine=2 
-set noballooneval
 let g:netrw_nobeval = 1
+
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+if !has('nvim')
+  set noballooneval
+  " removes the small delay between pressing escape and entering normal mode.
+  set esckeys
+
+  let g:ale_javascript_eslint_executable = 'eslint_d'
+  let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['standardrb'], 'python': ['flake8'], 'rust': ['analyzer', 'cargo'] }
+  let g:ale_fixers = {'javascript': ['eslint'], 'ruby': ['standardrb'], 'rust':['rustfmt']}
+
+  let g:ale_rust_cargo_use_clippy = 1
+  let g:ale_rust_cargo_check_tests = 1 
+  let g:ale_rust_cargo_check_examples = 1
+
+  let g:ale_fix_on_save = 1
+  let g:ale_set_highlights = 0
+endif
+
+let g:rustfmt_autosave = 1
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -152,18 +175,10 @@ au BufNewFile,BufRead *.jess set filetype=lisp
 au BufNewFile,BufRead *.md set filetype=markdown
 
 
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['standardrb']}
-let g:ale_fixers = {'javascript': ['eslint'], 'ruby': ['standardrb']}
-
-let g:ale_fix_on_save = 1
-let g:ale_set_highlights = 0
 
 " toggle paste mode
 nmap <leader>p :set paste!<CR>
 
-" removes the small delay between pressing escape and entering normal mode.
-set esckeys
 
 " Creating a split takes you there
 set splitright
@@ -250,7 +265,7 @@ vmap <leader>vs "vy :call VimuxSlime()<CR>
 nmap <leader>vs vip<leader>vs<CR>
 
 
-" override dwm vim shortcuts to remove ctrl+hjkl mappings, which break
+" override dwm vim shortcuts to remove gtrl+hjkl mappings, which break
 " tmux-vim-navigator
 let g:dwm_map_keys=0
 let g:dwm_master_pane_width=90
@@ -272,11 +287,6 @@ nmap <leader>q :wa<cr>:qa<cr>
 
 " quit without saving with leader-Q
 nmap <leader>Q :qa!<cr>
-
-noremap <Leader>j :Fixmyjs<CR>
-let g:fixmyjs_rc_path = '.eslintrc.js'
-
-"let g:silicon['theme'] = 'base16-256'
 
 " initialize directories
 function! InitializeDirectories()

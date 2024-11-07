@@ -9,14 +9,12 @@ if &compatible
 end
 call plug#begin('~/.vim/plugged')
 
-Plug 'Yggdroot/indentLine'             " indentation guide lines (vertical)
+
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'             " working directly always project root
 Plug 'preservim/vimux'                  " vim + tmux
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'danielwe/base16-vim'             " TODO: use upstream after this is merged: https://github.com/chriskempson/base16-vim/pull/198
-Plug 'dense-analysis/ale'
-Plug 'godlygeek/tabular'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'jszakmeister/vim-togglecursor'
@@ -27,7 +25,6 @@ Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'ruanyl/vim-fixmyjs'
 Plug 'ruanyl/vim-gh-line'              " open current line in GitHub
 Plug 'scrooloose/nerdcommenter'
 Plug 'segeljakt/vim-silicon'           " screenshots of code
@@ -47,5 +44,28 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
+Plug 'rust-lang/rust.vim'
+
+if !has('nvim')
+  Plug 'chriskempson/base16-vim'
+  Plug 'dense-analysis/ale'
+endif
+
+if has('nvim')
+  Plug 'bradcush/nvim-base16'
+  Plug 'mrcjkb/rustaceanvim'
+
+  " neovim completion
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
+
+  " For vsnip users.
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+endif
 
 call plug#end()
