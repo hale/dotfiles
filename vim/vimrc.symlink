@@ -234,9 +234,6 @@ let g:tagbar_type_ruby = {
 " .lvimrc security question answers are persisted
 let g:localvimrc_persistent=2
 
-" set home printer
-set printdevice=Photosmart_B110_series
-
 " vroom - run tests easily
 let g:vroom_use_vimux = 1
 let g:vroom_use_binstubs = 1
