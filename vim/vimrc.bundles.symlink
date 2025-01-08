@@ -45,6 +45,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'grafana/vim-alloy'
 
 if !has('nvim')
   Plug 'chriskempson/base16-vim'
