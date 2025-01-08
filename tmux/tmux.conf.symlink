@@ -5,19 +5,13 @@ bind-key ` send-prefix
 
 
 # improve colors
-<<<<<<< HEAD
 set-option -sa terminal-features ',alacritty:RGB'
 set-option -ga terminal-features ",alacritty:usstyle"
 set-option -ga terminal-overrides ',alacritty:Tc'
 set -g default-terminal "alacritty"
-||||||| parent of 11ecfc6 (Support neovim in addition to vim)
-set -g default-terminal "xterm-256color"
-=======
-#set -g default-terminal "xterm-256color"
-set -g  default-terminal "screen-256color"
+
 # needed for proper nvim/tmux/base16 colors
 set -ga terminal-overrides ",xterm-256color:Tc"
->>>>>>> 11ecfc6 (Support neovim in addition to vim)
 
 # load tmux.conf
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
