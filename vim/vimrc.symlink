@@ -265,7 +265,7 @@ nmap <leader>vs vip<leader>vs<CR>
 " override dwm vim shortcuts to remove gtrl+hjkl mappings, which break
 " tmux-vim-navigator
 let g:dwm_map_keys=0
-let g:dwm_master_pane_width=90
+let g:dwm_master_pane_width=120
 nmap <C-N> <Plug>DWMNew
 nmap <C-C> <Plug>DWMClose
 map <leader><leader> :call DWM_Focus()<CR>
