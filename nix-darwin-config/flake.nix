@@ -25,7 +25,7 @@
       # Configure Nix settings
       nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        extra-platforms = [ "x86_64-darwin" "aarch64-darwin" ];
+        extra-platforms = [ "x86_64-darwin" "aarch64-darwin" "x86_64-linux" ];
         trusted-users = [ "root" ];
         extra-substituters = [ "https://cache.nixos.org/" ];
         builders-use-substitutes = true;
@@ -35,6 +35,16 @@
       nix.linux-builder = {
         enable = true;
         ephemeral = true;
+        maxJobs = 4;
+        config = {
+          virtualisation = {
+            darwin-builder = {
+              diskSize = 40 * 1024;  # Default: 20 * 1024
+              memorySize = 8 * 1024; # Default: 3 * 1024
+            };
+            cores = 6;               # Default: 1
+          };
+        };
       };
 
       nix.linux-builder.package = pkgs.darwin.linux-builder;
