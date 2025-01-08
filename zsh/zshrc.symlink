@@ -128,4 +128,9 @@ export RUBY_YJIT_ENABLE=1
 
 export PG_USER=postgres
 
+# Hack to fix tmux slowness with `direnv reload`
+# See: https://github.com/direnv/direnv/issues/106
+if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
+    unset -m "DIRENV_*"
+fi
 eval "$(direnv hook zsh)"
