@@ -3,10 +3,10 @@
   description = "Example Darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -16,17 +16,17 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile
       environment.systemPackages =
-        [ pkgs.vim
+        [
+          pkgs.claude-code
         ];
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
+      nix.enable = true;
 
       # Configure Nix settings
       nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        extra-platforms = [ "x86_64-darwin" "aarch64-darwin" "x86_64-linux" ];
-        trusted-users = [ "root" ];
+        extra-platforms = [ "x86_64-darwin" "x86_64-linux" ];
+        trusted-users = [ "@admin" ];
         extra-substituters = [ "https://cache.nixos.org/" ];
         builders-use-substitutes = true;
       };
@@ -56,6 +56,8 @@
 
       # The platform the configuration will be used on
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      nixpkgs.config.allowUnfree = true;
     };
   in
   {
