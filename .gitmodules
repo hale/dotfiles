@@ -1,6 +1,0 @@
-[submodule "z"]
-	path = z
-	url = https://github.com/rupa/z.git
-[submodule "jekyll-seo-script"]
-	path = jekyll-seo-script
-	url = https://github.com/bhardin/jekyll-seo-script

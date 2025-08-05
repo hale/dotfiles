@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# Installs some default gems that we always want with new Ruby installs.
-gem install bundler kicker gist gem-ctags
-

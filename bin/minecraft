@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-#
-# Launches mincraft form the jar to avoid gatekeeper warnings.
-#
-java -Xmx2048M -Xms512M -cp /Applications/minecraft.jar net.minecraft.LauncherFrame

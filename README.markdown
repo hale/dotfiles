@@ -1,40 +1,73 @@
-# dotfiles
+# Phil's Dotfiles
 
-* Compatible with Fedora 22, OS X El Capitan
-* ZSH config built from oh-my-zsh
-* Vim, tmux, ruby
+A fully nixified macOS configuration using [nix-darwin](https://github.com/LnL7/nix-darwin) and [home-manager](https://github.com/nix-community/home-manager).
 
-## install
+## What's Included
 
-Run this:
+- **Terminal**: Alacritty with base16-default-dark theme
+- **Editor**: Neovim with LSP support for TypeScript, Python, Ruby, and Rust
+- **Shell**: Zsh with Prezto framework and pure prompt
+- **Multiplexer**: Tmux with vim-style navigation
+- **Development Tools**: Git, ripgrep, fzf, jq, htop, bun, and more
+- **Fonts**: Iosevka Nerd Font
+- **macOS Settings**: Fast key repeat, Caps Lock → Escape, and more
 
-```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-script/bootstrap
+## Installation
+
+### Prerequisites
+
+Fresh macOS installation
+
+### Steps
+
+1. **Install Nix** via Determinate Systems installer (with upstream Nix, not their fork):
+   ```bash
+   curl -fsSL https://install.determinate.systems/nix | sh -s -- install
+   ```
+   **Important**: This installs upstream Nix, which is required for nix-darwin to work properly. Do not use Determinate Systems' forked version.
+
+2. **Clone this repository**:
+   ```bash
+   git clone https://github.com/hale/dotfiles.git ~/.dotfiles
+   ```
+
+3. **Run nix-darwin**:
+   ```bash
+   sudo nix run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin-config
+   ```
+
+## Usage
+
+After installation, manage your system with:
+
+```bash
+# Apply configuration changes
+darwin-rebuild switch --flake ~/.dotfiles/nix-darwin-config
+
+# Update flake inputs
+nix flake update --flake ~/.dotfiles/nix-darwin-config
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory.
+## Key Features
 
-## topical
+### Shell Functions
+- `tat` - Smart tmux session management
+- `trash` - Move files to trash instead of deleting
+- `fr` - Fuzzy search command history
+- `fe` - Fuzzy file opener
+- `fco` - Fuzzy git branch checkout
 
-Everything's built around topic areas. If you're adding a new area to your
-forked dotfiles — say, "Java" — you can simply add a `java` directory and put
-files in there. **Anything with an extension of `.zsh` will get automatically
-included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `rake install`.**
+### Aliases
+- Git shortcuts (`g`, `ga`, `gc`, `gp`, etc.)
+- `vim`/`vi` → `nvim`
+- `tm` → `tmux -2`
+- `t` → `tree`
 
-## components
+## Structure
 
-There's a few special files in the hierarchy.
-
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
-  environment.
-- **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
-  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
-  but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `rake install`.
-- **topic/\*.completion.sh**: Any files ending in `completion.sh` get loaded
-  last so that they get loaded after we set up zsh autocomplete functions.
+Everything is managed through `nix-darwin-config/flake.nix`:
+- System packages
+- User packages via home-manager
+- Shell configuration (zsh/prezto)
+- Application configs (alacritty, tmux, neovim, git)
+- macOS system defaults

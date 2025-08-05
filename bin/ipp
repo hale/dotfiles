@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Prints the machine's external and internal IP address
-set -x
-
-dig -4 +short A myip.opendns.com @resolver1.opendns.com
-ipconfig getifaddr en0
-
-
