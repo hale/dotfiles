@@ -678,6 +678,12 @@ fonts.packages = with pkgs; [
             --exclude=.git
           '';
           
+          # Create vim directories for backup, undo, swap, and views
+          home.file.".vim/backup/.keep".text = "";
+          home.file.".vim/undo/.keep".text = "";
+          home.file.".vim/swap/.keep".text = "";
+          home.file.".vim/views/.keep".text = "";
+          
           # Direnv configuration  
           programs.direnv = {
             enable = true;
@@ -806,6 +812,66 @@ fonts.packages = with pkgs; [
                 set termguicolors
               endif
               
+              " Mouse support
+              set mouse=a
+              set mousehide
+              
+              " Clipboard integration
+              set clipboard^=unnamed
+              
+              " History and navigation
+              set history=5000
+              set hidden
+              set scrolloff=5
+              set scrolljump=1
+              
+              " Search behavior
+              set ignorecase
+              set smartcase
+              set incsearch
+              set hlsearch
+              set showmatch
+              
+              " Visual settings
+              set list
+              set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+              set number
+              set norelativenumber
+              set showmode
+              
+              " Formatting
+              set nowrap
+              set autoindent
+              set expandtab
+              set shiftwidth=2
+              set tabstop=2
+              set tw=100
+              
+              " Performance
+              set lazyredraw
+              set ttyfast
+              
+              " Backup and undo settings
+              set backup
+              set undofile
+              set undolevels=1000
+              set undoreload=10000
+              
+              " Split behavior
+              set splitright
+              set splitbelow
+              
+              " Folding
+              set foldmethod=indent
+              set foldlevel=999
+              
+              " Suppress warnings
+              set shortmess+=A
+              
+              " Other settings
+              set nospell
+              set laststatus=2
+              
               " Rust formatting
               let g:rustfmt_autosave = 1
               
@@ -831,19 +897,110 @@ fonts.packages = with pkgs; [
               " Vim rooter
               let g:rooter_patterns = ['.git', 'Makefile', 'package.json', 'Cargo.toml']
               
+              " Silver searcher configuration
+              if executable('ag')
+                set grepprg=ag\ --nogroup\ --nocolor
+                let g:ackprg = 'ag --nogroup --nocolor --column --ignore public/ --ignore static/ --ignore node_modules --ignore .git'
+              endif
+              
+              " DWM settings
+              let g:dwm_map_keys=0
+              let g:dwm_master_pane_width=120
+              
+              " Rails ctags
+              let g:rails_ctags_arguments = ['--languages=ruby', '--extra=f']
+              
               " Custom keybindings
-              let mapleader = ","
+              let mapleader = " "
               
               " FZF mappings
               nnoremap <C-p> :FzfFiles<CR>
+              noremap <C-P> :Files<CR>
               nnoremap <leader>b :FzfBuffers<CR>
               nnoremap <leader>g :FzfRg<CR>
               
-              " Quick save
-              nnoremap <leader>w :w<CR>
+              " Vim config shortcuts
+              nnoremap <leader>ev :split $MYVIMRC<CR>
+              nnoremap <leader>sv :source $MYVIMRC<CR>
+              
+              " Search shortcuts
+              nmap <leader>F :Ack!<space>
+              nmap <leader>f :Ack! <C-r><C-w><cr>
+              nmap <silent> <leader>/ :set invhlsearch<CR>
+              
+              " Quick save and quit shortcuts
+              nnoremap <leader>w :wa<CR>
+              nnoremap <leader>q :wa<CR>:qa<CR>
+              nnoremap <leader>Q :qa!<CR>
               
               " Clear search highlight
               nnoremap <leader>h :noh<CR>
+              
+              " Visual shifting without exiting Visual mode
+              vnoremap < <gv
+              vnoremap > >gv
+              
+              " For when you forget to sudo
+              cmap w!! w !sudo tee % >/dev/null
+              
+              " Window management (DWM style)
+              nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+              nnoremap <leader>= :wincmd =<cr>
+              map <leader><leader> :call DWM_Focus()<CR>
+              
+              " DWM shortcuts
+              nmap <C-N> <Plug>DWMNew
+              nmap <C-C> <Plug>DWMClose
+              
+              " Easier horizontal scrolling
+              map zl zL
+              map zh zH
+              
+              " Rails/Ctags shortcuts
+              map <leader>rt :Ctags<CR>
+              
+              " Find merge conflict markers
+              map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
+              
+              " Toggle paste mode
+              nmap <leader>p :set paste!<CR>
+              
+              " Yank from cursor to end of line, consistent with C and D
+              noremap Y y
+              
+              " Vimux shortcuts for test running
+              map <leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
+              map <leader>vp :VimuxPromptCommand<CR>
+              map <leader>vl :VimuxRunLastCommand<CR>
+              map <leader>vi :VimuxInspectRunner<CR>
+              map <leader>vq :VimuxCloseRunner<CR>
+              map <leader>vx :VimuxInterruptRunner<CR>
+              map <leader>vz :call VimuxZoomRunner()<CR>
+              
+              " Vimux slime function and mappings
+              function! VimuxSlime()
+                call VimuxSendText(@v)
+                call VimuxSendKeys("Enter")
+              endfunction
+              vmap <leader>vs "vy :call VimuxSlime()<CR>
+              nmap <leader>vs vip<leader>vs<CR>
+              
+              " Automatically rebalance windows on vim resize
+              autocmd VimResized * :wincmd =
+              
+              " Git commit message cursor position
+              au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+              
+              " File type associations
+              au BufNewFile,BufRead *.owl set filetype=xml
+              au BufNewFile,BufRead *.jess set filetype=lisp
+              au BufNewFile,BufRead *.md set filetype=markdown
+              
+              " Set vim directories (managed by Nix)
+              set backupdir=~/.vim/backup//
+              set directory=~/.vim/swap//
+              set undodir=~/.vim/undo//
+              set viewdir=~/.vim/views//
               
               " LSP configuration for Neovim
               lua << EOF
