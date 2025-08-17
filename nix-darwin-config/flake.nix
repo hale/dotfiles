@@ -20,7 +20,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, stylix }:
   let
-    configuration = { pkgs, config, ... }: {
+    mkDarwinConfiguration = username: { pkgs, config, ... }: {
 
       # Stylix configuration for system-wide theming
       stylix = {
@@ -52,18 +52,18 @@ fonts.packages = with pkgs; [
 
 
       # Home Manager configuration
-      users.users.philhale = {
-        name = "philhale";
-        home = "/Users/philhale";
+      users.users.${username} = {
+        name = username;
+        home = "/Users/${username}";
       };
       
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.philhale = { pkgs, ... }: {
+        users.${username} = { pkgs, ... }: {
           home.stateVersion = "24.05";
-          home.username = "philhale";
-          home.homeDirectory = "/Users/philhale";
+          home.username = username;
+          home.homeDirectory = "/Users/${username}";
           
           # Packages to install for this user
           home.packages = with pkgs; [
@@ -462,7 +462,7 @@ fonts.packages = with pkgs; [
               if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
                   unset -m "DIRENV_*"
               fi
-              eval "$(direnv hook zsh)"
+              # Direnv hook is handled by nix-darwin, no need to add it here
             '';
           };
           
@@ -663,7 +663,7 @@ fonts.packages = with pkgs; [
                 sort = "-committerdate";
               };
               maintenance = {
-                repo = "/Users/philhale/oc/opencounter";
+                repo = "/Users/${username}/oc/opencounter";
               };
               rerere = {
                 enabled = true;
@@ -683,6 +683,20 @@ fonts.packages = with pkgs; [
           home.file.".vim/undo/.keep".text = "";
           home.file.".vim/swap/.keep".text = "";
           home.file.".vim/views/.keep".text = "";
+          
+          # GPG configuration
+          programs.gpg = {
+            enable = true;
+            settings = {
+              default-key = "328F1B8F430801B19C4151E88CBDFF2DBDB4EB14";
+            };
+          };
+          
+          services.gpg-agent = {
+            enable = true;
+            enableSshSupport = true;
+            pinentryPackage = pkgs.pinentry_mac;
+          };
           
           # Direnv configuration  
           programs.direnv = {
@@ -1079,7 +1093,7 @@ fonts.packages = with pkgs; [
       environment.variables.EDITOR = "nvim";
 
       # macOS system settings
-      system.primaryUser = "philhale";
+      system.primaryUser = username;
       system.defaults = {
         NSGlobalDomain = {
           InitialKeyRepeat = 10;  # normal minimum is 15 (225 ms)
@@ -1147,7 +1161,18 @@ fonts.packages = with pkgs; [
       modules = [ 
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
-        configuration 
+        (mkDarwinConfiguration "philhale")
+
+
+      ];
+    };
+    
+    darwinConfigurations."Philips-MacBook-Pro-2" = nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";  # Explicitly set system architecture
+      modules = [ 
+        home-manager.darwinModules.home-manager
+        stylix.darwinModules.stylix
+        (mkDarwinConfiguration "philiphale")
 
 
       ];
