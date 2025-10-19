@@ -68,6 +68,7 @@ fonts.packages = with pkgs; [
           # Packages to install for this user
           home.packages = with pkgs; [
             pure-prompt
+            git  # Version control
             delta  # Git diff pager
             ncurses  # For terminal definitions including alacritty
             gh  # GitHub CLI
@@ -242,7 +243,7 @@ fonts.packages = with pkgs; [
               # Ensure autosuggestions use the right color
               export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
               
-              # PATH additions
+              # PATH additions - prepend to existing PATH
               export PATH="$HOME/.dotfiles/bin:$PATH"
               export PATH="/usr/local/share/npm/bin:$PATH"
               export PATH="$HOME/node_modules/.bin:$PATH"
@@ -260,13 +261,7 @@ fonts.packages = with pkgs; [
               export RUBY_YJIT_ENABLE=1
               export PG_USER=postgres
               
-              # Volta
-              export VOLTA_HOME="$HOME/.volta"
-              export PATH="$VOLTA_HOME/bin:$PATH"
-              
-              # N (node version manager)
-              export N_PREFIX="$HOME/n"
-              [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+              # Node version managers (Volta, N) removed - using Bun for JavaScript runtime
               
               # Increase file descriptor limit
               ulimit -n 2048
@@ -695,7 +690,7 @@ fonts.packages = with pkgs; [
           services.gpg-agent = {
             enable = true;
             enableSshSupport = true;
-            pinentryPackage = pkgs.pinentry_mac;
+            pinentry.package = pkgs.pinentry_mac;
           };
           
           # Direnv configuration  
@@ -896,17 +891,8 @@ fonts.packages = with pkgs; [
               highlight clear LineNr
               
               " Theming is handled automatically by Stylix
-              
-              " FZF settings
-              let g:fzf_command_prefix = 'Fzf'
-              
-              " Mini plugins setup for full experience
-              lua << MINI
-              require('mini.statusline').setup()
-              require('mini.icons').setup()
-              require('mini.git').setup()
-              require('mini.diff').setup()
-              MINI
+
+              " Mini plugins are already initialized by Stylix - don't duplicate
               
               " Vim rooter
               let g:rooter_patterns = ['.git', 'Makefile', 'package.json', 'Cargo.toml']
@@ -928,10 +914,9 @@ fonts.packages = with pkgs; [
               let mapleader = " "
               
               " FZF mappings
-              nnoremap <C-p> :FzfFiles<CR>
-              noremap <C-P> :Files<CR>
-              nnoremap <leader>b :FzfBuffers<CR>
-              nnoremap <leader>g :FzfRg<CR>
+              nnoremap <C-p> :Files<CR>
+              nnoremap <leader>b :Buffers<CR>
+              nnoremap <leader>g :Rg<CR>
               
               " Vim config shortcuts
               nnoremap <leader>ev :split $MYVIMRC<CR>
@@ -1041,28 +1026,38 @@ fonts.packages = with pkgs; [
                     { name = 'buffer' },
                   })
                 })
-                
-                  -- LSP servers
-                  local lsp_ok, lspconfig = pcall(require, 'lspconfig')
-                  if lsp_ok then
-                    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-                    
-                    -- Ruby
-                    lspconfig.solargraph.setup{
-                      capabilities = capabilities
-                    }
-                    
-                    -- JavaScript/TypeScript
-                    lspconfig.ts_ls.setup{
-                      capabilities = capabilities
-                    }
-                    
-                    -- Rust (handled by rustaceanvim)
-                    -- Python
-                    lspconfig.pyright.setup{
-                      capabilities = capabilities
-                    }
-                  end
+
+                  -- LSP servers using vim.lsp.config (new API)
+                  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+                  -- Ruby
+                  vim.lsp.config.solargraph = {
+                    cmd = { 'solargraph', 'stdio' },
+                    filetypes = { 'ruby' },
+                    root_markers = { 'Gemfile', '.git' },
+                    capabilities = capabilities,
+                  }
+                  vim.lsp.enable('solargraph')
+
+                  -- JavaScript/TypeScript
+                  vim.lsp.config.ts_ls = {
+                    cmd = { 'typescript-language-server', '--stdio' },
+                    filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+                    root_markers = { 'package.json', 'tsconfig.json', '.git' },
+                    capabilities = capabilities,
+                  }
+                  vim.lsp.enable('ts_ls')
+
+                  -- Python
+                  vim.lsp.config.pyright = {
+                    cmd = { 'pyright-langserver', '--stdio' },
+                    filetypes = { 'python' },
+                    root_markers = { 'pyproject.toml', 'setup.py', '.git' },
+                    capabilities = capabilities,
+                  }
+                  vim.lsp.enable('pyright')
+
+                  -- Rust is handled by rustaceanvim
                 end
               end
               EOF
@@ -1074,6 +1069,7 @@ fonts.packages = with pkgs; [
             enable = true;
             plugin = "mini.base16";
           };
+          
           
           # Other Home Manager programs can go here
         };
@@ -1087,6 +1083,7 @@ fonts.packages = with pkgs; [
           pkgs.claude-code
           pkgs.alacritty  # Keep in system for /Applications visibility
           pkgs.neovim
+          pkgs.git  # Version control - available system-wide
         ];
       
       # Set default editor
@@ -1156,6 +1153,7 @@ fonts.packages = with pkgs; [
     };
   in
   {
+    # Default (dark) configuration
     darwinConfigurations."Phils-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";  # Explicitly set system architecture
       modules = [ 
@@ -1166,6 +1164,7 @@ fonts.packages = with pkgs; [
 
       ];
     };
+    
     
     darwinConfigurations."Philips-MacBook-Pro-2" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";  # Explicitly set system architecture
