@@ -542,13 +542,11 @@ fonts.packages = with pkgs; [
           # Git configuration
           programs.git = {
             enable = true;
-            userName = "Philip Hale";
-            userEmail = "philip@pghale.com";
             signing = {
               key = "BDB4EB14";
               signByDefault = true;
             };
-            
+
             # Global gitignore
             ignores = [
               "tags"
@@ -559,20 +557,25 @@ fonts.packages = with pkgs; [
               "*.rbc"
               ".rake_tasks"
             ];
-            
+
             # Global gitattributes
             attributes = [
               "db/schema.rb merge=railsschema"
             ];
-            
-            aliases = {
-              rank-contributers = "!$ZSH/bin/git-rank-contributers";
-              count = "!git shortlog -sn";
-              find = "log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep";
-              up = "pull --rebase --autostash";
-            };
-            
-            extraConfig = {
+
+            settings = {
+              user = {
+                name = "Philip Hale";
+                email = "philip@pghale.com";
+              };
+
+              alias = {
+                rank-contributers = "!$ZSH/bin/git-rank-contributers";
+                count = "!git shortlog -sn";
+                find = "log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep";
+                up = "pull --rebase --autostash";
+              };
+
               color = {
                 diff = "auto";
                 status = "auto";
