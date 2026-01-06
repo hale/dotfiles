@@ -97,6 +97,7 @@ fonts.packages = with pkgs; [
             universal-ctags  # For ctags/retag aliases
             jq  # JSON processor
             htop  # Interactive process viewer
+            watch  # Repeat commands periodically
           ];
           
           # Alacritty configuration
@@ -1124,6 +1125,13 @@ fonts.packages = with pkgs; [
         trusted-users = [ "@admin" ];
         extra-substituters = [ "https://cache.nixos.org/" ];
         builders-use-substitutes = true;
+      };
+
+      # Automatic garbage collection
+      nix.gc = {
+        automatic = true;
+        interval = { Weekday = 0; Hour = 3; Minute = 0; };  # Weekly on Sunday at 3am
+        options = "--delete-generations +3";
       };
 
       # Enable Linux builder
